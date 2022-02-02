@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&display=swap');
+*{margin: 0; padding: 0;}
+ul{list-style: none;}
+a{text-decoration: none;color:#000}
+img{border:0 ;}
+.container{margin: 0 auto;
+    position: relative; width: 100%;}
+main .contents{
+}
+
+/* section1 메인 상단 */
+
+.contents .section1{
+    width: 100%;
+    height: 750px;
+    background-color: #fff;
+}
+.contents .section1 h2{
+    text-align: center;
+    padding: 80px 0;
+}
+.section1_bt{
+    width: 100%;
+    height: 30%;
+    display: flex;
+}
+.section1_bt .bt_left{
+    border-right: 1px solid #000;
+    width: 50%;
+    height: 30%;
+}
+.section1_bt .bt_left .txt_box1{
+    width: 50%;
+    text-align: center;
+    padding: 0 35%;
+    margin-bottom: 30px;
+}
+.section1_bt .bt_left .img_box{
+    width: 50%;
+    margin: 0 340px;
+}
+.section1_bt .bt_left .img_box img{
+    width: 100%;
+}
+.section1_bt .bt_right{
+    width: 50%;
+}
+.section1_bt .bt_right img{
+    width: 50%;
+    height: auto;
+    padding: 0 15%;
+}
+
+/* section2 도매사이트 모음 */
+
+.section2{
+    width: 100%;
+    height: 1100px;
+    background-color: #f7f7f7;
+    margin: 0 auto;
+}
+.section2 h2{
+    text-align: center;
+    padding: 50px 0;
+}
+.section2 .section_wrap{
+    width: 80%;
+    height: 200px;
+    display: flex;
+    margin: 0 auto;
+}
+.section2 .section_wrap ul.box_wrap{
+    display: flex;
+}
+.section2 .section_wrap ul.box_wrap li{
+    width: 25%;
+    height: 400px;
+    margin-left: 2%;
+}
+.section2 .section_wrap ul.box_wrap li:first-child{
+    margin-left: 0;
+}
+.section2 .section_wrap ul.box_wrap li img{
+    width: 100%;
+}
+.section2 .section_wrap ul.box_wrap li .inner_txt{
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+}
+.section2 .section_wrap ul.box_wrap li .inner_txt strong{
+    text-align: center;
+    font-size: 22px;
+    margin-left: 8px;
+}
+.section2 .section_wrap ul.box_wrap li .inner_txt p{
+    display: block;
+    font-size: 13px;
+    padding: 15px 0;
+    width: 95%;
+    line-height: 1.5;
+    margin-left: 8px;
+}
+
+
+
+
+.section2 .section_wrap2{
+    width: 80%;
+    height: 200px;
+    display: flex;
+    margin: 0 auto;
+    padding-top: 220px;
+}
+.section2 .section_wrap2 ul.box_wrap2{
+    display: flex;
+}
+.section2 .section_wrap2 ul.box_wrap2 li{
+    width: 25%;
+    height: 400px;
+    margin-left: 2%;
+}
+.section2 .section_wrap2 ul.box_wrap2 li:first-child{
+    margin-left: 0;
+}
+.section2 .section_wrap2 ul.box_wrap2 li img{
+    width: 100%;
+}
+.section2 .section_wrap2 ul.box_wrap2 li .inner_txt{
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+}
+.section2 .section_wrap2 ul.box_wrap2 li .inner_txt strong{
+    text-align: center;
+    font-size: 22px;
+    margin-left: 8px;
+}
+.section2 .section_wrap2 ul.box_wrap2 li .inner_txt p{
+    display: block;
+    font-size: 13px;
+    padding: 15px 0;
+    width: 95%;
+    line-height: 1.5;
+    margin-left: 8px;
+}
+
+
+/* section3 오늘의 도매 상품 */
+.section3{
+    width: 100%;
+    height: 1100px;
+    background-color: #fff;
+    margin: 0 auto;
+}
+.section3 h2{
+    text-align: center;
+    padding: 50px 0;
+}
+.section3 .section_wrap{
+    width: 80%;
+    height: 200px;
+    display: flex;
+    margin: 0 auto;
+}
+.section3 .section_wrap ul.box_wrap{
+    display: flex;
+}
+.section3 .section_wrap ul.box_wrap li{
+    width: 25%;
+    height: 400px;
+    margin-left: 2%;
+    border: 1px solid #ccc;
+}
+.section3 .section_wrap ul.box_wrap li:first-child{
+    margin-left: 0;
+}
+.section3 .section_wrap ul.box_wrap li img{
+    width: 100%;
+}
+.section3 .section_wrap ul.box_wrap li .inner_txt{
+    width: 100%;
+    height: 100px;
+    background-color: #fff;
+}
+.section3 .section_wrap ul.box_wrap li .inner_txt strong{
+    text-align: center;
+    font-size: 22px;
+    margin-left: 8px;
+}
+.section3 .section_wrap ul.box_wrap li .inner_txt p{
+    display: block;
+    font-size: 13px;
+    padding: 15px 0;
+    width: 95%;
+    line-height: 1.5;
+    margin-left: 8px;
+}
+
+
+
+
+.section3 .section_wrap2{
+    width: 80%;
+    height: 200px;
+    display: flex;
+    margin: 0 auto;
+    padding-top: 220px;
+}
+.section3 .section_wrap2 ul.box_wrap2{
+    display: flex;
+}
+.section3 .section_wrap2 ul.box_wrap2 li{
+    width: 25%;
+    height: 400px;
+    margin-left: 2%;
+    border: 1px solid #ccc;
+}
+.section3 .section_wrap2 ul.box_wrap2 li:first-child{
+    margin-left: 0;
+}
+.section3 .section_wrap2 ul.box_wrap2 li img{
+    width: 100%;
+}
+.section3 .section_wrap2 ul.box_wrap2 li .inner_txt{
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+}
+.section3 .section_wrap2 ul.box_wrap2 li .inner_txt strong{
+    margin-left: 8px;
+    text-align: center;
+    font-size: 22px;
+}
+.section3 .section_wrap2 ul.box_wrap2 li .inner_txt p{
+    display: block;
+    font-size: 13px;
+    padding: 15px 0;
+    width: 95%;
+    line-height: 1.5;
+    margin-left: 8px;
+}
+
+/* section4 필독 정보 모음 */
+.section4{
+    width: 100%;
+    height: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+}
+.section4 h2{
+    text-align: center;
+    padding: 50px 0;
+}
+.info_wrap{
+    width: 80%;
+    height: 250px;
+    margin: 0 auto;
+}
+.info_wrap ul.info_box{
+    display: flex;
+}
+.info_wrap ul.info_box li{
+    width: 25%;
+    height: 220px;
+    margin-left: 2%;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+.info_wrap ul.info_box li:first-child{
+    margin-left: 0;
+}
+.info_wrap ul.info_box li a{
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+}
+.info_wrap ul.info_box li a strong{
+    font-size: 24px;
+}
+.info_wrap ul.info_box li a p{
+    display: block;
+    margin: 20px 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.info_wrap2{
+    width: 80%;
+    height: 300px;
+    margin: 0 auto;
+}
+.info_wrap2 ul.info_box2{
+    display: flex;
+}
+.info_wrap2 ul.info_box2 li{
+    width: 25%;
+    height: 220px;
+    margin-left: 2%;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+.info_wrap2 ul.info_box2 li:first-child{
+    margin-left: 0;
+}
+.info_wrap2 ul.info_box2 li a{
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+}
+.info_wrap2 ul.info_box2 li a strong{
+    font-size: 24px;
+}
+.info_wrap2 ul.info_box2 li a p{
+    display: block;
+    margin: 20px 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* section5 비교 견적 받기 */
+.section5{
+    width: 100%;
+    height: 500px;
+    background-color: #f7f7f7;
+    padding: 100px 0;
+}
+.section5 h2{
+    text-align: center;
+}
+.form_box{
+    width: 20%;
+    height: 400px;
+    background: linear-gradient(to top,rgb(235, 229, 235),rgb(247, 242, 242));
+    /* border: 1px solid rgb(151, 151, 151); */
+    border-radius: 5px;
+    margin: 40px auto;
+    position: relative;
+}
+.form_box ul.form_txt{
+    padding-top: 50px;
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%,-50%);
+}
+.form_box ul.form_txt li{
+    display: flex;
+    width: 100%;
+    margin-top: 30px;
+
+}
+.form_box ul.form_txt li p{
+    display: block;
+}
+.form_box ul.form_txt li input{
+    margin-left: 15px;
+}
+.form_box input.submit{
+    margin-top: 20px;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%,-50%);
+}
