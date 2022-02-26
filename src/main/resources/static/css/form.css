@@ -1,0 +1,211 @@
+.c4_form{
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+}
+.c4_form .container{
+    width: 70%;
+    margin: 0 auto;
+    padding: 25px 0;
+}
+.c4_form h2{
+    text-align: left;
+    padding:50px 0;
+    font-weight: normal;
+}
+form.form1 {
+    padding-top: 40px;
+    width: 35%;
+    height: 600px;
+    border:3px solid #F3EBF6 ;
+    margin: 100px auto;
+}
+
+.form1 input{
+    margin: 20px 0;
+}
+.form1 .selectbox{
+    width: 76%;
+color: rgb(38, 50, 56);
+font-weight: 700;
+font-size: 14px;
+letter-spacing: 1px;
+background: rgba(136, 126, 126, 0.04);
+padding: 10px 20px;
+border: none;
+border-radius: 20px;
+outline: none;
+box-sizing: border-box;
+border: 2px solid rgba(0, 0, 0, 0.02);
+margin-bottom: 50px;
+margin-left: 46px;
+text-align: center;
+margin-bottom: 27px;
+font-family: 'Ubuntu', sans-serif;
+margin: 20px auto;
+}
+
+.un {
+width: 76%;
+color: rgb(38, 50, 56);
+font-weight: 700;
+font-size: 14px;
+letter-spacing: 1px;
+background: rgba(136, 126, 126, 0.04);
+padding: 10px 20px;
+border: none;
+border-radius: 20px;
+outline: none;
+box-sizing: border-box;
+border: 2px solid rgba(0, 0, 0, 0.02);
+margin-bottom: 50px;
+margin-left: 46px;
+text-align: center;
+margin-bottom: 27px;
+font-family: 'Ubuntu', sans-serif;
+margin: 0 auto;
+}
+
+.pass {
+        width: 76%;
+color: rgb(38, 50, 56);
+font-weight: 700;
+font-size: 14px;
+letter-spacing: 1px;
+background: rgba(136, 126, 126, 0.04);
+padding: 10px 20px;
+border: none;
+border-radius: 20px;
+outline: none;
+box-sizing: border-box;
+border: 2px solid rgba(0, 0, 0, 0.02);
+margin-bottom: 50px;
+margin-left: 46px;
+text-align: center;
+margin-bottom: 27px;
+font-family: 'Ubuntu', sans-serif;
+margin: 0 auto;
+}
+
+.tel {
+    width: 76%;
+color: rgb(38, 50, 56);
+font-weight: 700;
+font-size: 14px;
+letter-spacing: 1px;
+background: rgba(136, 126, 126, 0.04);
+padding: 10px 20px;
+border: none;
+border-radius: 20px;
+outline: none;
+box-sizing: border-box;
+border: 2px solid rgba(0, 0, 0, 0.02);
+margin-bottom: 50px;
+margin-left: 46px;
+text-align: center;
+margin-bottom: 27px;
+font-family: 'Ubuntu', sans-serif;
+margin: 0 auto;
+}
+
+.textbox {
+    width: 76%;
+    height: 20%;
+color: rgb(38, 50, 56);
+font-weight: 700;
+font-size: 14px;
+letter-spacing: 1px;
+background: rgba(136, 126, 126, 0.04);
+padding: 10px 20px;
+border: none;
+border-radius: 20px;
+outline: none;
+box-sizing: border-box;
+border: 2px solid rgba(0, 0, 0, 0.02);
+margin-bottom: 50px;
+margin-left: 46px;
+text-align: center;
+margin-bottom: 27px;
+font-family: 'Ubuntu', sans-serif;
+margin: 0 auto;
+word-break: keep-all;
+}
+
+
+.un:focus, .pass:focus, .tel:focus, .textbox:focus{
+    border: 2px solid rgba(0, 0, 0, 0.18) !important;
+    
+}
+
+.form1 .submit {
+  cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: linear-gradient(to right, #9C27B0, #E040FB);
+    border: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 35%;
+    font-size: 13px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    margin: 20px auto;
+    display: block;
+    width: 10%;
+}
+
+.form1 .qnalink {
+    text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+    color: #E1BEE7;
+    padding-top: 15px;
+    margin: 0 auto;
+}
+
+.c4_form .container a {
+    text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+    color: #E1BEE7;
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    .form1 {
+        border-radius: 0px;
+    }
+}
+/* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/ 
+@media all and (min-width:768px) and (max-width:1023px) {
+    form.form1{
+        width: 100%;
+        margin: 2rem 0;
+    } 
+    .c4_form h2{
+        font-size: 1.5rem;
+        padding: 2rem 0;
+    }
+  } 
+  
+  
+  /* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/ 
+  @media all and (max-width:767px) {
+    form.form1{
+        width: 100%;
+        margin: 2rem 0;
+        height: 550px;
+    } 
+    .c4_form h2{
+        font-size: 1.125rem;
+        padding: 1rem 0;
+    }
+    .form1 .selectbox{
+        margin: 10px 0;
+    }
+    .form1 input{
+        margin: 10px 0;
+    }
+    .form1 .textbox{
+        margin: 10px 0;
+    }
+   }
+  

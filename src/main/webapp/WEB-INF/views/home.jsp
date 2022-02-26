@@ -6,8 +6,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-    <title>WVM</title>
+    <script src="js/script.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-1.4.4.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css?a" type="text/css">
+    <link rel="icon" type="image/png" href="img/favicon.png" sizes="192x192">
+    <title>도매/위탁판매 사이트 모음 - Think With Wholesale</title>
 </head>
 <body>
 <header id="header" class="fixed-top">
@@ -16,25 +19,26 @@
 <main class="contents">
     <div class="section1">
         <div class="container">
-            <h2>위탁판매 도매 사이트 모음
-                <br>
-                WVM
+            <h2>Solve e-commerce in one shot.
             </h2>
-            <p class="p1">Think with Google과 함께 더욱 업그레이드 된 마케팅을 펼쳐보세요.</p>
+            <p class="p1">Think with Wholesale과 함께 더욱 업그레이드된 e커머스 사업을 펼쳐보세요.</p>
             <div class="section1_bt">
+                <div class="mo_top">
+                    <img src="img/main.jpg" alt="moimg">
+                </div>
                 <div class="bt_left">
                     <div class="txt_box1">
-                        <span>@도매사이트 모음</span>
-                        <h3>Wholesale Vertical Media</h3>
-                        <p>위탁판매 도매사이트 Wholesale Vertical Media<br>
-                            도매사이트를 한 번에 찾아보세요 !
+                        <span>도매/위탁판매 사이트 모음</span>
+                        <h3>Think With Wholesale</h3>
+                        <p>국내 인기 B2B, 도매사이트 위탁판매 사이트 리스트 순위 리스트 정리 모음 비교 추천 TOP10
+                            및 장단점을 총 정리했습니다. 매출상승으로 가는 지름길! 도매리스트닷컴에서 지금 시작하세요
                             <br>
-                            2021년은 우리가 알던 기존의 세상이 완전히 뒤바뀌었다는 사실을 인정해야만 했던 한 해였습니다. Google은 수많은 검색 데이터를 분석하여 여러분이 2022년을 잘 준비할 수 있도록 '올해의 검색어 리포트 (Year in Search)'에 2021년을 대표한 5가지 주요 트렌드를 정리했습니다. 리포트를 통해 지난해를 돌아보며 앞으로 나아갈 힘과 영감을 얻어보세요.
+                            당신이 원하는 인사이트.  더 스마트하게 일하세요. 당신이 필요한 상품과 정보를 한자리에서.
                         </p>
                     </div><!-- //.txt_box -->
                 </div><!-- //.bt_left -->
                 <div class="bt_right">
-                    <a href="#">
+                    <a  href="#">
                         <img src="img/main.jpg" alt="img2">
                     </a>
                 </div><!-- //.bt_right -->
@@ -47,7 +51,7 @@
             <div class="section_wrap">
                 <ul class="box_wrap">
                     <li>
-                        <a href="/category?cd=01">
+                        <a href="/sub/c1_sub1.html">
                             <div class="inner_img">
                                 <img src="img/img3.jpg" alt="img3">
                             </div>
@@ -71,7 +75,7 @@
                     <li>
                         <a href="/sub/c1_sub3.html">
                             <div class="inner_img">
-                                <img src="./img/img2.jpg" alt="img3">
+                                <img src="img/img2.jpg" alt="img3">
                             </div>
                             <div class="inner_txt">
                                 <h3>자동차</h3>
@@ -82,7 +86,7 @@
                     <li>
                         <a href="/sub/c1_sub4.html">
                             <div class="inner_img">
-                                <img src="./img/img1.jpg" alt="img3">
+                                <img src="img/img1.jpg" alt="img3">
                             </div>
                             <div class="inner_txt">
                                 <h3>디지털</h3>
@@ -93,7 +97,7 @@
                     <li>
                         <a href="/sub/c1_sub5.html">
                             <div class="inner_img">
-                                <img src="./img/img5.jpg" alt="img3">
+                                <img src="img/img5.jpg" alt="img3">
                             </div>
                             <div class="inner_txt">
                                 <h3>가전</h3>
@@ -104,7 +108,7 @@
                     <li>
                         <a href="/sub/c1_sub6.html">
                             <div class="inner_img">
-                                <img src="./img/img6.jpg" alt="img3">
+                                <img src="img/img6.jpg" alt="img3">
                             </div>
                             <div class="inner_txt">
                                 <h3>의류</h3>
@@ -115,7 +119,7 @@
                     <li>
                         <a href="/sub/c1_sub7.html">
                             <div class="inner_img">
-                                <img src="./img/img7.jpg" alt="img3">
+                                <img src="img/img7.jpg" alt="img3">
                             </div>
                             <div class="inner_txt">
                                 <h3>신발</h3>
@@ -126,7 +130,7 @@
                     <li>
                         <a href="/sub/c1_sub8.html">
                             <div class="inner_img">
-                                <img src="./img/img2.jpg" alt="img3">
+                                <img src="img/img2.jpg" alt="img3">
                             </div>
                             <div class="inner_txt">
                                 <h3>잡화</h3>
@@ -147,7 +151,7 @@
                         <li>
                             <a href="${tProduct.url}">
                                 <div class="inner_img">
-                                <img src="${tProduct.img}" alt="img3">
+                                    <img src="${tProduct.img}" alt="img3">
                                 </div>
                                 <div class="inner_txt">
                                     <h4>${tProduct.name}</h4>
@@ -162,8 +166,6 @@
         </div><!-- //.container -->
         <a href="/sub/c2_sub1.html"><button class="main_btn2">더보기</button></a>
     </div><!-- //.section3 -->
-
-
     <div class="section4">
         <h2>오늘의 도매 베스트 상품</h2>
         <div class="container">
@@ -188,8 +190,7 @@
         </div><!-- //.container -->
         <a href="/sub/c2_sub2.html"><button class="main_btn3">더보기</button></a>
     </div><!-- //.section4 -->
-    <jsp:include page="info.jsp" flush="true"/>
+    <jsp:include page="footer.jsp" flush="true"/>
 </main>
-<jsp:include page="footer.jsp" flush="true"/>
 </body>
 </html>

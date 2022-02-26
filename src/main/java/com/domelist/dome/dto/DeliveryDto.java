@@ -1,22 +1,20 @@
 package com.domelist.dome.dto;
 
-public class SiteInfoDto {
-
+public class DeliveryDto {
     private Long id;
     private String name;
-    private String url;
-    private String info;
     private String img;
+    private String url;
+    private String description;
     private String category;
 
-    public SiteInfoDto() {}
-
-    public SiteInfoDto(Long id, String name, String url, String info, String img, String category) {
+    public DeliveryDto(){}
+    public DeliveryDto(Long id, String name, String img, String url, String description, String category) {
         this.id = id;
         this.name = name;
-        this.url = url;
-        this.info = info;
         this.img = img;
+        this.url = url;
+        this.description = description;
         this.category = category;
     }
 
@@ -36,6 +34,14 @@ public class SiteInfoDto {
         this.name = name;
     }
 
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
     public String getUrl() {
         return url;
     }
@@ -44,20 +50,12 @@ public class SiteInfoDto {
         this.url = url;
     }
 
-    public String getInfo() {
-        return info;
+    public String getDescription() {
+        return description;
     }
 
-    public void setInfo(String info) {
-        this.info = info;
-    }
-
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String img) {
-        this.img = img;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getCategory() {

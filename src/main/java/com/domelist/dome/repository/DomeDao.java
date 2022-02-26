@@ -1,5 +1,6 @@
 package com.domelist.dome.repository;
 
+import com.domelist.dome.dto.DeliveryDto;
 import com.domelist.dome.dto.DomeDto;
 import com.domelist.dome.dto.SiteInfoDto;
 import org.apache.ibatis.annotations.Mapper;
@@ -16,7 +17,13 @@ public interface DomeDao {
 
     List<SiteInfoDto> siteInfoList(String cd);
 
+    String categoryNm(String cd);
+
     List<DomeDto> prdMainNewList();
 
     List<DomeDto> prdMainBestList();
+
+    List<DeliveryDto> domesticList(int cnt);
+
+    List<DeliveryDto> abroadList(int cnt);
 }

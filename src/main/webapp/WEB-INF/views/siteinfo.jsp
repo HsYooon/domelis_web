@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" href="css/sub.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/sub.css" type="text/css">
     <title>생활</title>
 </head>
 <body>
@@ -18,18 +18,18 @@
 <div class="c1_sub">
     <div class="container">
         <div class="c1_list">
-            <h2>생활</h2>
+            <h2>${title}</h2>
             <p>사이트 모아보기 ▼</p>
             <ul class="sitelist">
-                <c:forEach items="${siteInfoList}" var="tSite">
+                <c:forEach items="${siteInfoList}" var="item">
                     <li>
-                        <a href="${tSite.url}" target="_blank">
+                        <a href="${item.url}" target="_blank">
                             <div class="inner_img">
-                                <img src="img/img3.jpg" alt="img3">
+                                <img src="${item.img}" alt="img3">
                             </div>
                             <div class="inner_txt">
-                                <h3>${tSite.name}</h3>
-                                <p>${tSite.info}</p>
+                                <h3>${item.name}</h3>
+                                <p>${item.info}</p>
                             </div>
                         </a>
                     </li>

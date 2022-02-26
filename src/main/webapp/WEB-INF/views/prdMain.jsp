@@ -19,7 +19,7 @@
     <div class="container">
         <h2>오늘의 도매 신규 상품</h2>
         <p>도매사이트의 신규 상품을 한자리에 모았습니다.<br>오늘 새롭게 올라온 상품을 확인하세요.</p>
-        <a href="/sub/c2_sub1.html" class="c2btn_wrap"><button class="c2btn">더보기</button></a>
+        <a href="${pageContext.request.contextPath}/product/new" class="c2btn_wrap"><button class="c2btn">더보기</button></a>
         <ul class="sitelist">
             <c:forEach items="${prdMainNewList}" var="tProduct">
                 <li>
@@ -39,7 +39,7 @@
     <div class="container">
         <h2>오늘의 도매 베스트 상품</h2>
         <p>도매사이트의 인기 상품을 한자리에 모았습니다.<br>잘 팔리는 인기 상품을 확인하세요.</p>
-        <a href="/sub/c2_sub2.html" class="c2btn_wrap"><button class="c2btn">더보기</button></a>
+        <a href="${pageContext.request.contextPath}/product/best" class="c2btn_wrap"><button class="c2btn">더보기</button></a>
         <ul class="sitelist">
             <c:forEach items="${prdMainBestList}" var="tProduct">
                 <li>

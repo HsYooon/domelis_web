@@ -33,11 +33,22 @@
         ]]>
     </select>
     <select id="siteInfoList" resultType = "SiteInfoDto" parameterType="string">
-    <![CDATA[
-    select name, url, info, category
-    from t_dome_site
+    select id
+           , name
+           , url
+           , info
+           , img
+           , category
+    from t_siteinfo
+    <if test="cd != null and cd != 'all'">
     where category = #{cd}
-    ]]>
+    </if>
+    </select>
+
+    <select id="categoryNm" resultType="string" parameterType="string">
+        select name
+        from t_category_cd
+        where cd = #{cd}
     </select>
     <select id="prdMainNewList" resultType="DomeDto">
         SELECT id
@@ -63,5 +74,23 @@
         where info = '12'
         order by rand() desc, id desc
             limit 12
+    </select>
+
+    <select id="domesticList" resultType = "DeliveryDto" parameterType="int">
+    SELECT id, name, img, url, description
+    from t_delivery
+    where category = '10' order by id
+    <if test='cnt!=0'>
+        LIMIT #{cnt}
+    </if>
+    </select>
+
+    <select id="abroadList" resultType = "DeliveryDto" parameterType="int">
+        SELECT id, name, img, url, description
+        from t_delivery
+        where category = '11' order by id
+        <if test='cnt!=0'>
+        LIMIT #{cnt}
+        </if>
     </select>
 </mapper>

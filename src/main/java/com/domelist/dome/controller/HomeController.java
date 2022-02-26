@@ -1,5 +1,6 @@
 package com.domelist.dome.controller;
 
+import com.domelist.dome.dto.DeliveryDto;
 import com.domelist.dome.dto.DomeDto;
 import com.domelist.dome.dto.SiteInfoDto;
 import com.domelist.dome.service.DomeService;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class HomeController {
@@ -28,12 +30,20 @@ public class HomeController {
         model.addAttribute("bestProductList", bestProductList);
         return "home";
     }
-    @GetMapping("/category")
-    public String category(@RequestParam("cd") String cd, Model model) {
-        /* id = 1 : 생활 */
+    @GetMapping("/siteinfo")
+    public String siteInfo(@RequestParam("cd") String cd, Model model) {
+        /* cd = null or all : 모든 사이트*/
         List<SiteInfoDto> siteInfoList = service.siteInfoList(cd);
+        String title = "";
+        if(cd == "all") {
+            model.addAttribute("title", title);
+            model.addAttribute("siteInfoList", siteInfoList);
+            return "siteinfo";
+        }
+        title = service.categoryNm(cd);
+        model.addAttribute("title", title);
         model.addAttribute("siteInfoList", siteInfoList);
-        return "category";
+        return "siteinfo";
     }
 
     @GetMapping("/product")
@@ -47,13 +57,64 @@ public class HomeController {
     @GetMapping("/product/new")
     public String productNew(Model model) {
         String title = "오늘의 도매 신상품";
-        String desc = "도매사이트의 신규 상품을 한자리에 모았습니다. 오늘 새롭게 올라온 상품을 확인하세요.";
+        String desc1 = "도매사이트의 신규 상품을 한자리에 모았습니다.";
+        String desc2 = "오늘 새롭게 올라온 상품을 확인하세요.";
         List<DomeDto> prdSubNewList = service.todayProductList();
 
-        model.addAttribute("prdSubNewList",prdSubNewList);
+        model.addAttribute("prdSubList",prdSubNewList);
         model.addAttribute("title", title);
-        model.addAttribute("desc", desc);
+        model.addAttribute("desc1", desc1);
+        model.addAttribute("desc2", desc2);
         return "prdSub";
+    }
+
+    @GetMapping("/product/best")
+    public String productBest(Model model) {
+        String title = "오늘의 도매 베스트";
+        String desc1 = "도매사이트의 인기 상품을 한자리에 모았습니다.";
+        String desc2 = "잘 팔리는 상품을 확인하세요.";
+        List<DomeDto> prdSubBestList = service.bestProductList();
+
+        model.addAttribute("prdSubList",prdSubBestList);
+        model.addAttribute("title", title);
+        model.addAttribute("desc1", desc1);
+        model.addAttribute("desc2", desc2);
+        return "prdSub";
+    }
+
+    @GetMapping("/delivery")
+    public String delivery(Model model) {
+        Map<String, List> result = service.deliveryMainLists();
+        model.addAttribute("domesticList", result.get("domestic"));
+        model.addAttribute("abroadList", result.get("abroad"));
+        return "delivery";
+    }
+
+    @GetMapping("/delivery/domestic")
+    public String deliveryDomesticInfo(Model model){
+        String title = "3PL 물류/택배 대행 업체 정보 모음";
+        String desc ="3PL 물류/택배 대행 업체 정보를 한자리에 모았습니다. 비지니스 성장을 위한 인사이트를 얻을 수 있는지 살펴 보세요.";
+        List<DeliveryDto> result = service.deliveryDomesticList();
+        model.addAttribute("title",title);
+        model.addAttribute("desc", desc);
+        model.addAttribute("deliveryList", result);
+        return "delivery_info";
+    }
+
+    @GetMapping("/delivery/abroad")
+    public String deliveryAbroadInfo(Model model){
+        String title = "해외 수입구매 (대량구매/OEM/ODM) 대행 업체 정보 모음";
+        String desc ="해외 수입구매 대행 업체 정보를 한자리에 모았습니다. 비지니스 성장을 위한 인사이트를 얻을 수 있는지 살펴 보세요.";
+        List<DeliveryDto> result = service.deliveryAbroadList();
+        model.addAttribute("title",title);
+        model.addAttribute("desc", desc);
+        model.addAttribute("deliveryList", result);
+        return "delivery_info";
+    }
+
+    @GetMapping("/marketing")
+    public String marketingInfo(){
+        return "marketing";
     }
 
     @GetMapping("/board")
