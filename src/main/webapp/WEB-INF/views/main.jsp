@@ -28,13 +28,13 @@
                         <p>@도매사이트 카테고리별 모음</p>
                     </div><!-- //.txt_box -->
                     <div class="img_box">
-                        <a href="#">
+                        <a href="/">
                             <img src="img/img1.jpg" alt="img1">
                         </a>
                     </div><!-- //.img_box -->
                 </div><!-- //.bt_left -->
                 <div class="bt_right">
-                    <a  href="#">
+                    <a  href="/">
                         <img src="img/img2.jpg" alt="img2">
                     </a>
                 </div><!-- //.bt_right -->

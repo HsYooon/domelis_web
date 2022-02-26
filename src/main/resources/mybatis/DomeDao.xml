@@ -4,18 +4,8 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.domelist.dome.repository.DomeDao">
-    <select id="test" resultType="DomeDto">
+    <select id="bestProductList" resultType="DomeDto" parameterType="int">
         <![CDATA[
-        SELECT id
-              ,name
-              ,img
-              ,url
-              ,title
-              ,category
-          from t_domelist
-        ]]>
-    </select>
-    <select id="todayProductList" resultType="DomeDto">
         SELECT id
              ,name
              ,img
@@ -23,6 +13,55 @@
              ,title
              ,category
         from t_domelist
-        order by reg_dttm desc, id desc
+        where info = '12'
+        order by rand() desc, id desc
+        limit #{cnt}
+        ]]>
+    </select>
+    <select id="todayProductList" resultType="DomeDto" parameterType="int">
+        <![CDATA[
+        SELECT id
+             ,name
+             ,img
+             ,url
+             ,title
+             ,category
+        from t_domelist
+        where info = '11'
+        order by rand() desc, id desc
+        limit #{cnt}
+        ]]>
+    </select>
+    <select id="siteInfoList" resultType = "SiteInfoDto" parameterType="string">
+    <![CDATA[
+    select name, url, info, category
+    from t_dome_site
+    where category = #{cd}
+    ]]>
+    </select>
+    <select id="prdMainNewList" resultType="DomeDto">
+        SELECT id
+             ,name
+             ,img
+             ,url
+             ,title
+             ,category
+        from t_domelist
+        where info = '11'
+        order by rand() desc, id desc
+        limit 12
+    </select>
+
+    <select id="prdMainBestList" resultType="DomeDto">
+        SELECT id
+             ,name
+             ,img
+             ,url
+             ,title
+             ,category
+        from t_domelist
+        where info = '12'
+        order by rand() desc, id desc
+            limit 12
     </select>
 </mapper>
