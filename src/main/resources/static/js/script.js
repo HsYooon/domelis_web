@@ -4,15 +4,14 @@ $(function(){
         if($(this).hasClass("active")){
             $(this).removeClass("active");
         }else {
-            $(".accordion").find(".active").parent().next().slideUp("slow");
+            $(".accordion").find(".active").parent().next().toggle();
             $(".accordion").find(".active").removeClass("active");
-            $(".cate ul li").slideUp("slow");
-            $(this).parent().next().slideDown("slow");
+            $(".cate ul li").toggle();
+            $(this).parent().next().toggle('slow');
             $(this).addClass("active");
         }
     });
 });
-
 
 
 
