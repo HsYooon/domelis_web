@@ -5,9 +5,10 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="referrer" content="no-referrer"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
-    <link rel="stylesheet" href="css/board.css" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css?a" type="text/css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/board.css?a" type="text/css">
     <title>필독 정보 모음</title>
 </head>
 <body>
@@ -15,9 +16,12 @@
     <jsp:include page="header.jsp" flush="true"/>
 </header>
 <div class="c3_board1">
-    <div class="container">
-        ${article}
-    </div><!-- //.container -->
+    <div class="c3_board1">
+        <div class="container">
+            <h2>${post.title}</h2>
+            <p>${post.writer} / ${post.reg_dttm}</p>
+            ${post.article}
+        </div><!-- //.container -->
     <div class="hotnews">
         <div class="container">
             <h2>인기 게시물</h2>
@@ -50,7 +54,7 @@
         </div><!-- //.container -->
     </div><!-- //.hotnews -->
 </div><!-- //.c3_board1 -->
-<script>loadHTML("/info.html");</script>
+    <jsp:include page="info.jsp" flush="true"/>
 <footer id="footer" class="fixed-top">
     <jsp:include page="footer.jsp" flush="true"/>
 </footer>
