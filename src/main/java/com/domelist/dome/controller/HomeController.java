@@ -3,6 +3,7 @@ package com.domelist.dome.controller;
 import com.domelist.dome.dto.DeliveryDto;
 import com.domelist.dome.dto.DomeDto;
 import com.domelist.dome.dto.SiteInfoDto;
+import com.domelist.dome.service.CommonService;
 import com.domelist.dome.service.DomeService;
 import jdk.nashorn.internal.objects.annotations.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,9 @@ import java.util.Map;
 public class HomeController {
     @Autowired
     DomeService service;
+
+    @Autowired
+    CommonService commonService;
 
     @GetMapping("/")
     public String home(Model model) {
@@ -54,13 +58,44 @@ public class HomeController {
         model.addAttribute("prdMainBestList",prdMainBestList);
         return "prdMain";
     }
+
+    private int calLastPage(int total, int offset) {
+        if (total % offset == 0) {
+            return (int) Math.ceil((double)total / (double) offset);
+        }
+        return (int) Math.ceil((double)total / (double) offset);
+    }
+    /* 오늘의 도매상품 > 신상품 */
     @GetMapping("/product/new")
-    public String productNew(Model model) {
+    public String productNew(@RequestParam(value ="page", required = false) String page, Model model) {
+        int totalPrdCnt = commonService.totalPrdCnt();
+        // 한페이지에 보여줄 상품 수
+        int offset = 100;
+        int lastPage = calLastPage(totalPrdCnt, offset);
+        int nowPage = 1;
+        if(page != null && Integer.parseInt(page) > 0) {
+            nowPage = Integer.parseInt(page);
+        }
+        // 현재 페이지가 마지막 페이지보다 클 경우 에러
+        if (nowPage > lastPage) {
+            return "error";
+        }
+
+        int start = ((nowPage - 1) * offset) + 1;
+        int end = offset;
+        if (nowPage != lastPage) {
+            end = start + offset - 1;
+        }else {
+            end = totalPrdCnt - (lastPage-1) * offset;
+        }
+
+        List<DomeDto> prdSubNewList = service.todayProductList(start, end);
         String title = "오늘의 도매 신상품";
         String desc1 = "도매사이트의 신규 상품을 한자리에 모았습니다.";
         String desc2 = "오늘 새롭게 올라온 상품을 확인하세요.";
-        List<DomeDto> prdSubNewList = service.todayProductList();
 
+        model.addAttribute("lastPage", lastPage);
+        model.addAttribute("nowPage", nowPage);
         model.addAttribute("prdSubList",prdSubNewList);
         model.addAttribute("title", title);
         model.addAttribute("desc1", desc1);

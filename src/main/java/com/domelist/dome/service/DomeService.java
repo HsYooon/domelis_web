@@ -18,13 +18,9 @@ public class DomeService {
     @Autowired
     DomeDao dao;
 
-    public List<DomeDto> test() {
-        return dao.test();
-    }
-
     public List<DomeDto> mainNewList() {
         int cnt = 12;
-        List<DomeDto> result = dao.todayProductList(cnt);
+        List<DomeDto> result = dao.todayProductList();
         return result;
     }
 
@@ -34,10 +30,9 @@ public class DomeService {
         return result;
     }
 
-    public List<DomeDto> todayProductList() {
-        /* 100개의 신상품 목록을 가져옴 */
-        int cnt = 100;
-        List<DomeDto> result = dao.todayProductList(cnt);
+    public List<DomeDto> todayProductList(int start, int end) {
+
+        List<DomeDto> result = dao.domeNewPrdList(start, end);
         return result;
     }
 

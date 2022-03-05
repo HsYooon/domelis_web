@@ -4,14 +4,16 @@ import com.domelist.dome.dto.DeliveryDto;
 import com.domelist.dome.dto.DomeDto;
 import com.domelist.dome.dto.SiteInfoDto;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 @Mapper
 public interface DomeDao {
-    List<DomeDto> test();
+    /* 오늘의 도매상품 > 신상품,베스트 */
+    List<DomeDto> domeNewPrdList(@Param("start") int start, @Param("end") int end);
 
-    List<DomeDto> todayProductList(int cnt);
+    List<DomeDto> todayProductList();
 
     List<DomeDto> bestProductList(int cnt);
 

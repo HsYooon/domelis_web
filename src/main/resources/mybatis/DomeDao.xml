@@ -4,6 +4,16 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.domelist.dome.repository.DomeDao">
+    <select id="domeNewPrdList" resultType="DomeDto" parameterType="int">
+        <![CDATA[
+        with v1 as (
+            SELECT *
+            FROM t_domelist
+            order by rand() desc
+        ) select *
+          from v1 limit #{start} , #{end}
+        ]]>
+    </select>
     <select id="bestProductList" resultType="DomeDto" parameterType="int">
         <![CDATA[
         SELECT id
