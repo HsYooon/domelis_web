@@ -78,7 +78,7 @@
     line-height: 1.5rem;
 }
 
-/* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/ 
+/* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/
 @media all and (min-width:768px) and (max-width:1023px){
     .category1 h2{
         padding-top: 2rem;
@@ -104,7 +104,10 @@
         padding-bottom: 1rem;
     }
     .category1 p{
-        display: none;
+        font-size: 0.75rem;
+        margin-bottom: 12%;
+        padding: 0;
+        line-height: 1.8;
     }
     .category1 ul.sitelist{
         display:inline;
@@ -132,7 +135,7 @@
         font-size: 0.75rem;
     }
 
-    
+
 }
 
 
@@ -240,7 +243,7 @@
     cursor: pointer;
 }
 
-/* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/ 
+/* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/
 @media all and (min-width:768px) and (max-width:1023px){
     .category2{
         margin-bottom: 0;
@@ -277,7 +280,10 @@
         padding-bottom: 1rem;
     }
     .category2 p{
-        display: none;
+        font-size: 0.75rem;
+        margin-bottom: 12%;
+        padding: 0;
+        line-height: 1.8;
     }
     .category2 ul.sitelist{
         display:inline;
@@ -469,7 +475,7 @@
     cursor: pointer;
 }
 
-/* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/ 
+/* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/
 @media all and (min-width:768px) and (max-width:1023px) {
     .category3 .c3_section h2{
         text-align: center;
@@ -509,13 +515,13 @@
         font-size: 1.125rem;
     }
     .category3 ul.sitelist li a .inner_txt p{
-    display: none;
+        display: none;
     }
-  } 
-  
-  
-  /* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/ 
-  @media all and (max-width:767px) {
+}
+
+
+/* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
+@media all and (max-width:767px) {
     .category3{
         margin-bottom: 4rem;
     }
@@ -568,7 +574,7 @@
         bottom: -1%;
         transform: translate(-50%,-50%);
     }
-   }
+}
 
 
 
@@ -645,7 +651,7 @@
     width: 50%;
 }
 .category4 ul.formlink li a.span_a ul.icon_txt li:nth-child(2){
-    width: 70%;
+    width: 80%;
 }
 .category4 ul.formlink li a.span_a ul.icon_txt li{
     margin: 0;
@@ -655,6 +661,13 @@
     width: 20%;
     display: block;
 }
+.category4 ul.formlink li a.span_a ul.icon_txt li img{
+    width: 100%;
+    padding-left: 0.5em;
+}
+.category4 ul.formlink li a.span_a:hover ul.icon_txt li img{
+    width: 100%;
+}
 .category4 ul.formlink li a.span_a:hover ul.icon_txt li p{
     color: #b4b2b2;
 }
@@ -662,6 +675,7 @@
     margin: 0;
     width: 100%;
     text-align: center;
+    line-height: 2.5;
 }
 .category4 .c4_contents{
     margin: 8rem 0;
@@ -734,13 +748,16 @@
 
 
 
-/* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/ 
+/* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/
 @media all and (min-width:768px) and (max-width:1023px) {
     .category4 h2{
         font-size:1.75rem ;
     }
+    .category4 p{
+        line-height: 1.8;
+    }
     .category4 ul.formlink li a h3{
-        font-size: 1rem;
+        font-size: 0.85rem;
     }
     .category4 ul.formlink li a p{
         width: 95%;
@@ -751,8 +768,13 @@
     .category4 ul.formlink li a.span_a ul.icon_txt{
         width: 100%;
     }
+    .category4 ul.formlink li a.span_a ul.icon_txt li img{
+        width: 70%;
+    }
     .category4 ul.formlink li a.span_a ul.icon_txt li p{
         width: 55%;
+        font-size: 1rem;
+        line-height: 2;
     }
     .category4 .c4_contents h3{
         padding-top: 0;
@@ -761,17 +783,20 @@
     .category4 ul.sitelist li{
         width: 48%;
     }
-  } 
-  
-  
-  /* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/ 
-  @media all and (max-width:767px) {
+}
+
+
+/* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
+@media all and (max-width:767px) {
     .category4 h2{
         font-size:1.125rem ;
         padding-top: 1rem;
+        letter-spacing: -.08rem;
     }
     .category4 p{
-        display: none;
+        font-size: 0.75rem;
+        padding-bottom: 2rem;
+        line-height: 1.8;
     }
     .category4 ul.formlink{
         display: inline;
@@ -784,6 +809,14 @@
     .category4 ul.formlink li a h3{
         font-size: 0.75rem;
     }
+    .category4 ul.formlink li a p{
+        width: 100%;
+        margin: 0;
+        margin-top: 8%;
+        line-height: 2;
+        font-size: 0.6rem;
+        padding-bottom: 0;
+    }
     .category4 ul.formlink li a.span_a ul.icon_txt{
         height: 40px;
         width: 85%;
@@ -791,13 +824,18 @@
     .category4 ul.formlink li a.span_a ul.icon_txt li{
         width: 40%;
     }
+
     .category4 ul.formlink li a.span_a ul.icon_txt img{
         width: 70%;
+    }
+    .category4 ul.formlink li a.span_a ul.icon_txt li img{
+        width: 65%;
     }
     .category4 ul.formlink li a.span_a ul.icon_txt p{
         display: block;
         font-size: 0.7rem;
         width: 70%;
+        padding-top: 6%;
     }
     .category4 .c4_contents{
         margin: 4rem 0;
@@ -820,7 +858,10 @@
         bottom: -2%;
         transform: translate(-50%,-50%);
     }
-   }
+    .category4 ul.sitelist li .inner_txt p{
+        padding-bottom: 0;
+    }
+}
 
 
 
@@ -890,12 +931,15 @@
     width: 50%;
 }
 
-/* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/ 
+/* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/
 @media all and (min-width:768px) and (max-width:1023px) {
     .category5 h2{
         font-size: 1.75rem;
-    } 
+    }
     .category5 p{
+        width: 100%;
+    }
+    .category5 .box_wrap ul.c5{
         width: 100%;
     }
     .category5 .box_wrap ul.c5 li:nth-child(2n){
@@ -907,18 +951,22 @@
     .category5 .box_wrap ul.c5 li p{
         width: 100%;
     }
-  } 
-  
-  
-  /* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/ 
-  @media all and (max-width:767px) {
+}
+
+
+/* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
+@media all and (max-width:767px) {
     .category5 h2{
         font-size: 1.125rem;
         padding-top: 1rem;
         padding-bottom: 1rem;
-    } 
+    }
     .category5 p{
-        display: none;
+        font-size: 0.75rem;
+        margin-bottom: 12%;
+        padding: 0;
+        width: 100%;
+        line-height: 1.8;
     }
     .category5 .box_wrap ul.c5 {
         display: inline;
@@ -939,4 +987,4 @@
         padding:3%;
         line-height: 1.5;
     }
-   }
+}

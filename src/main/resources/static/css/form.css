@@ -8,12 +8,8 @@
     margin: 0 auto;
     padding: 25px 0;
 }
-.c4_form h2{
-    text-align: left;
-    padding:50px 0;
-    font-weight: normal;
-}
-form.form1 {
+
+/* form.form1 {
     padding-top: 40px;
     width: 35%;
     height: 600px;
@@ -134,7 +130,7 @@ word-break: keep-all;
 
 .un:focus, .pass:focus, .tel:focus, .textbox:focus{
     border: 2px solid rgba(0, 0, 0, 0.18) !important;
-    
+
 }
 
 .form1 .submit {
@@ -161,51 +157,43 @@ word-break: keep-all;
     color: #E1BEE7;
     padding-top: 15px;
     margin: 0 auto;
-}
+} */
 
 .c4_form .container a {
     text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
     color: #E1BEE7;
     text-decoration: none;
 }
+.teQAzf{
+    max-width: 100vw;
+}
+iframe{
+    margin-top: 4em;
+}
 
 @media (max-width: 600px) {
-    .form1 {
-        border-radius: 0px;
+    .teQAzf{
+        max-width: 100vw;
     }
 }
-/* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/ 
+/* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/
 @media all and (min-width:768px) and (max-width:1023px) {
-    form.form1{
+    iframe{
         width: 100%;
-        margin: 2rem 0;
-    } 
-    .c4_form h2{
-        font-size: 1.5rem;
-        padding: 2rem 0;
     }
-  } 
-  
-  
-  /* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/ 
-  @media all and (max-width:767px) {
-    form.form1{
+    .teQAzf{
+        max-width: 100vw;
+    }
+}
+
+
+/* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
+@media all and (max-width:767px) {
+    iframe{
         width: 100%;
-        margin: 2rem 0;
-        height: 550px;
-    } 
-    .c4_form h2{
-        font-size: 1.125rem;
-        padding: 1rem 0;
+        height: 1300px;
     }
-    .form1 .selectbox{
-        margin: 10px 0;
+    .teQAzf{
+        max-width: 100vw;
     }
-    .form1 input{
-        margin: 10px 0;
-    }
-    .form1 .textbox{
-        margin: 10px 0;
-    }
-   }
-  
+}
