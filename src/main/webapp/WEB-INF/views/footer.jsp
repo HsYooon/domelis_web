@@ -9,22 +9,17 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <link rel="stylesheet" href="css/category.css" type="text/css">
     <style>
-        footer{
-            width: 100%;
-            height: 100px;
-            background-color: #fff;
-            text-align: center;
-        }
         footer .container{
             display: flex;
             width: 90%;
-            margin: 25px auto;
+            margin: 1em auto;
+            padding-bottom: 1em;
         }
         footer .ft_left{
             width: 10%;
         }
         footer .ft_left a img{
-            margin-top: 10px;
+            margin-top: 1.5em;
         }
         footer .ft_right{
             width: 90%;
@@ -32,7 +27,6 @@
         }
         footer .ft_right .ft_cs{
             width: 100%;
-            height: 50%;
         }
         footer .ft_right .ft_cs ul.cs{
             display: flex;
@@ -43,10 +37,10 @@
             line-height: 2;
             font-weight: bold;
             color: #000;
+            padding-bottom: 2em;
         }
         footer .ft_right .ft_copy{
             width: 100%;
-            height: 50%;
         }
         footer .ft_right .ft_copy ul.copy{
             display: flex;
@@ -65,29 +59,46 @@
             footer .container{
                 display: flex;
                 width: 100%;
-                margin: 25px auto;
+            }
+            footer .ft_right .ft_cs ul.cs li{
+                padding-bottom: 0;
             }
             footer .ft_left{
-                width: 22%;
+                width: 18%;
+                margin: 0 1em;
             }
             footer .ft_left a img{
-                width: 90%;
-                margin-top: 12%;
+                margin-top: 2.5em;
             }
             footer .ft_right{
                 width: 77%;
                 margin-top: 0;
+            }
+            footer .ft_right .ft_copy ul.copy{
+                display: inline;
+                width: 100%;
+            }
+            footer .ft_right .ft_copy ul.copy li{
+                width: 45%;
+                float: left;
+            }
+            footer .ft_right .ft_copy ul.copy li:nth-child(3n){
+                flex-wrap: wrap;
             }
         }
 
         /* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
         @media all and (max-width:767px){
             footer .container{
-                margin: 10px auto;
+                margin: 0 auto;
             }
             footer .ft_left{
-                width: 44%;
-                padding-top: 25%;
+                width: 40%;
+                padding-top: 28%;
+                margin-right: 1.5em;
+            }
+            footer .ft_right{
+                margin-bottom: 2em;
             }
             footer .ft_right .ft_cs{
                 height: 38%;
@@ -96,8 +107,11 @@
                 height: 0;
                 flex-wrap: wrap;
             }
+            footer .ft_right .ft_cs ul.cs li{
+                padding-bottom: 0;
+            }
             footer .ft_right{
-                width: 60%;
+                width: 58%;
             }
             footer .ft_right .ft_copy ul.copy{
                 flex-wrap: wrap;

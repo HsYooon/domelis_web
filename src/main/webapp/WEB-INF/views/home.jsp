@@ -6,10 +6,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/script.js" type="text/javascript"></script>
+    <meta name="referrer" content="no-referrer"/>
+    <script src="${pageContext.request.contextPath}js/script.js" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-1.4.4.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css?a" type="text/css">
-    <link rel="icon" type="image/png" href="img/favicon.png" sizes="192x192">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css?a" type="text/css"/>
+    <link rel="icon" type="image/png" href="${pageContext.request.contextPath}/img/favicon.png" sizes="192x192"/>
     <title>도매/위탁판매 사이트 모음 - Think With Wholesale</title>
 </head>
 <body>
@@ -51,7 +52,7 @@
             <div class="section_wrap">
                 <ul class="box_wrap">
                     <li>
-                        <a href="/sub/c1_sub1.html">
+                        <a href="/siteinfo?cd=02">
                             <div class="inner_img">
                                 <img src="img/img3.jpg" alt="img3">
                             </div>
@@ -62,7 +63,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/sub/c1_sub2.html">
+                        <a href="/siteinfo?cd=04">
                             <div class="inner_img">
                                 <img src="img/img4.jpg" alt="img3">
                             </div>
@@ -73,7 +74,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/sub/c1_sub3.html">
+                        <a href="/siteinfo?cd=06">
                             <div class="inner_img">
                                 <img src="img/img2.jpg" alt="img3">
                             </div>
@@ -84,29 +85,29 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/sub/c1_sub4.html">
+                        <a href="/siteinfo?cd=09">
                             <div class="inner_img">
                                 <img src="img/img1.jpg" alt="img3">
                             </div>
                             <div class="inner_txt">
-                                <h3>디지털</h3>
+                                <h3>디지털/가전</h3>
                                 <p>바로가기</p>
                             </div><!-- //.inner_txt -->
                         </a>
                     </li>
                     <li>
-                        <a href="/sub/c1_sub5.html">
+                        <a href="/siteinfo?cd=03">
                             <div class="inner_img">
                                 <img src="img/img5.jpg" alt="img3">
                             </div>
                             <div class="inner_txt">
-                                <h3>가전</h3>
+                                <h3>인테리어/소품</h3>
                                 <p>바로가기</p>
                             </div><!-- //.inner_txt -->
                         </a>
                     </li>
                     <li>
-                        <a href="/sub/c1_sub6.html">
+                        <a href="/siteinfo?cd=11">
                             <div class="inner_img">
                                 <img src="img/img6.jpg" alt="img3">
                             </div>
@@ -117,12 +118,12 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/sub/c1_sub7.html">
+                        <a href="/siteinfo?cd=12">
                             <div class="inner_img">
                                 <img src="img/img7.jpg" alt="img3">
                             </div>
                             <div class="inner_txt">
-                                <h3>신발</h3>
+                                <h3>신발/잡화</h3>
                                 <p>바로가기</p>
                             </div><!-- //.inner_txt -->
                         </a>

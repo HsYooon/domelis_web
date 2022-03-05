@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/sub.css" type="text/css">
     <link rel="icon" type="image/png" href="${pageContext.request.contextPath}/img/favicon.png" sizes="192x192">
@@ -26,7 +27,7 @@
                     <li>
                         <a href="${item.url}">
                             <div class="inner_img">
-                                <img src="${item.img}" alt="img3">
+                                <img src="${item.img}" onerror="this.src='${pageContext.request.contextPath}/img/delivery_default.jpg'" alt="img3">
                             </div>
                             <div class="inner_txt">
                                 <span>${item.description}</span>

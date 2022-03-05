@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="referrer" content="no-referrer"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/category.css" type="text/css">
@@ -23,11 +24,11 @@
         </p>
         <ul class="formlink">
             <li>
-                <a href="${pageContext.request.contextPath}/delivery_request">
+                <a href="${pageContext.request.contextPath}/delivery/request">
                     <h3>3PL/물류/택배 대행</h3>
                     <p>3PL 물류/택배 대행 업체 정보를 한자리에 모았습니다. 비지니스 성장을 위한 인사이트를 얻을 수 있는지 살펴 보세요.</p>
                 </a>
-                <a href="${pageContext.request.contextPath}/delivery_request" class="span_a">
+                <a href="${pageContext.request.contextPath}/delivery/request" class="span_a">
                     <ul class="icon_txt">
                         <li><img src="${pageContext.request.contextPath}/img/c4_img.png" alt="icon"></li>
                         <li><p>무료 견적 받기</p></li>
@@ -35,11 +36,11 @@
                 </a>
             </li>
             <li>
-                <a href="${pageContext.request.contextPath}/delivery_request">
+                <a href="${pageContext.request.contextPath}/delivery/request">
                     <h3>해외 수입구매 (대량구매/OEM/ODM) 대행</h3>
                     <p>해외 수입구매 대행 업체 정보를 한자리에 모았습니다. 비지니스 성장을 위한 인사이트를 얻을 수 있는지 살펴 보세요.</p>
                 </a>
-                <a href="${pageContext.request.contextPath}/delivery_request" class="span_a">
+                <a href="${pageContext.request.contextPath}/delivery/request" class="span_a">
                     <ul class="icon_txt">
                         <li><img src="${pageContext.request.contextPath}img/c4_img.png" alt="icon"></li>
                         <li><p>무료 견적 받기</p></li>
@@ -55,7 +56,7 @@
                     <li>
                         <a href="${item.url}">
                             <div class="inner_img">
-                                <img src="${item.img}" alt="img3">
+                                <img src="${item.img}" onerror="this.src='${pageContext.request.contextPath}/img/delivery_default.jpg'" alt="img3">
                             </div>
                             <div class="inner_txt">
                                 <span>${item.description}</span>
@@ -74,7 +75,7 @@
                         <li>
                             <a href="${item.url}">
                                 <div class="inner_img">
-                                    <img src="${item.img}" alt="img3">
+                                    <img src="${item.img}" onerror="this.src='${pageContext.request.contextPath}/img/delivery_default.jpg'" alt="img3">
                                 </div>
                                 <div class="inner_txt">
                                     <span>${item.description}</span>

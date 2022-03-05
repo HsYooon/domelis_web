@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-1.4.4.min.js" type="text/javascript"></script>
-    <script src="js/loadHTML.js" type="text/javascript"></script>
-    <script src="js/script.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/js/script.js" type="text/javascript"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1708982640263259"
             crossorigin="anonymous"></script>
     <title>Document</title>
@@ -27,11 +26,7 @@
             width: 90%;
         }
         header .logo{
-            width: 10%
-        }
-        header .logo img{
-            width: 100%;
-            margin-top: 12px;
+            margin-top: 1.5em;
         }
         header nav{
             width: 90%;
@@ -101,7 +96,6 @@
 
         /* 아코디언 메뉴 */
         .cate{ width:100%; position:relative;}
-        .cate:last-child{ border-bottom:1px solid #000; }
         .cate .menu{ display:block; position:relative; width:100%; background:rgb(167, 167, 167); height:50px; }
         .cate .menu .menulink{ display:block; color:#fff; text-decoration:none; width:100%;  line-height:50px; font-size:1.125rem; }
         .cate .menu .subopen{ position:absolute; width:20px; height:20px; right:15px; padding:0; top:0; bottom:0; margin:auto; }
@@ -119,12 +113,12 @@
                 width: 100%;
             }
             header .logo{
-                width: 28%;
                 padding-left: 10%;
+                width: 30%;
             }
             header .logo img{
                 width: 100%;
-                margin-top: 8%;
+                margin-top: 0.1em;
             }
             header nav .allmenu ul.depth1 li{
                 display: none;
@@ -143,11 +137,8 @@
                 width: 100%;
             }
             header .logo{
-                width: 100%
-            }
-            header .logo img{
-                width: 80%;
-                margin-top: 5%;
+                width: 100%;
+                margin-top: 1.7em;
             }
 
             header .modal nav.mo_nav ul.mo_menu li{
@@ -245,28 +236,28 @@
                             </div><!-- .cate -->
                             <div class="cate">
                                         <span class="menu">
-                                            <a href="/category3.html" class="menulink">필독 정보 모음</a>
+                                            <a href="/info" class="menulink">필독 정보 모음</a>
                                             <a href="javascript:void(0);" class="subopen"><span></span></a>
                                         </span>
                                 <ul>
-                                    <li>
-                                        <a href="/sub/c3_sub1.html">최신 마케팅 소식</a>
-                                    </li>
+<%--                                    <li>--%>
+<%--                                        <a href="/sub/c3_sub1.html">최신 마케팅 소식</a>--%>
+<%--                                    </li>--%>
                                     <li>
                                         <a href="/sub/c3_sub2.html">2022년 마케팅 달력</a>
                                     </li>
-                                    <li>
-                                        <a href="/sub/c3_sub3.html">마케팅 상품 모음</a>
-                                    </li>
-                                    <li>
-                                        <a href="/sub/c3_sub4.html">연매출 10억 달성 아카데미 모아보기</a>
-                                    </li>
-                                    <li>
-                                        <a href="/sub/c3_sub5.html">필수 프로그램 모음</a>
-                                    </li>
-                                    <li>
-                                        <a href="/sub/c3_sub6.html">정부지원사업정보 모음</a>
-                                    </li>
+<%--                                    <li>--%>
+<%--                                        <a href="/sub/c3_sub3.html">마케팅 상품 모음</a>--%>
+<%--                                    </li>--%>
+<%--                                    <li>--%>
+<%--                                        <a href="/sub/c3_sub4.html">연매출 10억 달성 아카데미 모아보기</a>--%>
+<%--                                    </li>--%>
+<%--                                    <li>--%>
+<%--                                        <a href="/sub/c3_sub5.html">필수 프로그램 모음</a>--%>
+<%--                                    </li>--%>
+<%--                                    <li>--%>
+<%--                                        <a href="/sub/c3_sub6.html">정부지원사업정보 모음</a>--%>
+<%--                                    </li>--%>
                                 </ul>
                             </div><!-- .cate -->
                             <div class="cate">
@@ -295,7 +286,7 @@
         </div><!-- header -->
     </div><!-- //.content -->
     <div class="container">
-        <a href="${pageContext.request.contextPath}" class="logo"><img src="${pageContext.request.contextPath}/img/logo1.png" alt="logo"></a>
+        <a href="${pageContext.request.contextPath}/" class="logo"><img src="${pageContext.request.contextPath}/img/logo1.png" alt="logo"></a>
         <nav>
             <div class="allmenu">
                 <ul class="depth1">
@@ -318,7 +309,7 @@
                                 <a href="/siteinfo?cd=09">디지털/가전</a>
                             </li>
                             <li>
-                                <a href="/siteinfo?cd=03">인테리/소품</a>
+                                <a href="/siteinfo?cd=03">인테리어/소품</a>
                             </li>
                             <li>
                                 <a href="/siteinfo?cd=11">의류</a>
@@ -343,25 +334,10 @@
                         </ul><!-- //depth2 -->
                     </li>
                     <li>
-                        <a href="/category3.html">필독 정보 모음</a>
+                        <a href="/marketInfo">필독 정보 모음</a>
                         <ul class="depth2">
                             <li>
-                                <a href="/sub/c3_sub1.html">최신 마케팅 소식</a>
-                            </li>
-                            <li>
-                                <a href="/sub/c3_sub2.html">2022년 마케팅 달력</a>
-                            </li>
-                            <li>
-                                <a href="/sub/c3_sub3.html">마케팅 상품 모음</a>
-                            </li>
-                            <li>
-                                <a href="/sub/c3_sub4.html">연매출 10억 달성 아카데미 모아보기</a>
-                            </li>
-                            <li>
-                                <a href="/sub/c3_sub5.html">필수 프로그램 모음</a>
-                            </li>
-                            <li>
-                                <a href="/sub/c3_sub6.html">정부지원사업정보 모음</a>
+                                <a href="/marketInfo/calendar">2022년 마케팅 달력</a>
                             </li>
                         </ul><!-- //depth2 -->
                     </li>
@@ -380,12 +356,20 @@
                         <a href="${pageContext.request.contextPath}/marketing">마케터를 위한 도구</a>
                     </li>
                     <li>
-                        <input type="search">
+                        <form action="${pageContext.request.contextPath}/search" method="post">
+                            <div class="search">
+                                <input type="text" name="query">
+                                <button type="submit">검색</button>
+                            </div>
+                        </form>
                     </li>
                 </ul><!-- //.depth1 -->
             </div><!-- //.allmenu -->
         </nav>
     </div><!-- //.container -->
+    <script>
+
+    </script>
 </header>
 </body>
 </html>

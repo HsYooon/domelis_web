@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -7,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-1.4.4.js" type="text/javascript"></script>
     <script src="${pageContext.request.contextPath}/js/script.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/js/loadHTML.js" type="text/javascript"></script>
     <title>Document</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/category.css" type="text/css">
@@ -88,8 +90,8 @@
             }
             .info_wrap ul.info_box li a{
                 display: block;
-                margin-top: 10px;
-                padding: 5% ;
+                margin-top: 5px;
+                padding: 2% ;
             }
             .info_wrap ul.info_box li a strong{
                 font-size: 1rem;
@@ -241,9 +243,12 @@
             .section6 ul.tool_link li:first-child{
                 margin-left: 3%;
             }
+            .section6 ul.tool_link li:nth-child(5n){
+                margin-left: 3%;
+            }
             .section6 .main_btn4{
                 position: absolute;
-                bottom: -12%;
+                bottom: -7%;
                 left: 50%;
                 transform: translate(-50%,-50%);
             }
@@ -274,7 +279,7 @@
                 width: 46%;
                 float: left;
                 padding-right: 2%;
-                padding-top: 12%;
+                padding-top: 2%;
             }
             .section6 ul.tool_link li .inner_txt{
                 width: 50%;
@@ -297,15 +302,6 @@
             }
         }
 
-
-
-
-
-
-
-
-
-
     </style>
 </head>
 <body>
@@ -315,53 +311,51 @@
         <div class="info_wrap">
             <ul class="info_box">
                 <li>
-                    <a href="/sub/c3_sub2.html">
+                    <a href="/marketInfo/calendar">
                         <strong>2022년 마케팅 달력</strong>
                         <p>2022년 주목할 이슈를 미리 파악하는 발 빠른 마케터가 되어보세요.</p>
                         <span>바로가기</span>
                     </a>
                 </li>
-                <li>
-                    <a href="/sub/c3_sub1.html">
-                        <strong>최신 마케팅 소식 모아보기</strong>
-                        <p>새로운 도구, 전문가의 견해, 활용 가능한 분석 정보를 통해 효과적인 마케팅 운영 및 관련 아이디어를 얻어보세요.</p>
-                        <span>바로가기</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/sub/c3_sub3.html">
-                        <strong>마케팅 상품 모아보기</strong>
-                        <p>다양한 마케팅 상품을 한자리에서 확인하고 비교하여 집행해보세요.</p>
-                        <span>바로가기</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/sub/c3_sub4.html">
-                        <strong>연매출 10억 달성 아카데미 모아보기</strong>
-                        <p>혼자서는 어려웠던 마케팅 노하우를 얻어가세요</p>
-                        <span>바로가기</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/sub/c3_sub5.html">
-                        <strong>e커머스 필수 프로그램 모아보기</strong>
-                        <p>e커머스 사업에 꼭 필요한 핵심 TOOL을 모아두었습니다.</p>
-                        <span>바로가기</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/sub/c3_sub6.html">
-                        <strong>정부지원사업정보 모아보기</strong>
-                        <p>다양한 정부 지원사업 정보를 한자리에서 확인해 혜택 꼭 챙겨가세요.</p>
-                        <span>바로가기</span>
-                    </a>
-                </li>
+<%--                <li>--%>
+<%--                    <a href="/sub/c3_sub1.html">--%>
+<%--                        <strong>최신 마케팅 소식 모아보기</strong>--%>
+<%--                        <p>새로운 도구, 전문가의 견해, 활용 가능한 분석 정보를 통해 효과적인 마케팅 운영 및 관련 아이디어를 얻어보세요.</p>--%>
+<%--                        <span>바로가기</span>--%>
+<%--                    </a>--%>
+<%--                </li>--%>
+<%--                <li>--%>
+<%--                    <a href="/sub/c3_sub3.html">--%>
+<%--                        <strong>마케팅 상품 모아보기</strong>--%>
+<%--                        <p>다양한 마케팅 상품을 한자리에서 확인하고 비교하여 집행해보세요.</p>--%>
+<%--                        <span>바로가기</span>--%>
+<%--                    </a>--%>
+<%--                </li>--%>
+<%--                <li>--%>
+<%--                    <a href="/sub/c3_sub4.html">--%>
+<%--                        <strong>연매출 10억 달성 아카데미 모아보기</strong>--%>
+<%--                        <p>혼자서는 어려웠던 마케팅 노하우를 얻어가세요</p>--%>
+<%--                        <span>바로가기</span>--%>
+<%--                    </a>--%>
+<%--                </li>--%>
+<%--                <li>--%>
+<%--                    <a href="/sub/c3_sub5.html">--%>
+<%--                        <strong>e커머스 필수 프로그램 모아보기</strong>--%>
+<%--                        <p>e커머스 사업에 꼭 필요한 핵심 TOOL을 모아두었습니다.</p>--%>
+<%--                        <span>바로가기</span>--%>
+<%--                    </a>--%>
+<%--                </li>--%>
+<%--                <li>--%>
+<%--                    <a href="/sub/c3_sub6.html">--%>
+<%--                        <strong>정부지원사업정보 모아보기</strong>--%>
+<%--                        <p>다양한 정부 지원사업 정보를 한자리에서 확인해 혜택 꼭 챙겨가세요.</p>--%>
+<%--                        <span>바로가기</span>--%>
+<%--                    </a>--%>
+<%--                </li>--%>
             </ul><!-- //.info_box -->
         </div><!-- //.info_wrap -->
     </div><!-- //.container -->
 </div><!-- //.section5 -->
-
-
 
 
 
