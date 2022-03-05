@@ -3,18 +3,26 @@ package com.domelist.dome.controller;
 import com.domelist.dome.dto.DomeDto;
 import com.domelist.dome.service.DomeService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
-@RestController
+@Controller
 public class MainController {
     @Autowired
     DomeService service;
 
-    @GetMapping("/test")
-    List<DomeDto> test() {
-        return service.test();
+    @PostMapping("/search")
+    public String searchPrd(String query, Model model) {
+        Map<String,Object> result =  service.searchPrd(query);
+        model.addAttribute("query", query);
+        model.addAttribute("searchList", result.get("list"));
+        model.addAttribute("cnt", result.get("cnt"));
+        return "prdDefault";
     }
+
+
 }
