@@ -4,9 +4,10 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.domelist.dome.repository.CommonDao">
-    <select id="totalPrdCnt" resultType="int">
+    <select id="totalPrdCnt" resultType="int" parameterType="string">
         select count(*)
         from t_domelist
+        where info = #{info}
     </select>
 
 </mapper>

@@ -10,7 +10,8 @@ public class CommonService {
     @Autowired
     private CommonDao dao;
 
-    public int totalPrdCnt() {
-        return dao.totalPrdCnt();
+    /* 상품 코드 (11: 신상품 12: 베스트 상품) 을 받아 총 개수 조회 */
+    public int totalPrdCnt(String info) {
+        return dao.totalPrdCnt(info);
     }
 }

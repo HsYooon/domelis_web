@@ -7,5 +7,5 @@ public interface CommonDao {
     /*
     * 상품 총 개수 조회
     */
-    int totalPrdCnt();
+    int totalPrdCnt(String info);
 }
