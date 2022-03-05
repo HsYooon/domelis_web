@@ -9,11 +9,25 @@
         with v1 as (
             SELECT *
             FROM t_domelist
+            WHERE info = '11'
             order by rand() desc
         ) select *
           from v1 limit #{start} , #{end}
         ]]>
     </select>
+
+    <select id="domeBestPrdList" resultType="DomeDto" parameterType="int">
+        <![CDATA[
+        with v1 as (
+            SELECT *
+            FROM t_domelist
+            WHERE info = '12'
+            order by rand() desc
+        ) select *
+        from v1 limit #{start} , #{end}
+        ]]>
+    </select>
+
     <select id="bestProductList" resultType="DomeDto" parameterType="int">
         <![CDATA[
         SELECT id
@@ -86,6 +100,16 @@
             limit 12
     </select>
 
+    <select id="marketPostList" resultType="MarketPostDto">
+        select id, title from t_post
+    </select>
+
+    <select id="marketPost" resultType="MarketPostDto" parameterType="int">
+        select title, writer, article, DATE_FORMAT(reg_dttm, '%Y-%m-%d')
+        from t_post
+        where id = #{id}
+    </select>
+
     <select id="domesticList" resultType = "DeliveryDto" parameterType="int">
     SELECT id, name, img, url, description
     from t_delivery
@@ -102,5 +126,11 @@
         <if test='cnt!=0'>
         LIMIT #{cnt}
         </if>
+    </select>
+
+    <select id="searchPrd" resultType="DomeDto" parameterType="string">
+        select *
+        from t_domelist
+        where title like CONCAT('%',#{query},'%')
     </select>
 </mapper>
