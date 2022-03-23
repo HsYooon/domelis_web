@@ -15,10 +15,10 @@
     <link href="https://fonts.googleapis.com/css?family=Kanit:200" rel="stylesheet">
 
     <!-- Font Awesome Icon -->
-    <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css" />
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/font-awesome.min.css" />
 
     <!-- Custom stlylesheet -->
-    <link type="text/css" rel="stylesheet" href="css/error.css" />
+    <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath}/css/error.css" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,7 +37,7 @@
             <h1>404</h1>
         </div>
         <h2>Oops! Nothing was found</h2>
-        <p>The page you are looking for might have been removed had its name changed or is temporarily unavailable. <a href="/index.html">Return to homepage</a></p>
+        <p>The page you are looking for might have been removed had its name changed or is temporarily unavailable. <a href="/">Return to homepage</a></p>
         <div class="notfound-social">
             <a href="#"><i class="fa fa-facebook"></i></a>
             <a href="#"><i class="fa fa-twitter"></i></a>

@@ -26,7 +26,7 @@
                     <li>
                         <a href="${item.url}" target="_blank">
                             <div class="inner_img">
-                                <img src="${item.img}" alt="img3">
+                                <img src="${item.img}" onerror="this.src='${pageContext.request.contextPath}/img/company_default.jpg'" alt="">
                             </div>
                             <div class="inner_txt">
                                 <h3>${item.name}</h3>

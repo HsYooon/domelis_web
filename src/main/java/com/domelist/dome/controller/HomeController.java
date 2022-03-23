@@ -24,6 +24,7 @@ public class HomeController {
     @Autowired
     CommonService commonService;
 
+    /* 메인 */
     @GetMapping("/")
     public String home(Model model) {
         int cnt = 12;
@@ -35,6 +36,8 @@ public class HomeController {
         model.addAttribute("bestProductList", mainBestList);
         return "home";
     }
+
+    /* 메인 */
     @GetMapping("/siteinfo")
     public String siteInfo(@RequestParam("cd") String cd, Model model) {
         /* cd = null or all : 모든 사이트*/

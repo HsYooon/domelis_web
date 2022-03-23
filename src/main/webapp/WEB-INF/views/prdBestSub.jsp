@@ -22,24 +22,6 @@
         <h2>${title}</h2>
         <p>${desc1}<br>${desc2}</p>
         <div class="bestsite">
-            <div>
-                <c:if test="${nowPage != 1 }">
-                <a href="/product/best?page=${nowPage - 1}">&lt;</a>
-                </c:if>
-                <c:forEach begin="1" end="${lastPage}" var="page">
-                    <c:choose>
-                        <c:when test="${page == nowPage}">
-                            <b>${page }</b>
-                        </c:when>
-                        <c:when test="${page != nowPage}">
-                            <a href="/product/best?page=${page}">${page}</a>
-                        </c:when>
-                    </c:choose>
-                </c:forEach>
-                <c:if test="${nowPage != lastPage }">
-                    <a href="/product/best?page=${nowPage + 1}">&gt;</a>
-                </c:if>
-            </div>
             <ul class="sitelist">
                 <c:forEach items="${prdSubList}" var="tProduct">
                     <li>

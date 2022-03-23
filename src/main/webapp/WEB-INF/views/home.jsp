@@ -165,7 +165,7 @@
                 </ul><!-- //.box_wrap -->
             </div><!-- //.section_wrap -->
         </div><!-- //.container -->
-        <a href="/sub/c2_sub1.html"><button class="main_btn2">더보기</button></a>
+        <a href="${pageContext.request.contextPath}/product/new"><button class="main_btn2">더보기</button></a>
     </div><!-- //.section3 -->
     <div class="section4">
         <h2>오늘의 도매 베스트 상품</h2>
@@ -189,7 +189,7 @@
                 </ul><!-- //.box_wrap -->
             </div><!-- //.section_wrap -->
         </div><!-- //.container -->
-        <a href="/sub/c2_sub2.html"><button class="main_btn3">더보기</button></a>
+        <a href="${pageContext.request.contextPath}/product/best"><button class="main_btn3">더보기</button></a>
     </div><!-- //.section4 -->
     <jsp:include page="footer.jsp" flush="true"/>
 </main>

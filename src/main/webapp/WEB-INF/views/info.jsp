@@ -453,7 +453,7 @@
                 </a>
             </li>
         </ul><!-- //.tool_link -->
-        <a href="/category5.html"><button class="main_btn4">더보기</button></a>
+        <a href="${pageContext.request.contextPath}/marketing"><button class="main_btn4">더보기</button></a>
     </div><!-- //.container -->
 </div><!-- //.section6 -->
 </body>
