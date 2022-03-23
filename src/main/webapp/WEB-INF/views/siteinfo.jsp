@@ -20,13 +20,14 @@
     <div class="container">
         <div class="c1_list">
             <h2>${title}</h2>
-            <p>사이트 모아보기 ▼</p>
+            <p>${title} 카테고리의 도매 사이트를 한자리에 모았습니다.<br>신규 및 인기 상품을 살펴보세요.</p>
+            <jsp:include page="categorynav.jsp" flush="true"/>
             <ul class="sitelist">
                 <c:forEach items="${siteInfoList}" var="item">
                     <li>
                         <a href="${item.url}" target="_blank">
                             <div class="inner_img">
-                                <img src="${item.img}" onerror="this.src='${pageContext.request.contextPath}/img/company_default.jpg'" alt="">
+                                <img src="img/site/${item.img}" onerror="this.src='${pageContext.request.contextPath}/img/site/blankimg.png'" alt="">
                             </div>
                             <div class="inner_txt">
                                 <h3>${item.name}</h3>

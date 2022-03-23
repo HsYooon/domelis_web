@@ -33,7 +33,7 @@
               <a class="submit">send</a>
               <p class="qnalink"><a href="#">1:1 문의하기</a></p>
             </form> -->
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdsUbK7J-8A1m2CkEAblUZQV19NfULfeY7lG01FI9GAduetHQ/viewform?embedded=true" width="640" height="975" frameborder="0" marginheight="0" marginwidth="0">로드 중…</iframe>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdFyr6jy-sZhffMI1mGwgY_vSVruHIIFYnoqgWxlZqnDhEp-A/viewform?embedded=true" width="1000" height="1000" frameborder="0" marginheight="0" marginwidth="0" scrolling="no">로드 중…</iframe>
     </div><!-- //.container -->
 </div><!-- //.c4_form -->
 <jsp:include page="info.jsp" flush="true"/>

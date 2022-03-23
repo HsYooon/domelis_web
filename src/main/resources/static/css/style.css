@@ -3,12 +3,22 @@
 ul{list-style: none;}
 a{text-decoration: none;color:#000;}
 img{border:0 ;}
-.container{margin: 0 auto;
-    position: relative; width: 100%;}
+.container{
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    clear: both;
+}
 body{
     color: inherit;
     font-family: 'Noto Sans KR', sans-serif;
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
 }
+
+
+
 
 /* section1 메인 상단 */
 
@@ -30,8 +40,7 @@ body{
     line-height: 3.25rem;
 }
 .contents .section1 span{
-    font-size: .75rem;
-    font-weight: 500;
+    font-size: 1rem;
     letter-spacing: .05rem;
     line-height: 1rem;
     text-transform: uppercase;
@@ -50,11 +59,12 @@ body{
     display: none;
 }
 .section1_bt .bt_left{
-    width: 50%;
+    width: 100%;
 }
 .section1_bt .bt_left .txt_box1{
     width: 100%;
     margin-bottom: 30px;
+    text-align: center;
 }
 .section1_bt .bt_left .txt_box1 h3{
     font-size: 1.75rem;
@@ -63,17 +73,17 @@ body{
 .section1_bt .bt_left .txt_box1 p{
     padding: 2rem 0;
     font-size: 1rem;
-    line-height: 1.5rem;
+    line-height: 2rem;
     letter-spacing: .00625rem;
     word-break: keep-all;
 }
-.section1_bt .bt_right{
+/* .section1_bt .bt_right{
     width: 50%;
 }
 .section1_bt .bt_right img{
     width: 100%;
     height: auto;
-}
+} */
 
 
 
@@ -87,20 +97,30 @@ body{
         margin: 0 auto;
         padding-top: 3rem;
         font-weight: 700;
-        font-size: 2rem;
-        letter-spacing: .03125rem;
+        font-size: 1.8rem;
+        letter-spacing: -.14125rem;
         line-height: 3.25rem;
     }
+    .contents .section1 p.p1{
+        font-size: 0.9rem;
+        padding: 1rem 0;
+    }
+    .section1_bt{
+        padding: 2rem 0;
+    }
     .section1_bt .bt_left .txt_box1 p{
-        display: none;
+        line-height: 1.5rem;
+    }
+    .section1_bt .bt_left .txt_box1{
+        text-align: center;
+        padding-top: 7%;
     }
 
+  }
 
-}
 
-
-/* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
-@media all and (max-width:767px) {
+  /* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
+  @media all and (max-width:767px) {
     .contents .section1 .container{
         width: 85%;
     }
@@ -145,14 +165,14 @@ body{
     .section1_bt .bt_left .txt_box1 p{
         display: none;
     }
-    .section1_bt .bt_right{
+    /* .section1_bt .bt_right{
         display: none;
     }
     .section1_bt .bt_right img{
         width: 100%;
         height: auto;
-    }
-}
+    } */
+   }
 
 
 
@@ -214,12 +234,12 @@ body{
 }
 .section2 .section_wrap ul.box_wrap li a .inner_img{
     width: 100%;
-    height: 240px;
+    height: 220px;
     overflow: hidden;
 }
 .section2 .section_wrap ul.box_wrap li .inner_img img{
     width: 100%;
-    height: 240px;
+    height: 220px;
     transition: all 0.6s;
     max-width: 100%;
 }
@@ -378,6 +398,7 @@ body{
 }
 .section3 .section_wrap ul.box_wrap li a img{
     width: 100%;
+    height: 220px;
 }
 .section3 .section_wrap ul.box_wrap li a .inner_txt{
     width: 100%;
@@ -542,6 +563,7 @@ body{
 }
 .section4 .section_wrap ul.box_wrap li a img{
     width: 100%;
+    height: 220px;
 }
 .section4 .section_wrap ul.box_wrap li a .inner_txt{
     width: 100%;
