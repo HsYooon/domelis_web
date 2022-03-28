@@ -11,6 +11,29 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/sub.css?a" type="text/css">
     <link rel="icon" type="image/png" href="img/favicon.png" sizes="192x192">
     <title>오늘의 베스트 상품</title>
+    <style>
+        .pagination {
+            display: inline-block;
+        }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
 <header id="header" class="fixed-top">
@@ -37,31 +60,31 @@
                     </li>
                 </c:forEach>
             </ul><!-- //.sitelist -->
-            <div>
+            <div class="pagination">
                 <c:choose>
                     <c:when test="${nowPage/5 <= 1}">
-                        <a href="">&lt;</a>
+                        <a href="#">&lt;</a>
                     </c:when>
                     <c:when test="${nowPage/5 > 1}">
-                        <a href="/product/new?page=${startPage - 1}">&lt;</a>
+                        <a href="/product/best?page=${startPage - 1}">&lt;</a>
                     </c:when>
                 </c:choose>
                 <c:forEach begin="${startPage}" end="${endPage}" var="page">
                     <c:choose>
                         <c:when test="${page == nowPage}">
-                            <b>${page }</b>
+                            <a href="#" class="active">${page }</a>
                         </c:when>
                         <c:when test="${page != nowPage}">
-                            <a href="/product/new?page=${page}">${page}</a>
+                            <a href="/product/best?page=${page}">${page}</a>
                         </c:when>
                     </c:choose>
                 </c:forEach>
                 <c:choose>
                     <c:when test="${nowPage/5 + 1 >= lastPage/5}">
-                        <a href="">&gt;</a>
+                        <a href="#">&gt;</a>
                     </c:when>
                     <c:when test="${nowPage/5 + 1 < lastPage/5}">
-                        <a href="/product/new?page=${endPage + 1}">&gt;</a>
+                        <a href="/product/best?page=${endPage + 1}">&gt;</a>
                     </c:when>
                 </c:choose>
             </div>

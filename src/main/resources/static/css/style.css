@@ -51,10 +51,11 @@ body{
 }
 .section1_bt{
     width: 100%;
-    padding: 3rem 0;
+    padding: 6rem 0;
     display: flex;
     margin: 0 auto;
 }
+
 .section1_bt .mo_top{
     display: none;
 }
@@ -204,7 +205,6 @@ body{
 .section2 h2{
     text-align: left;
     width: 70%;
-    padding-top:80px;
     margin: 0 auto;
     font-size: 1.75rem;
     line-height: 2.25rem;

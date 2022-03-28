@@ -24,7 +24,7 @@ header{
     box-shadow: 0 0.125rem 0.25rem rgb(226, 226, 226);
     min-height: 3.5rem;
     text-align: center;
-    transition: min-height .25s cubic-bezier(.4,0,.2,1) background-color .25s cubic-bezier(.4,0,.2,1);
+    transition: min-height .25s cubic-bezier(.4,0,.2,1)
 }
 header .container{
     display: flex;
@@ -257,10 +257,10 @@ header nav .allmenu ul.depth1 li{
                                             <a href="/siteinfo?cd=10">아동/완구</a>
                                         </li>
                                         <li>
-                                            <a href="/sub/c1_sub9.html">반려/애완</a>
+                                            <a href="/siteinfo?cd=08">반려/애완</a>
                                         </li>
                                         <li>
-                                            <a href="/sub/c1_sub10.html">헬스케어/뷰티</a>
+                                            <a href="/siteinfo?cd=05">헬스케어/뷰티</a>
                                         </li>
                                     </ul>
                                     </div><!-- .cate -->
@@ -280,15 +280,15 @@ header nav .allmenu ul.depth1 li{
                             </div><!-- .cate -->
                             <div class="cate">
                                         <span class="menu">
-                                            <a href="/info" class="menulink">필독 정보 모음</a>
+                                            <a href="/marketInfo" class="menulink">필독 정보 모음</a>
                                             <a href="javascript:void(0);" class="subopen"><span></span></a>
                                         </span>
                                 <ul>
-<%--                                    <li>--%>
-<%--                                        <a href="/sub/c3_sub1.html">최신 마케팅 소식</a>--%>
-<%--                                    </li>--%>
                                     <li>
-                                        <a href="/sub/c3_sub2.html">2022년 마케팅 달력</a>
+                                        <a href="/marketInfo/info">최신 마케팅 소식</a>
+                                    </li>
+                                    <li>
+                                        <a href="/marketInfo/calendar">2022년 마케팅 달력</a>
                                     </li>
 <%--                                    <li>--%>
 <%--                                        <a href="/sub/c3_sub3.html">마케팅 상품 모음</a>--%>
@@ -320,7 +320,7 @@ header nav .allmenu ul.depth1 li{
                                     </div><!-- .cate -->
                                     <div class="cate">
                                         <span class="menu">
-                                            <a href="/category5.html" class="menulink">마케팅 도구</a>
+                                            <a href="/marketing" class="menulink">마케팅 도구</a>
                                         </span>
                                     </div><!-- .cate -->
                                     <div class="cate">
@@ -394,7 +394,10 @@ header nav .allmenu ul.depth1 li{
                             <a href="/marketInfo">필독 정보 모음</a>
                             <ul class="depth2">
                                 <li>
-                                    <a href="/marketInfo/calendar">2022년 마케팅 달력</a>
+                                    <a href="/marketInfo/info">최신 마케팅 소식</a>
+                                </li>
+                                <li>
+                                    <a href="/marketInfo/info">2022년 마케팅 달력</a>
                                 </li>
                             </ul><!-- //depth2 -->
                         </li>
