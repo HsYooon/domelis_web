@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -38,10 +39,15 @@
                 </c:forEach>
             </ul><!-- //.sitelist -->
             <div>
-                <c:if test="${nowPage != 1 }">
-                <a href="/product/new?page=${nowPage - 1}">&lt;</a>
-                </c:if>
-                <c:forEach begin="1" end="${lastPage}" var="page">
+                <c:choose>
+                    <c:when test="${nowPage/5 <= 1}">
+                        <a href="">&lt;</a>
+                    </c:when>
+                    <c:when test="${nowPage/5 > 1}">
+                        <a href="/product/new?page=${startPage - 1}">&lt;</a>
+                    </c:when>
+                </c:choose>
+                <c:forEach begin="${startPage}" end="${endPage}" var="page">
                     <c:choose>
                         <c:when test="${page == nowPage}">
                             <b>${page }</b>
@@ -51,9 +57,14 @@
                         </c:when>
                     </c:choose>
                 </c:forEach>
-                <c:if test="${nowPage != lastPage }">
-                    <a href="/product/new?page=${nowPage + 1}">&gt;</a>
-                </c:if>
+                <c:choose>
+                    <c:when test="${nowPage/5 + 1 >= lastPage/5}">
+                        <a href="">&gt;</a>
+                    </c:when>
+                    <c:when test="${nowPage/5 + 1 < lastPage/5}">
+                        <a href="/product/new?page=${endPage + 1}">&gt;</a>
+                    </c:when>
+                </c:choose>
             </div>
         </div><!-- //.bestsite -->
     </div><!-- //.container -->
