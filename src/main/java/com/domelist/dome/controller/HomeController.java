@@ -81,30 +81,12 @@ public class HomeController {
         model.addAttribute("lastPage", map.get("lastPage"));
         model.addAttribute("nowPage", map.get("nowPage"));
         model.addAttribute("prdSubList",map.get("result"));
+        model.addAttribute("startPage", map.get("startPage"));
+        model.addAttribute("endPage", map.get("endPage"));
         model.addAttribute("title", title);
         model.addAttribute("desc1", desc1);
         model.addAttribute("desc2", desc2);
         return "prdNewSub";
-    }
-
-    /* 필독 정보 모음 */
-    @GetMapping("/marketInfo")
-    public String infoMain(Model model) {
-        List<MarketPostDto> result = service.marketPostList();
-        model.addAttribute("marcketPostList", result);
-        return "marketInfo";
-    }
-
-    @GetMapping("/marketInfo/calendar")
-    public String infoCalendar() {
-        return "marketCalendar";
-    }
-
-    @GetMapping("/marketInfo/post")
-    public String infoMarket(@RequestParam("id") int id, Model model) {
-       MarketPostDto result = service.marketPost(id);
-       model.addAttribute("post", result);
-        return "marketInfo_post";
     }
 
     @GetMapping("/product/best")
@@ -122,6 +104,8 @@ public class HomeController {
         model.addAttribute("info", info);
         model.addAttribute("lastPage", map.get("lastPage"));
         model.addAttribute("nowPage", map.get("nowPage"));
+        model.addAttribute("startPage", map.get("startPage"));
+        model.addAttribute("endPage", map.get("endPage"));
         model.addAttribute("prdSubList",map.get("result"));
         model.addAttribute("title", title);
         model.addAttribute("desc1", desc1);

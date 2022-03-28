@@ -44,12 +44,10 @@ public class DomeService {
         if (nowPage > lastPage) {
             return null;
         }
-        // 시작페이지와 마지막 페이지 계산
+        // 시작상품번호와 마지막 상품번호 계산
         int start = ((nowPage - 1) * offset) + 1;
         int end = offset;
-        if (nowPage != lastPage) {
-            end = start + offset - 1;
-        }else {
+        if (nowPage == lastPage) {
             end = totalPrdCnt - (lastPage-1) * offset;
         }
 
@@ -61,9 +59,23 @@ public class DomeService {
         if (info == "12") {
             result = dao.domeBestPrdList(start, end);
         }
+
+        int v = nowPage / 5;
+        // 페이징의 시작이 5의 배수일때
+        if(nowPage % 5 == 0) {
+            v = nowPage / 5 -1;
+        }
+        int startPage = 5 * v + 1;
+        int endPage = startPage + 4;
+        // 페이징의 끝이 마지막 페이지일경우
+        if(endPage > lastPage) {
+            endPage = lastPage;
+        }
         map.put("result", result);
         map.put("lastPage", lastPage);
         map.put("nowPage", nowPage);
+        map.put("startPage", startPage);
+        map.put("endPage",endPage);
 
         return map;
     }
@@ -122,6 +134,10 @@ public class DomeService {
         result.put("list", list);
         result.put("cnt", cnt);
         return result;
+    }
+
+    public void uploadPost(Map<String,String> post) {
+        dao.insertPost(post);
     }
 
     ///////////////////////////////////////////////////////////

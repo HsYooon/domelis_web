@@ -101,12 +101,12 @@
     </select>
 
     <select id="marketPostList" resultType="MarketPostDto">
-        select id, title from t_post
+        select * from t_info_post
     </select>
 
     <select id="marketPost" resultType="MarketPostDto" parameterType="int">
-        select title, writer, article, DATE_FORMAT(reg_dttm, '%Y-%m-%d')
-        from t_post
+        select title, writer, article, media, media_type, DATE_FORMAT(reg_dttm, '%Y-%m-%d') as 'reg_dttm'
+        from t_info_post
         where id = #{id}
     </select>
 
@@ -133,4 +133,9 @@
         from t_domelist
         where title like CONCAT('%',#{query},'%')
     </select>
+
+    <insert id="insertPost" parameterType="hashmap">
+        insert into t_info_post(title, writer, article, media, media_type, thumbnail, reg_dttm)
+        values(#{title}, #{writer}, #{article}, #{media}, #{mediaType}, #{thumbnail}, now())
+    </insert>
 </mapper>

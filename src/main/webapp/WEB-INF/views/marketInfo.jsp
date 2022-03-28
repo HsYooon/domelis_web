@@ -54,11 +54,11 @@
         <h2>최신 마케팅 소식 </h2>
 <%--        <a href="/sub/c3_sub1.html" class="c3btn_wrap"><button class="c3btn">더보기</button></a>--%>
         <ul class="sitelist">
-            <c:forEach items="${marcketPostList}" var="post">
+            <c:forEach items="${marketPostList}" var="post">
                 <li>
                     <a href="/marketInfo/post?id=${post.id}">
                         <div class="inner_img">
-                            <img src="/img/img3.jpg" alt="img3">
+                            <img src="/image/${post.thumbnail}" alt="img3">
                         </div>
                         <div class="inner_txt">
                             <h3>${post.title}</h3>

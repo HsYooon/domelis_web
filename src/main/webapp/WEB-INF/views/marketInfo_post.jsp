@@ -20,7 +20,15 @@
         <div class="container">
             <h2>${post.title}</h2>
             <p>${post.writer} / ${post.reg_dttm}</p>
-            ${post.article}
+            <c:choose>
+                <c:when test="${post.media_type == 'image'}">
+                    <img src="/image/${post.media}" alt="img3">
+                </c:when>
+                <c:when test="${post.media_type == 'video'}">
+                    <iframe src="${post.media}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </c:when>
+            </c:choose>
+            <article>${post.article}</article>
         </div><!-- //.container -->
     <div class="hotnews">
         <div class="container">

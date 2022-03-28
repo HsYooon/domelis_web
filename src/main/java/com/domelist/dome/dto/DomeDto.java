@@ -1,5 +1,7 @@
 package com.domelist.dome.dto;
 
+import java.util.Map;
+
 public class DomeDto {
     private Long id;
     private String name;
