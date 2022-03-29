@@ -72,54 +72,54 @@ public class MainController {
         return "marketInfo_post";
     }
 
-    @GetMapping("/marketInfo/writePost")
-    public String marketInfoWritePost() {
-        return "writePost";
-    }
-
-    @PostMapping("/marketInfo/upload")
-    public String marketInfoUpload(@RequestParam MultipartFile[] image, @RequestParam String writer,
-                                   @RequestParam String mediaType, @RequestParam String title,
-                                   @RequestParam String article, @RequestParam MultipartFile[] thumbnail) {
-
-        Map<String,String> post = new HashMap<>();
-        if(image != null) {
-            for (MultipartFile file : image) {
-                File newFileName = new File(UUID.randomUUID() + file.getOriginalFilename());
-                try {
-                    file.transferTo(newFileName);
-                    post.put("media", newFileName.getName());
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
-        post.put("title", title);
-        post.put("mediaType", mediaType);
-        post.put("writer", writer);
-        post.put("article", article);
-
-        for(MultipartFile file : thumbnail) {
-            File newFileName = new File(UUID.randomUUID()+file.getOriginalFilename());
-            try {
-                file.transferTo(newFileName);
-                post.put("thumbnail", newFileName.getName());
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-
-        service.uploadPost(post);
-
-        return "writePost";
-    }
+//    @GetMapping("/marketInfo/writePost")
+//    public String marketInfoWritePost() {
+//        return "writePost";
+//    }
+//
+//    @PostMapping("/marketInfo/upload")
+//    public String marketInfoUpload(@RequestParam MultipartFile[] image, @RequestParam String writer,
+//                                   @RequestParam String mediaType, @RequestParam String title,
+//                                   @RequestParam String article, @RequestParam MultipartFile[] thumbnail) {
+//
+//        Map<String,String> post = new HashMap<>();
+//        if(image != null) {
+//            for (MultipartFile file : image) {
+//                File newFileName = new File(UUID.randomUUID() + file.getOriginalFilename());
+//                try {
+//                    file.transferTo(newFileName);
+//                    post.put("media", newFileName.getName());
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }
+//
+//        post.put("title", title);
+//        post.put("mediaType", mediaType);
+//        post.put("writer", writer);
+//        post.put("article", article);
+//
+//        for(MultipartFile file : thumbnail) {
+//            File newFileName = new File(UUID.randomUUID()+file.getOriginalFilename());
+//            try {
+//                file.transferTo(newFileName);
+//                post.put("thumbnail", newFileName.getName());
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+//        }
+//
+//        service.uploadPost(post);
+//
+//        return "writePost";
+//    }
 
     @GetMapping(value = "/image/{filename}", produces = MediaType.IMAGE_JPEG_VALUE)
     @ResponseBody
     public byte[] userSearch(@PathVariable("filename") String filename) throws IOException {
         //InputStream imageStream = new FileInputStream("C://images/feed/" + filename);
-        String path = "/Users/hapsun/Desktop/study/img/";
+        String path = "/usr/domaelist/img/";
         File file = new File(path+filename);
         FileInputStream inputStream = new FileInputStream(file);
         byte[] bytes = new byte[inputStream.available()];

@@ -11,7 +11,7 @@
     <script src="https://code.jquery.com/jquery-1.4.4.js" type="text/javascript"></script>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css"/>
     <link rel="icon" type="image/png" href="${pageContext.request.contextPath}/img/favicon.png" sizes="192x192"/>
-    <title>도매/위탁판매 사이트 모음 - Think With Wholesale</title>
+    <title>도매/위탁판매 사이트 모음 - Think With Domaelist.com </title>
 </head>
 <body>
 <header id="header" class="fixed-top">
@@ -22,7 +22,7 @@
                 <div class="container">
                 <h2>Solve e-commerce in one shot.
                 </h2>
-                <p class="p1">Think with Wholesale과 함께 더욱 업그레이드된 e커머스 사업을 펼쳐보세요.</p>
+                <p class="p1">Think with Domaelist.com과 함께 더욱 업그레이드된 e커머스 사업을 펼쳐보세요.</p>
                     <div class="section1_bt">
                         <!-- <div class="mo_top">
                             <img src="./img/main.jpg" alt="moimg">
@@ -30,7 +30,7 @@
                         <div class="bt_left">
                             <div class="txt_box1">
                                 <span>도매/위탁판매 사이트 모음</span>
-                                <h3>Think With Wholesale</h3>
+                                <h3>Think With Domaelist.com</h3>
                                 <p>매출상승으로 가는 지름길!<br>
                                     국내 인기 B2B 도매&위탁판매 사이트 순위, 리스트, 정보 모음까지!<br>
                                     TOP10 및 장단점을 총 정리했습니다. 도매리스트닷컴에서 지금 시작하세요.<br>
@@ -237,7 +237,10 @@
         </div><!-- //.container -->
         <a href="${pageContext.request.contextPath}/product/best"><button class="main_btn3">더보기</button></a>
     </div><!-- //.section4 -->
-    <jsp:include page="footer.jsp" flush="true"/>
+    <jsp:include page="info.jsp" flush="true"/>
 </main>
+<footer id="footer" class="fixed-top">
+    <jsp:include page="footer.jsp" flush="true"/>
+</footer>
 </body>
 </html>

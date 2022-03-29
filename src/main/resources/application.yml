@@ -12,6 +12,11 @@ spring:
     url: jdbc:mysql://localhost:3306/domelist?characterEncoding=UTF-8&useTimezone=true&serverTimezone=Asia/Seoul
     username: user
     password: wjdgns001!A
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+      location: /Users/hapsun/Desktop/study/img
 mybatis:
   mapper-locations: mybatis/*.xml
   type-aliases-package: com.domelist.dome.dto

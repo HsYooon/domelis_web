@@ -31,7 +31,7 @@ header .container{
     width: 90%;
 }
 header .logo{
-    margin-top: 1.7em;
+    margin-top: 1.3em;
 }
 header nav{
     width: 100%;
@@ -122,7 +122,8 @@ header nav .allmenu ul.depth2 li a{
 
 
 
-/* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/
+/* 테블릿 가로, 테블릿 세로 (
+ 768px ~ 1023px)*/
 @media all and (min-width:768px) and (max-width:1023px) {
 .head{
     display: block;
@@ -163,6 +164,11 @@ header nav .allmenu ul.depth1 a.logo{
     padding-left: 3em;
     width: 35%;
 }
+
+header .logo {
+    padding-left: 2%;
+}
+
 header .logo img{
     margin-top: 0.1em;
 }
@@ -284,9 +290,9 @@ header nav .allmenu ul.depth1 li{
                                             <a href="javascript:void(0);" class="subopen"><span></span></a>
                                         </span>
                                 <ul>
-                                    <li>
-                                        <a href="/marketInfo/info">최신 마케팅 소식</a>
-                                    </li>
+<%--                                    <li>--%>
+<%--                                        <a href="/marketInfo/info">최신 마케팅 소식</a>--%>
+<%--                                    </li>--%>
                                     <li>
                                         <a href="/marketInfo/calendar">2022년 마케팅 달력</a>
                                     </li>
@@ -393,9 +399,9 @@ header nav .allmenu ul.depth1 li{
                         <li>
                             <a href="/marketInfo">필독 정보 모음</a>
                             <ul class="depth2">
-                                <li>
-                                    <a href="/marketInfo/info">최신 마케팅 소식</a>
-                                </li>
+<%--                                <li>--%>
+<%--                                    <a href="/marketInfo/info">최신 마케팅 소식</a>--%>
+<%--                                </li>--%>
                                 <li>
                                     <a href="/marketInfo/info">2022년 마케팅 달력</a>
                                 </li>

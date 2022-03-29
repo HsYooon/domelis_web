@@ -5,7 +5,7 @@ a{text-decoration: none;color:#000;}
 img{border:0 ;}
 .container{
     margin: 0 auto;
-    position: relative;
+    position: relative; 
     width: 100%;
     clear: both;
 }
@@ -55,7 +55,6 @@ body{
     display: flex;
     margin: 0 auto;
 }
-
 .section1_bt .mo_top{
     display: none;
 }
@@ -91,7 +90,7 @@ body{
 
 /* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/
 @media all and (min-width:768px) and (max-width:1023px) {
-
+    
     .contents .section1 h2{
         text-align: center;
         width: 70%;
@@ -117,8 +116,8 @@ body{
         padding-top: 7%;
     }
 
-  }
-
+  } 
+  
 
   /* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
   @media all and (max-width:767px) {
@@ -357,11 +356,16 @@ body{
     line-height: 2.25rem;
     font-weight: normal;
 }
+a.main_btn2_wrap{
+    width: 100%;
+    height: 30px;
+    display: block;
+    margin: 2em 0;
+}
 .main_btn2{
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    /* position: absolute;
+    top: 0%;
+    right: 15%; */
     width: 80px;
     height: 40px;
     float: right;
@@ -522,10 +526,10 @@ body{
     font-weight: normal;
 }
 .main_btn3{
-    position: absolute;
+    /* position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%); */
     width: 80px;
     height: 40px;
     float: right;
