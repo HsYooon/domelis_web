@@ -290,24 +290,24 @@ header nav .allmenu ul.depth1 li{
                                             <a href="javascript:void(0);" class="subopen"><span></span></a>
                                         </span>
                                 <ul>
-<%--                                    <li>--%>
-<%--                                        <a href="/marketInfo/info">최신 마케팅 소식</a>--%>
-<%--                                    </li>--%>
+                                    <li>
+                                        <a href="/marketInfo/info">최신 마케팅 소식</a>
+                                    </li>
                                     <li>
                                         <a href="/marketInfo/calendar">2022년 마케팅 달력</a>
                                     </li>
-<%--                                    <li>--%>
-<%--                                        <a href="/sub/c3_sub3.html">마케팅 상품 모음</a>--%>
-<%--                                    </li>--%>
-<%--                                    <li>--%>
-<%--                                        <a href="/sub/c3_sub4.html">연매출 10억 달성 아카데미 모아보기</a>--%>
-<%--                                    </li>--%>
-<%--                                    <li>--%>
-<%--                                        <a href="/sub/c3_sub5.html">필수 프로그램 모음</a>--%>
-<%--                                    </li>--%>
-<%--                                    <li>--%>
-<%--                                        <a href="/sub/c3_sub6.html">정부지원사업정보 모음</a>--%>
-<%--                                    </li>--%>
+                                    <li>
+                                        <a href="/marketInfo/product">마케팅 상품 모음</a>
+                                    </li>
+                                    <li>
+                                        <a href="/marketInfo/academy">연매출 10억 달성 아카데미 모아보기</a>
+                                    </li>
+                                    <li>
+                                        <a href="/marketInfo/program">필수 프로그램 모음</a>
+                                    </li>
+                                    <li>
+                                        <a href="/marketInfo/business">정부지원사업정보 모음</a>
+                                    </li>
                                 </ul>
                             </div><!-- .cate -->
                             <div class="cate">
@@ -321,6 +321,9 @@ header nav .allmenu ul.depth1 li{
                                             </li>
                                             <li>
                                                 <a href="/delivery/domestic">물류대행</a>
+                                            </li>
+                                            <li>
+                                                <a href="/advertise">광고대행</a>
                                             </li>
                                         </ul>
                                     </div><!-- .cate -->
@@ -399,11 +402,23 @@ header nav .allmenu ul.depth1 li{
                         <li>
                             <a href="/marketInfo">필독 정보 모음</a>
                             <ul class="depth2">
-<%--                                <li>--%>
-<%--                                    <a href="/marketInfo/info">최신 마케팅 소식</a>--%>
-<%--                                </li>--%>
                                 <li>
-                                    <a href="/marketInfo/info">2022년 마케팅 달력</a>
+                                    <a href="/marketInfo/info">최신 마케팅 소식</a>
+                                </li>
+                                <li>
+                                    <a href="/marketInfo/calendar">2022년 마케팅 달력</a>
+                                </li>
+                                <li>
+                                    <a href="/marketInfo/product">마케팅 상품 모음</a>
+                                </li>
+                                <li>
+                                    <a href="/marketInfo/academy">연매출 10억 달성 아카데미 모아보기</a>
+                                </li>
+                                <li>
+                                    <a href="/marketInfo/program">필수 프로그램 모음</a>
+                                </li>
+                                <li>
+                                    <a href="/marketInfo/business">정부지원사업정보 모음</a>
                                 </li>
                             </ul><!-- //depth2 -->
                         </li>
@@ -415,6 +430,9 @@ header nav .allmenu ul.depth1 li{
                                 </li>
                                 <li>
                                     <a href="${pageContext.request.contextPath}/delivery/domestic">물류대행</a>
+                                </li>
+                                <li>
+                                    <a href="${pageContext.request.contextPath}/advertise">광고대행</a>
                                 </li>
                             </ul><!-- //depth2 -->
                         </li>

@@ -33,11 +33,20 @@ public interface DomeDao {
 
     List<DeliveryDto> abroadList(int cnt);
 
-    List<MarketPostDto> marketPostList();
+    List<DeliveryDto> advertiseList(int cnt);
+
+    List<DeliveryDto> advertiseCategoryList(String category);
+
+    /* 필독 정보 > 최신 마케팅 소식*/
+    List<MarketPostDto> marketInfoPostList(String category);
 
     MarketPostDto marketPost(int id);
 
     List<DomeDto> searchPrd(String query);
 
     void insertPost(Map<String,String> post);
+
+    void modifyPost(Map<String,Object> post);
+
+    void deletePost(int id);
 }

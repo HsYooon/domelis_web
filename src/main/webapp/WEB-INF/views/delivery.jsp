@@ -47,6 +47,18 @@
                     </ul>
                 </a>
             </li>
+            <li>
+                <a href="${pageContext.request.contextPath}/delivery/request">
+                    <h3>광고 대행</h3>
+                    <p>나에게 맞는 광고 상품과 이를 통해 같이 성장해 나갈 광고 대행사를 알아보세요.</p>
+                </a>
+                <a href="${pageContext.request.contextPath}/delivery/request" class="span_a">
+                    <ul class="icon_txt">
+                        <li><img src="./img/c4_img_b.png" alt="icon"></li>
+                        <li><p>무료 견적 받기</p></li>
+                    </ul>
+                </a>
+            </li>
         </ul><!-- //.formlink -->
         <div class="c4_contents">
             <h3>3PL/물류/택배 업체 정보 모음</h3>
@@ -84,6 +96,25 @@
                             </a>
                         </li>
                     </c:forEach>
+            </ul>
+        </div><!-- //.c4_contents -->
+        <div class="c4_contents">
+            <h3>광고 대행 업체 정보 모음</h3>
+            <a href="${pageContext.request.contextPath}/advertise" target="_blank" class="c4btn_wrap"><button class="c4btn">더보기</button></a>
+            <ul class="sitelist">
+                <c:forEach items="${advertiseList}" var="item">
+                <li>
+                    <a href="${item.url}">
+                        <div class="inner_img">
+                            <img src="${item.img}" onerror="this.src='${pageContext.request.contextPath}/img/advertise_default.jpg'" alt="img3">
+                        </div>
+                        <div class="inner_txt">
+                            <span>${item.description}</span>
+                            <p>${item.name}</p>
+                        </div>
+                    </a>
+                </li>
+                </c:forEach>
             </ul>
         </div><!-- //.c4_contents -->
     </div><!-- //.container -->

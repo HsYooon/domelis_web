@@ -26,11 +26,12 @@
                 <li>
                     <a href="${tProduct.url}">
                         <div class="inner_img">
-                            <img src="${tProduct.img}" alt="img3">
+                            <img src="${tProduct.img}" onerror="this.src='${pageContext.request.contextPath}/img/site/blankimg.png'" alt="img3">
                         </div>
                         <div class="inner_txt">
                             <h3>${tProduct.title}</h3>
-                            <p>회원 가입 후 가격확인</p>
+                            <h4>${tProduct.name}</h4>
+                            <p>클릭 시 해당 도매몰로 이동합니다<br>해당 도매몰 로그인 후 자세한 정보 확인이 가능합니다</p>
                         </div><!-- //.inner_txt -->
                     </a>
                 </li>
@@ -46,11 +47,12 @@
                 <li>
                     <a href="${tProduct.url}">
                         <div class="inner_img">
-                            <img src="${tProduct.img}" alt="img3">
+                            <img src="${tProduct.img}" onerror="this.src='${pageContext.request.contextPath}/img/site/blankimg.png'" alt="img3">
                         </div>
                         <div class="inner_txt">
                             <h3>${tProduct.title}</h3>
-                            <p>회원 가입 후 가격확인</p>
+                            <h4>${tProduct.name}</h4>
+                            <p>클릭 시 해당 도매몰로 이동합니다<br>해당 도매몰 로그인 후 자세한 정보 확인이 가능합니다</p>
                         </div><!-- //.inner_txt -->
                     </a>
                 </li>

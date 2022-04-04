@@ -317,41 +317,41 @@
                         <span>바로가기</span>
                     </a>
                 </li>
-<%--                <li>--%>
-<%--                    <a href="/sub/c3_sub1.html">--%>
-<%--                        <strong>최신 마케팅 소식 모아보기</strong>--%>
-<%--                        <p>새로운 도구, 전문가의 견해, 활용 가능한 분석 정보를 통해 효과적인 마케팅 운영 및 관련 아이디어를 얻어보세요.</p>--%>
-<%--                        <span>바로가기</span>--%>
-<%--                    </a>--%>
-<%--                </li>--%>
-<%--                <li>--%>
-<%--                    <a href="/sub/c3_sub3.html">--%>
-<%--                        <strong>마케팅 상품 모아보기</strong>--%>
-<%--                        <p>다양한 마케팅 상품을 한자리에서 확인하고 비교하여 집행해보세요.</p>--%>
-<%--                        <span>바로가기</span>--%>
-<%--                    </a>--%>
-<%--                </li>--%>
-<%--                <li>--%>
-<%--                    <a href="/sub/c3_sub4.html">--%>
-<%--                        <strong>연매출 10억 달성 아카데미 모아보기</strong>--%>
-<%--                        <p>혼자서는 어려웠던 마케팅 노하우를 얻어가세요</p>--%>
-<%--                        <span>바로가기</span>--%>
-<%--                    </a>--%>
-<%--                </li>--%>
-<%--                <li>--%>
-<%--                    <a href="/sub/c3_sub5.html">--%>
-<%--                        <strong>e커머스 필수 프로그램 모아보기</strong>--%>
-<%--                        <p>e커머스 사업에 꼭 필요한 핵심 TOOL을 모아두었습니다.</p>--%>
-<%--                        <span>바로가기</span>--%>
-<%--                    </a>--%>
-<%--                </li>--%>
-<%--                <li>--%>
-<%--                    <a href="/sub/c3_sub6.html">--%>
-<%--                        <strong>정부지원사업정보 모아보기</strong>--%>
-<%--                        <p>다양한 정부 지원사업 정보를 한자리에서 확인해 혜택 꼭 챙겨가세요.</p>--%>
-<%--                        <span>바로가기</span>--%>
-<%--                    </a>--%>
-<%--                </li>--%>
+                <li>
+                    <a href="/marketInfo/calendar">
+                        <strong>최신 마케팅 소식 모아보기</strong>
+                        <p>새로운 도구, 전문가의 견해, 활용 가능한 분석 정보를 통해 효과적인 마케팅 운영 및 관련 아이디어를 얻어보세요.</p>
+                        <span>바로가기</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/marketInfo/product">
+                        <strong>마케팅 상품 모아보기</strong>
+                        <p>다양한 마케팅 상품을 한자리에서 확인하고 비교하여 집행해보세요.</p>
+                        <span>바로가기</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/marketInfo/academy">
+                        <strong>연매출 10억 달성 아카데미 모아보기</strong>
+                        <p>혼자서는 어려웠던 마케팅 노하우를 얻어가세요</p>
+                        <span>바로가기</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/marketInfo/program">
+                        <strong>e커머스 필수 프로그램 모아보기</strong>
+                        <p>e커머스 사업에 꼭 필요한 핵심 TOOL을 모아두었습니다.</p>
+                        <span>바로가기</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/marketInfo/business">
+                        <strong>정부지원사업정보 모아보기</strong>
+                        <p>다양한 정부 지원사업 정보를 한자리에서 확인해 혜택 꼭 챙겨가세요.</p>
+                        <span>바로가기</span>
+                    </a>
+                </li>
             </ul><!-- //.info_box -->
         </div><!-- //.info_wrap -->
     </div><!-- //.container -->

@@ -102,9 +102,11 @@ public class DomeService {
         int cnt = 8;
         List<DeliveryDto> domesticList = dao.domesticList(cnt);
         List<DeliveryDto> abroadList = dao.abroadList(cnt);
+        List<DeliveryDto> advertiseList = dao.advertiseList(cnt);
         Map<String, List> result = new HashMap<>();
         result.put("domestic", domesticList);
         result.put("abroad", abroadList);
+        result.put("advertise", advertiseList);
         return result;
     }
 
@@ -118,9 +120,26 @@ public class DomeService {
         return dao.abroadList(cnt);
     }
 
+    /* 광고 대행 업체 모음 */
+    public Map<String, List> advertiseLists() {
+        /** 검색광고 : 12, 쇼핑광고: 13, DA광고: 14, 체험단&리뷰 대행: 15 **/
+        List<DeliveryDto> searchList = dao.advertiseCategoryList("12");
+        List<DeliveryDto> shoppingList = dao.advertiseCategoryList("13");
+        List<DeliveryDto> daList = dao.advertiseCategoryList("14");
+        List<DeliveryDto> reviewList = dao.advertiseCategoryList("15");
+
+        Map<String, List> result = new HashMap<>();
+        result.put("searchList", searchList);
+        result.put("shoppingList", shoppingList);
+        result.put("daList", daList);
+        result.put("reviewList", reviewList);
+
+        return result;
+    }
+
     /* 필독 정보 */
-    public List<MarketPostDto> marketPostList() {
-        return dao.marketPostList();
+    public List<MarketPostDto> marketInfoPostList(String category) {
+        return dao.marketInfoPostList(category);
     }
     public MarketPostDto marketPost(int id) {
         return dao.marketPost(id);
@@ -136,8 +155,19 @@ public class DomeService {
         return result;
     }
 
+    /* 게시글 업로드*/
     public void uploadPost(Map<String,String> post) {
         dao.insertPost(post);
+    }
+
+    /* 게시글 수정 */
+    public void modifyPost(Map<String,Object> post) {
+        dao.modifyPost(post);
+    }
+
+    /* 게시글 삭제 */
+    public void deletePost(int id) {
+        dao.deletePost(id);
     }
 
     ///////////////////////////////////////////////////////////

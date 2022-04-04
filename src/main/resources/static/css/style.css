@@ -287,9 +287,6 @@ body{
     .section2 .section_wrap ul.box_wrap li:nth-child(3n){
         margin-right: 0;
     }
-    .section2 .section_wrap ul.box_wrap li:last-child{
-        margin-right: 188px;
-    }
     .section2 .section_wrap ul.box_wrap li a .inner_img{
         height: 140px;
     }

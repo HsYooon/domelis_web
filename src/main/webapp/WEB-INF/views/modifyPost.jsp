@@ -1,11 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>게시글 수정</title>
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="/smartEditor2/js/service/HuskyEZCreator.js" charset="utf-8"></script>
@@ -118,7 +119,8 @@
 <header id="header" class="fixed-top">
     <jsp:include page="header.jsp" flush="true"/>
 </header>
-<form method="post" action="/marketInfo/upload" enctype="multipart/form-data">
+<form method="post" action="/marketInfo/modify" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="${id}"/>
     <h2>게시물 작성</h2>
     <table>
         <tr>
@@ -136,11 +138,11 @@
         <tr>
             <td>
                 <label for="writer">작성자</label>
-                <input type="text" id="writer" name="writer" placeholder="작성자를 입력하세요."/>
+                <input type="text" id="writer" name="writer" value="${post.writer}"/>
             </td>
             <td>
                 <label for="writer">제목</label>
-                <input type="text" placeholder="제목을 입력하세요" id="title" maxlength=30 name="title">
+                <input type="text" value="${post.title}" id="title" maxlength=30 name="title"/>
             </td>
         </tr>
         <tr>
@@ -161,7 +163,7 @@
             <td colspan="2" height=350>
 <%--                <textarea name="article" placeholder="내용을 입력하세요."  class="text"></textarea>--%>
 
-                    <textarea name="article" id="ir1" rows="10" cols="100" style="width:766px; height:412px; display:none;"></textarea>
+                    <textarea name="article" id="ir1" rows="10" cols="100" style="width:766px; height:412px; display:none;">${post.article}</textarea>
                     <!--textarea name="ir1" id="ir1" rows="10" cols="100" style="width:100%; height:412px; min-width:610px; display:none;"></textarea-->
             </td>
         </tr>
@@ -173,7 +175,7 @@
         </tr>
         <tr>
             <td colspan="2" class="submit">
-                <input type="button" onclick="submitContents(this);" value="등록" class="submit">
+                <input type="button" onclick="submitContents(this);" value="수정" class="submit">
             </td>
         </tr>
     </table>

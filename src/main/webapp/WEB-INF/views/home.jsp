@@ -193,6 +193,7 @@
         <h2>오늘의 도매 신규 상품</h2>
         <div class="container">
             <div class="section_wrap">
+                <a href="${pageContext.request.contextPath}/product/new" class="main_btn2_wrap"><button class="main_btn2">더보기</button></a>
                 <ul class="box_wrap">
                     <c:forEach items="${todayProductList}" var="tProduct">
                         <li>
@@ -201,9 +202,9 @@
                                     <img src="${tProduct.img}" alt="img3">
                                 </div>
                                 <div class="inner_txt">
-                                    <h4>${tProduct.name}</h4>
                                     <h3>${tProduct.title}</h3>
-                                    <p>회원가입 후 가격 확인</p>
+                                    <h4>${tProduct.name}</h4>
+                                    <p>클릭 시 해당 도매몰로 이동합니다<br>해당 도매몰 로그인 후 자세한 정보 확인이 가능합니다</p>
                                 </div><!-- //.inner_txt -->
                             </a>
                         </li>
@@ -211,12 +212,12 @@
                 </ul><!-- //.box_wrap -->
             </div><!-- //.section_wrap -->
         </div><!-- //.container -->
-        <a href="${pageContext.request.contextPath}/product/new"><button class="main_btn2">더보기</button></a>
     </div><!-- //.section3 -->
     <div class="section4">
         <h2>오늘의 도매 베스트 상품</h2>
         <div class="container">
             <div class="section_wrap">
+                <a href="${pageContext.request.contextPath}/product/best" class="main_btn2_wrap"><button class="main_btn2">더보기</button></a>
                 <ul class="box_wrap">
                     <c:forEach items="${bestProductList}" var="tProduct">
                         <li>
@@ -227,7 +228,7 @@
                                 <div class="inner_txt">
                                     <h3>${tProduct.title}</h3>
                                     <h4>${tProduct.name}</h4>
-                                    <p>회원가입 후 가격 확인</p>
+                                    <p>클릭 시 해당 도매몰로 이동합니다<br>해당 도매몰 로그인 후 자세한 정보 확인이 가능합니다</p>
                                 </div><!-- //.inner_txt -->
                             </a>
                         </li>
@@ -235,7 +236,6 @@
                 </ul><!-- //.box_wrap -->
             </div><!-- //.section_wrap -->
         </div><!-- //.container -->
-        <a href="${pageContext.request.contextPath}/product/best"><button class="main_btn3">더보기</button></a>
     </div><!-- //.section4 -->
     <jsp:include page="info.jsp" flush="true"/>
 </main>

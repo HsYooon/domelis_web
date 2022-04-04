@@ -118,6 +118,7 @@ public class HomeController {
         Map<String, List> result = service.deliveryMainLists();
         model.addAttribute("domesticList", result.get("domestic"));
         model.addAttribute("abroadList", result.get("abroad"));
+        model.addAttribute("advertiseList", result.get("advertise"));
         return "delivery";
     }
 
@@ -146,6 +147,16 @@ public class HomeController {
         model.addAttribute("desc", desc);
         model.addAttribute("deliveryList", result);
         return "delivery_info";
+    }
+
+    @GetMapping("/advertise")
+    public String advertiseInfo(Model model) {
+        Map<String, List> result = service.advertiseLists();
+        model.addAttribute("searchList", result.get("searchList"));
+        model.addAttribute("shoppingList", result.get("shoppingList"));
+        model.addAttribute("daList", result.get("daList"));
+        model.addAttribute("reviewList", result.get("reviewList"));
+        return "advertise";
     }
 
     @GetMapping("/marketing")

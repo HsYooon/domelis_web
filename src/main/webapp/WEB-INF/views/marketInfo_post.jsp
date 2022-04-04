@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css?a" type="text/css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/board.css?a" type="text/css">
-    <title>필독 정보 모음</title>
+    <title>게시물-${post.title}</title>
 </head>
 <body>
 <header id="header" class="fixed-top">
@@ -29,6 +29,10 @@
                 </c:when>
             </c:choose>
             <article>${post.article}</article>
+            <c:if test="${role == 'admin'}">
+                <input type="button" onclick="location.href='/modifyPost?id=${id}'" value="수정"/>
+                <input type="button" onclick="confirmDelete(${id})" value="삭제"/>
+            </c:if>
         </div><!-- //.container -->
     <div class="hotnews">
         <div class="container">
@@ -66,5 +70,14 @@
 <footer id="footer" class="fixed-top">
     <jsp:include page="footer.jsp" flush="true"/>
 </footer>
+    <script>
+        function confirmDelete(id) {
+            if (confirm("삭제 하시겠습니까?")) {
+                location.href="/deletePost?id=" + id;
+            } else {
+                return;
+            }
+        }
+    </script>
 </body>
 </html>

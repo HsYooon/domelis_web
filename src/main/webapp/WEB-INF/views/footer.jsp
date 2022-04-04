@@ -124,7 +124,7 @@
 <footer>
     <div class="container">
         <div class="ft_left">
-            <a href="#"><img src="img/logo1.png" alt="logo"></a>
+            <a href="/writePost"><img src="img/logo1.png" alt="logo"></a>
         </div><!-- //.ft_left -->
         <div class="ft_right">
             <div class="ft_cs">

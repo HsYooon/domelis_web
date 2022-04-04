@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/category.css" type="text/css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/sub.css" type="text/css">
     <link rel="icon" type="image/png" href="/img/favicon.png" sizes="192x192">
-    <title>마케팅달력</title>
+    <title>마케팅 달력</title>
 </head>
 <body>
 <header id="header" class="fixed-top">
