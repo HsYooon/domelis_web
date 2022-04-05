@@ -111,6 +111,12 @@
         where id = #{id}
     </select>
 
+    <update id="updatePostCount">
+        update t_info_post
+        set cnt = cnt + 1
+        where id = #{id}
+    </update>
+
     <select id="domesticList" resultType = "DeliveryDto" parameterType="int">
     SELECT id, name, img, url, description
     from t_delivery

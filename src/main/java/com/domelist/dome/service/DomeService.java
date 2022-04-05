@@ -137,12 +137,16 @@ public class DomeService {
         return result;
     }
 
-    /* 필독 정보 */
+    /* 게시글 조회  */
     public List<MarketPostDto> marketInfoPostList(String category) {
         return dao.marketInfoPostList(category);
     }
     public MarketPostDto marketPost(int id) {
         return dao.marketPost(id);
+    }
+
+    public void updatePostCount(int id) {
+        dao.updatePostCount(id);
     }
 
     /* 검색 */

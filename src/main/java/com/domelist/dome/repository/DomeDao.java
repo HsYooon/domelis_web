@@ -42,6 +42,9 @@ public interface DomeDao {
 
     MarketPostDto marketPost(int id);
 
+    /* 게시물 조회수 업데이트 */
+    void updatePostCount(int id);
+
     List<DomeDto> searchPrd(String query);
 
     void insertPost(Map<String,String> post);

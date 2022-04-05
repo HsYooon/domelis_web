@@ -100,12 +100,15 @@ public class MainController {
     /* 필독 정보 모음 > 게시글 */
     @GetMapping("/marketInfo/post")
     public String infoMarket(@RequestParam("id") int id, Model model, HttpSession session) {
+        // 게시글 조회
         MarketPostDto result = service.marketPost(id);
-        System.out.println(result.toString());
-
         String role = (String)session.getAttribute("role");
+
         if(role == "admin"){
             model.addAttribute("role", role);
+        }else {
+            // 관리자 아닌경우 조회수 증가
+            service.updatePostCount(id);
         }
 
         model.addAttribute("post", result);
