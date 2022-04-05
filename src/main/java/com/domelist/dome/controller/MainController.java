@@ -156,6 +156,7 @@ public class MainController {
     /* 게시글 작성 > 업로드*/
     @PostMapping("/marketInfo/upload")
     public String marketInfoUpload(@RequestParam MultipartFile[] image, @RequestParam String writer,
+                                   @RequestParam String url,
                                    @RequestParam String mediaType, @RequestParam String title,
                                    @RequestParam String article, @RequestParam String category,
                                    @RequestParam MultipartFile[] thumbnail) throws IOException {
@@ -163,17 +164,27 @@ public class MainController {
         String path = "/var/lib/tomcat9/webapps/upload/";
         // 로컬 경로
         //String path = "/Users/hapsun/Desktop/study/img/";
+
         Map<String,String> post = new HashMap<>();
-        if(image.length > 0) {
-            for (MultipartFile file : image) {
-                String name = UUID.randomUUID() + file.getOriginalFilename();
-                File imageFile = new File(path+name);
-                try {
-                    file.transferTo(imageFile);
-                    post.put("media", name);
-                } catch (Exception e) {
-                    e.printStackTrace();
+
+        if (mediaType.equals("image")) {
+            if(image.length > 0) {
+                for (MultipartFile file : image) {
+                    String name = UUID.randomUUID() + file.getOriginalFilename();
+                    File imageFile = new File(path+name);
+                    try {
+                        file.transferTo(imageFile);
+                        post.put("media", name);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
+            }
+        }
+
+        if (mediaType.equals("video")) {
+            if(!url.isEmpty()) {
+                post.put("media", url);
             }
         }
 
@@ -202,7 +213,7 @@ public class MainController {
 
     /* 게시글 수정 */
     @PostMapping("/marketInfo/modify")
-    public String marketInfoModifyPost(@RequestParam MultipartFile[] image, @RequestParam String writer,
+    public String marketInfoModifyPost(@RequestParam MultipartFile[] image, @RequestParam String writer,  @RequestParam String url,
                                    @RequestParam String mediaType,  @RequestParam int id , @RequestParam String title,
                                    @RequestParam String article, @RequestParam String category,
                                    @RequestParam MultipartFile[] thumbnail) throws IOException {
@@ -211,18 +222,28 @@ public class MainController {
         // 로컬 경로
         //String path = "/Users/hapsun/Desktop/study/img/";
         Map<String,Object> post = new HashMap<>();
-        if(image.length > 0) {
-            for (MultipartFile file : image) {
-                String name = UUID.randomUUID() + file.getOriginalFilename();
-                File imageFile = new File(path+name);
-                try {
-                    file.transferTo(imageFile);
-                    post.put("media", name);
-                } catch (Exception e) {
-                    e.printStackTrace();
+
+        if(mediaType.equals("image")) {
+            if(image.length > 0) {
+                for (MultipartFile file : image) {
+                    String name = UUID.randomUUID() + file.getOriginalFilename();
+                    File imageFile = new File(path+name);
+                    try {
+                        file.transferTo(imageFile);
+                        post.put("media", name);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         }
+
+        if (mediaType.equals("video")) {
+            if(!url.isEmpty()) {
+                post.put("media", url);
+            }
+        }
+
 
         post.put("title", title);
         post.put("mediaType", mediaType);
