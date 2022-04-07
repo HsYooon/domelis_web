@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css?a" type="text/css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/board.css?a" type="text/css">
+    <script charset="utf-8" src="//cdn.iframe.ly/embed.js?api_key=365087f3062adf2f129131"></script>
     <title>게시물-${post.title}</title>
 </head>
 <body>
@@ -20,15 +21,6 @@
         <div class="container">
             <h2>${post.title}</h2>
             <p>${post.writer} / ${post.reg_dttm}</p>
-            <c:choose>
-                <c:when test="${post.media_type == 'image'}">
-                    <img src="/image/${post.media}" alt="img3">
-                </c:when>
-                <c:when test="${post.media_type == 'video'}">
-                    ${post.media}
-<%--                    <iframe src="${post.media}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>--%>
-                </c:when>
-            </c:choose>
             <article>${post.article}</article>
             <c:if test="${role == 'admin'}">
                 <input type="button" onclick="location.href='/modifyPost?id=${id}'" value="수정"/>
@@ -62,9 +54,13 @@
             if (confirm("삭제 하시겠습니까?")) {
                 location.href="/deletePost?id=" + id;
             } else {
-                return;
+                return
             }
         }
+            document.querySelectorAll( 'oembed[url]').forEach( element => {
+            iframely.load( element, element.attributes.url.value) ;
+        } );
+
     </script>
 </body>
 </html>

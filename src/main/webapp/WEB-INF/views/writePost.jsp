@@ -23,6 +23,9 @@
         });
     </script>
     <style>
+        .ck-editor__editable {
+            min-height: 500px;
+        }
         form{
             width: 100%;
             margin: 2em auto;
@@ -168,6 +171,7 @@
 
     ClassicEditor
         .create( document.querySelector( '#editor' ),{
+
             extraPlugins: [MyCustomUploadAdapterPlugin],
         })
         .catch( error => {
@@ -207,6 +211,17 @@
     //     this.xhr.send(data)
     //
     // }
+
+    document.querySelectorAll( 'oembed[url]' ).forEach( element => {
+        // Create the <a href="..." class="embedly-card"></a> element that Embedly uses
+        // to discover the media.
+        const anchor = document.createElement( 'a' );
+
+        anchor.setAttribute( 'href', element.getAttribute( 'url' ) );
+        anchor.className = 'embedly-card';
+
+        element.appendChild( anchor );
+    } );
 
     class UploadAdapter {constructor(loader) {
         this.loader = loader;
