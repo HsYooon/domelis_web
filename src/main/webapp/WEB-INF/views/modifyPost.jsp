@@ -229,7 +229,7 @@
 
         _initRequest() {
             const xhr = this.xhr = new XMLHttpRequest();
-            xhr.open('POST', 'http://localhost:8080/marketInfo/image', true);
+            xhr.open('POST', 'https://www.domaelist.com/marketInfo/image', true);
             xhr.responseType = 'json';
         }
 
