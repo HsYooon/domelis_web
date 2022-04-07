@@ -237,7 +237,7 @@
 
         _initRequest() {
             const xhr = this.xhr = new XMLHttpRequest();
-            xhr.open('POST', 'https://www.domaelist.com/marketInfo/image', true);
+            xhr.open('POST', '/marketInfo/image', true);
             xhr.responseType = 'json';
         }
 
