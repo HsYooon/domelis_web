@@ -21,26 +21,27 @@
         <h2>정부 지원 사업 정보 모음</h2>
         <p>새로운 도구, 전문가의 견해, 활용 가능한 분석 정보를 통해 효과적인 마케팅 운영 및 관련 아이디어를 얻어보세요.</p>
         <ul class="m_news">
-            <li class="mn_1">
-                <a href="/delivery/request">
-                    <h3>Inside Google 마케팅:인플루언서 마케팅 효과, 어떻게 측정해야 할까 ?</h3>
-                    <span>게시글 보기</span>
-                </a>
-            </li>
-            <li>
-                <a href="/delivery/request">
-                    <h3>2021년의 마케팅 성과 측정: 마케팅 효과 이해하기</h3>
-                    <p>소비자의 검색 트렌드를 실시간으로 파악하고 경쟁력 있는 키워드를 추출할 수 있는 유용한 도구입니다.</p>
-                    <span>게시글 보기</span>
-                </a>
-            </li>
-            <li>
-                <a href="/delivery/request">
-                    <h3>해외 수입구매 (대량구매/OEM/ODM) 대행</h3>
-                    <p>소비자의 검색 트렌드를 실시간으로 파악하고 경쟁력 있는 키워드를 추출할 수 있는 유용한 도구입니다.</p>
-                    <span>게시글 보기</span>
-                </a>
-            </li>
+            <c:forEach items="${recentPostList}" var="post" varStatus="num">
+                <c:choose>
+                    <c:when test="${num.index == 0}">
+                        <li class="mn_1">
+                            <a href="/marketInfo/post?id=${post.id}">
+                                <h3>${post.title}</h3>
+                                <span>게시글 보기</span>
+                            </a>
+                        </li>
+                    </c:when>
+                    <c:otherwise>
+                        <li>
+                            <a href="/marketInfo/post?id=${post.id}">
+                                <h3>${post.title}</h3>
+                                <p>최신 마케팅 소식을 놓치지 마세요</p>
+                                <span>게시글 보기</span>
+                            </a>
+                        </li>
+                    </c:otherwise>
+                </c:choose>
+            </c:forEach>
         </ul><!-- //.m_news -->
         <div class="c3s1_contents">
             <h3>최신 정보 모음</h3>

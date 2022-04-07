@@ -25,7 +25,8 @@
                     <img src="/image/${post.media}" alt="img3">
                 </c:when>
                 <c:when test="${post.media_type == 'video'}">
-                    <iframe src="${post.media}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    ${post.media}
+<%--                    <iframe src="${post.media}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>--%>
                 </c:when>
             </c:choose>
             <article>${post.article}</article>
@@ -38,30 +39,16 @@
         <div class="container">
             <h2>인기 게시물</h2>
             <ul class="hotcontent">
-                <li>
-                    <a href="#">
-                        <ul class="content">
-                            <li><img src="/img/img2.jpg" alt="img1"></li>
-                            <li><p>2021 Year in Search: 앞서나가는 마케팅을 위해 지난해를 돌아보세요</p></li>
-                        </ul><!-- //.content -->
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <ul class="content">
-                            <li><img src="/img/img3.jpg" alt="img1"></li>
-                            <li><p>중장년층에 대한 마케터의 인식이 바뀌어야 하는 이유</p></li>
-                        </ul><!-- //.content -->
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <ul class="content">
-                            <li><img src="/img/img4.jpg" alt="img1"></li>
-                            <li><p>코로나10가 근본적으로 변화시킨 4가지 소비 트렌드</p></li>
-                        </ul><!-- //.content -->
-                    </a>
-                </li>
+                <c:forEach items="${popularPostList}" var="post">
+                    <li>
+                        <a href="/marketInfo/post?id=${post.id}">
+                            <ul class="content">
+                                <li><img src="/image/${post.thumbnail}" onerror="this.src='${pageContext.request.contextPath}/img/info_default.jpg'" alt="img1"></li>
+                                <li><p>${post.title}</p></li>
+                            </ul><!-- //.content -->
+                        </a>
+                    </li>
+                </c:forEach>
             </ul><!-- //.hotcontent -->
         </div><!-- //.container -->
     </div><!-- //.hotnews -->

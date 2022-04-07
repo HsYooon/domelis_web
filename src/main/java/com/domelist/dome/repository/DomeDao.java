@@ -1,9 +1,6 @@
 package com.domelist.dome.repository;
 
-import com.domelist.dome.dto.DeliveryDto;
-import com.domelist.dome.dto.DomeDto;
-import com.domelist.dome.dto.MarketPostDto;
-import com.domelist.dome.dto.SiteInfoDto;
+import com.domelist.dome.dto.*;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -37,8 +34,19 @@ public interface DomeDao {
 
     List<DeliveryDto> advertiseCategoryList(String category);
 
-    /* 필독 정보 > 최신 마케팅 소식*/
+    List<CdDto> infoCategoryList();
+
+    /* 카테고리별 게시물 */
     List<MarketPostDto> marketInfoPostList(String category);
+
+    /* 카테고리 별 인기 게시물 TOP4 */
+    List<MarketPostDto> marketInfoPostListByCnt(String category);
+
+    /* 전체 인기 게시물 TOP3 */
+    List<MarketPostDto> allInfoPostListByCnt(int cnt);
+
+    /* 카테고리, 갯수, 정렬 방식으로 게시물 조회 */
+    List<MarketPostDto> marketInfoPostList2(Map<String,Object> params);
 
     MarketPostDto marketPost(int id);
 
@@ -52,4 +60,6 @@ public interface DomeDao {
     void modifyPost(Map<String,Object> post);
 
     void deletePost(int id);
+
+
 }

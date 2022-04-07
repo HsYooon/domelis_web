@@ -103,10 +103,41 @@
     <select id="marketInfoPostList" resultType="MarketPostDto" parameterType="String">
         select * from t_info_post
         where category = #{category}
+        order by reg_dttm
+    </select>
+
+    <select id="marketInfoPostListByCnt" resultType="MarketPostDto" parameterType="String">
+        select * from t_info_post
+        where category = #{category}
+        order by cnt desc
+         limit 4
+    </select>
+
+    <select id="marketInfoPostList2" resultType="MarketPostDto" parameterType="hashmap">
+        select *
+        from t_info_post
+        where category = #{category}
+        <choose>
+            <when test="order!=''">
+                order by #{order} desc
+            </when>
+            <otherwise>
+                order by reg_dttm desc
+            </otherwise>
+        </choose>
+        <if test='cnt>0'>
+            LIMIT #{cnt}
+        </if>
+    </select>
+
+    <select id="allInfoPostListByCnt" resultType="MarketPostDto" parameterType="int">
+        select id,thumbnail, title from t_info_post
+        order by cnt desc
+            limit #{cnt}
     </select>
 
     <select id="marketPost" resultType="MarketPostDto" parameterType="int">
-        select title, writer, article, media, media_type, DATE_FORMAT(reg_dttm, '%Y-%m-%d') as 'reg_dttm'
+        select title, writer, article, media, category, media_type, DATE_FORMAT(reg_dttm, '%Y-%m-%d') as 'reg_dttm'
         from t_info_post
         where id = #{id}
     </select>
@@ -189,10 +220,17 @@
     <insert id="modifyPost" parameterType="hashmap">
         update t_info_post
         set title=#{title}, writer=#{writer}, article=#{article}, media=#{media}, media_type=#{mediaType},
-            thumbnail=#{thumbnail}, category=#{category}
+            category=#{category}
+        <if test="thumbnail != null">
+            ,thumbnail=#{thumbnail}
+        </if>
         where id = #{id}
     </insert>
     <delete id="deletePost" parameterType="int">
         delete from t_info_post where id = #{id}
     </delete>
+
+    <select id="infoCategoryList" resultType="CdDto">
+        select * from t_info_cd
+    </select>
 </mapper>

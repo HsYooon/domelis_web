@@ -11,10 +11,12 @@ public class MarketPostDto {
     private String media_type;
     private String thumbnail;
     private String reg_dttm;
+    private String category;
+    private int cnt;
 
     public MarketPostDto(){}
 
-    public MarketPostDto(long id, String title, String writer, String article, String media, String media_type, String thumbnail, String reg_dttm) {
+    public MarketPostDto(long id, String title, String writer, String article, String media, String media_type, String thumbnail, String reg_dttm, String category, int cnt) {
         this.id = id;
         this.title = title;
         this.writer = writer;
@@ -23,6 +25,8 @@ public class MarketPostDto {
         this.media_type = media_type;
         this.thumbnail = thumbnail;
         this.reg_dttm = reg_dttm;
+        this.category = category;
+        this.cnt = cnt;
     }
 
     public long getId() {
@@ -89,6 +93,22 @@ public class MarketPostDto {
         this.reg_dttm = reg_dttm;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public int getCnt() {
+        return cnt;
+    }
+
+    public void setCnt(int cnt) {
+        this.cnt = cnt;
+    }
+
     @Override
     public String toString() {
         return "MarketPostDto{" +
@@ -97,9 +117,11 @@ public class MarketPostDto {
                 ", writer='" + writer + '\'' +
                 ", article='" + article + '\'' +
                 ", media='" + media + '\'' +
-                ", mediaType='" + media_type + '\'' +
+                ", media_type='" + media_type + '\'' +
                 ", thumbnail='" + thumbnail + '\'' +
-                ", reg_dttm=" + reg_dttm +
+                ", reg_dttm='" + reg_dttm + '\'' +
+                ", category='" + category + '\'' +
+                ", cnt=" + cnt +
                 '}';
     }
 }

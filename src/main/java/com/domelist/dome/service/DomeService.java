@@ -1,9 +1,6 @@
 package com.domelist.dome.service;
 
-import com.domelist.dome.dto.DeliveryDto;
-import com.domelist.dome.dto.DomeDto;
-import com.domelist.dome.dto.MarketPostDto;
-import com.domelist.dome.dto.SiteInfoDto;
+import com.domelist.dome.dto.*;
 import com.domelist.dome.repository.DomeDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -136,15 +133,49 @@ public class DomeService {
 
         return result;
     }
+    /* 필독 정보 카테고리 조회 */
+    public List<CdDto> infoCategoryList() {
+        return dao.infoCategoryList();
+    }
 
     /* 게시글 조회  */
     public List<MarketPostDto> marketInfoPostList(String category) {
         return dao.marketInfoPostList(category);
     }
+
+    /* 인기 게시글 조회 TOP4 */
+    public List<MarketPostDto> marketInfoPostListByCnt(String category) {
+        return dao.marketInfoPostListByCnt(category);
+    }
+
+    /* 전체 게시물 중 인기 게시물 조회 */
+    public List<MarketPostDto> allInfoPostListByCnt(int cnt) {
+        return dao.allInfoPostListByCnt(cnt);
+    }
+
+    public List<MarketPostDto> marketInfoPostList2(String category, String order, int cnt) {
+        Map<String, Object> params = new HashMap<>();
+        if(category == null) {
+            category = "";
+        }
+        if(order == null) {
+            category = "";
+        }
+        if(category == null) {
+            cnt = 0;
+        }
+        params.put("category", category);
+        params.put("order", order);
+        params.put("cnt", cnt);
+        return dao.marketInfoPostList2(params);
+    }
+
+    /* 게시물 조회 */
     public MarketPostDto marketPost(int id) {
         return dao.marketPost(id);
     }
 
+    /* 조회수 증가 */
     public void updatePostCount(int id) {
         dao.updatePostCount(id);
     }

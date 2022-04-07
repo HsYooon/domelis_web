@@ -21,26 +21,27 @@
         <h2>최신 마케팅 소식</h2>
         <p>새로운 도구, 전문가의 견해, 활용 가능한 분석 정보를 통해 효과적인 마케팅 운영 및 관련 아이디어를 얻어보세요.</p>
         <ul class="m_news">
-            <li class="mn_1">
-                <a href="/c4_form.html">
-                    <h3>Inside Google 마케팅:인플루언서 마케팅 효과, 어떻게 측정해야 할까 ?</h3>
-                    <span>게시글 보기</span>
-                </a>
-            </li>
-            <li>
-                <a href="/c4_form.html">
-                    <h3>2021년의 마케팅 성과 측정: 마케팅 효과 이해하기</h3>
-                    <p>소비자의 검색 트렌드를 실시간으로 파악하고 경쟁력 있는 키워드를 추출할 수 있는 유용한 도구입니다.</p>
-                    <span>게시글 보기</span>
-                </a>
-            </li>
-            <li>
-                <a href="/c4_form.html">
-                    <h3>해외 수입구매 (대량구매/OEM/ODM) 대행</h3>
-                    <p>소비자의 검색 트렌드를 실시간으로 파악하고 경쟁력 있는 키워드를 추출할 수 있는 유용한 도구입니다.</p>
-                    <span>게시글 보기</span>
-                </a>
-            </li>
+            <c:forEach items="${recentPostList}" var="post" varStatus="num">
+                <c:choose>
+                    <c:when test="${num.index == 0}">
+                        <li class="mn_1">
+                            <a href="/marketInfo/post?id=${post.id}">
+                                <h3>${post.title}</h3>
+                                <span>게시글 보기</span>
+                            </a>
+                        </li>
+                    </c:when>
+                    <c:otherwise>
+                        <li>
+                            <a href="/marketInfo/post?id=${post.id}">
+                                <h3>${post.title}</h3>
+                                <p>최신 마케팅 소식을 놓치지 마세요</p>
+                                <span>게시글 보기</span>
+                            </a>
+                        </li>
+                    </c:otherwise>
+                </c:choose>
+            </c:forEach>
         </ul><!-- //.m_news -->
         <div class="c3s1_contents">
             <h3>최신 마케팅 전략</h3>
@@ -63,70 +64,24 @@
         <div class="c3s1_list">
             <h3>인기 마케팅 소식</h3>
             <ul class="list_wrap">
-                <li>
-                    <a href="#">
-                        <ul class="list_inner">
-                            <li>
-                                <a href="#">
-                                    <img src="/img/img1.jpg" alt="img">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <p>새로운 스트리밍의 시대, 시청률을 효과적으로 높이는 YouTube 활용법</p>
-                                </a>
-                            </li>
-                        </ul><!-- //.list_inner -->
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <ul class="list_inner">
-                            <li>
-                                <a href="#">
-                                    <img src="/img/img3.jpg" alt="img">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <p>새로운 스트리밍의 시대, 시청률을 효과적으로 높이는 YouTube 활용법</p>
-                                </a>
-                            </li>
-                        </ul><!-- //.list_inner -->
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <ul class="list_inner">
-                            <li>
-                                <a href="#">
-                                    <img src="/img/img6.jpg" alt="img">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <p>새로운 스트리밍의 시대, 시청률을 효과적으로 높이는 YouTube 활용법</p>
-                                </a>
-                            </li>
-                        </ul><!-- //.list_inner -->
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <ul class="list_inner">
-                            <li>
-                                <a href="#">
-                                    <img src="/img/img5.jpg" alt="img">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <p>새로운 스트리밍의 시대, 시청률을 효과적으로 높이는 YouTube 활용법</p>
-                                </a>
-                            </li>
-                        </ul><!-- //.list_inner -->
-                    </a>
-                </li>
+                <c:forEach items="${popularPostList}" var="post">
+                    <li>
+                        <a href="/marketInfo/post?id=${post.id}">
+                            <ul class="list_inner">
+                                <li>
+                                    <a href="/marketInfo/post?id=${post.id}">
+                                        <img src="/image/${post.thumbnail}" onerror="this.src='${pageContext.request.contextPath}/img/info_default.jpg'" alt="img3">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/marketInfo/post?id=${post.id}">
+                                        <p>${post.title}</p>
+                                    </a>
+                                </li>
+                            </ul><!-- //.list_inner -->
+                        </a>
+                    </li>
+                </c:forEach>
             </ul><!-- //.list_wrap -->
         </div><!-- //.c3s1_list -->
     </div><!-- //.container -->

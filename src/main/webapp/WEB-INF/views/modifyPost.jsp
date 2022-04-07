@@ -1,15 +1,15 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>게시글 수정</title>
+    <title>Document</title>
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script type="text/javascript" src="/smartEditor2/js/service/HuskyEZCreator.js" charset="utf-8"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/33.0.0/classic/ckeditor.js"></script>
     <script>
         $(function(){
             $("#video").click(function(){
@@ -125,13 +125,18 @@
     <table>
         <tr>
             <td colspan="2">
-                <select name="category">
+                <select id="category" name="category">
                     <option value="">--선택--</option>
-                    <option value="01">최신마케팅소식</option>
-                    <option value="02">마케팅 상품모음</option>
-                    <option value="03">10억 아카데미</option>
-                    <option value="04">필수 프로그램</option>
-                    <option value="05">정부 지원</option>
+                    <c:forEach items="${infoCategoryList}" var="cd" >
+                        <c:choose>
+                            <c:when test="${cd.cd == post.category}">
+                                <option value="${cd.cd}" selected="selected">${cd.name}</option>
+                            </c:when>
+                            <c:otherwise>
+                                <option value="${cd.cd}">${cd.name}</option>
+                            </c:otherwise>
+                        </c:choose>
+                    </c:forEach>
                 </select>
             </td>
         </tr>
@@ -142,33 +147,19 @@
             </td>
             <td>
                 <label for="writer">제목</label>
-                <input type="text" value="${post.title}" id="title" maxlength=30 name="title"/>
-            </td>
-        </tr>
-        <tr>
-            <td class="select">
-                <input type="radio" id="video" name="mediaType" value="video" >
-                <label for="video">동영상</label>
-                <input type="radio" id="image" name="mediaType" value="image">
-                <label for="image">이미지</label>
-                <input type="radio" id="no" name="mediaType" value="no" checked>
-                <label for="no">없음</label>
-            </td>
-            <td>
-                <input type="file" class="file" name="image" multiple="multiple"/>
-                <input type="url" class="url" name="url" placeholder="동영상 url을 입력하세요" >
+                <input type="text" value="${post.title}"  id="title" maxlength=30 name="title">
             </td>
         </tr>
         <tr>
             <td colspan="2" height=350>
 <%--                <textarea name="article" placeholder="내용을 입력하세요."  class="text"></textarea>--%>
 
-                    <textarea name="article" id="ir1" rows="10" cols="100" style="width:766px; height:412px; display:none;">${post.article}</textarea>
+                    <textarea name="article" id="editor" rows="10" cols="100" style="width:766px; height:412px; display:none;">${post.article}</textarea>
                     <!--textarea name="ir1" id="ir1" rows="10" cols="100" style="width:100%; height:412px; min-width:610px; display:none;"></textarea-->
             </td>
         </tr>
         <tr>
-            <td colspan="2" class="thumbnail">
+            <td colspan="2">
                 <label for="thumbnail">썸네일</label>
                 <input type="file" id="thumbnail" name="thumbnail" multiple="multiple"/>
             </td>
@@ -181,50 +172,96 @@
     </table>
 </form>
 <script type="text/javascript">
-    var oEditors = [];
 
-    var sLang = "ko_KR";	// 언어 (ko_KR/ en_US/ ja_JP/ zh_CN/ zh_TW), default = ko_KR
+    ClassicEditor
+        .create( document.querySelector( '#editor' ),{
+            extraPlugins: [MyCustomUploadAdapterPlugin],
+        })
+        .catch( error => {
+            console.error( error );
+        } );
 
-    // 추가 글꼴 목록
-    //var aAdditionalFontSet = [["MS UI Gothic", "MS UI Gothic"], ["Comic Sans MS", "Comic Sans MS"],["TEST","TEST"]];
+    function MyCustomUploadAdapterPlugin(editor) {
+        editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
+            return new UploadAdapter(loader)
+        }
+    }
 
-    nhn.husky.EZCreator.createInIFrame({
-        oAppRef: oEditors,
-        elPlaceHolder: "ir1",
-        sSkinURI: "/smartEditor2/SmartEditor2Skin.html",
-        htParams : {
-            bUseToolbar : true,				// 툴바 사용 여부 (true:사용/ false:사용하지 않음)
-            bUseVerticalResizer : true,		// 입력창 크기 조절바 사용 여부 (true:사용/ false:사용하지 않음)
-            bUseModeChanger : true,			// 모드 탭(Editor | HTML | TEXT) 사용 여부 (true:사용/ false:사용하지 않음)
-            //bSkipXssFilter : true,		// client-side xss filter 무시 여부 (true:사용하지 않음 / 그외:사용)
-            //aAdditionalFontList : aAdditionalFontSet,		// 추가 글꼴 목록
-            fOnBeforeUnload : function(){
-                //alert("완료!");
-            },
-            I18N_LOCALE : sLang
-        }, //boolean
-        fOnAppLoad : function(){
-            //예제 코드
-            //oEditors.getById["ir1"].exec("PASTE_HTML", ["로딩이 완료된 후에 본문에 삽입되는 text입니다."]);
-        },
-        fCreator: "createSEditor2"
-    });
-
-    function submitContents(elClickedObj) {
-        oEditors.getById["ir1"].exec("UPDATE_CONTENTS_FIELD", []);	// 에디터의 내용이 textarea에 적용됩니다.
-
-        // 에디터의 내용에 대한 값 검증은 이곳에서 document.getElementById("ir1").value를 이용해서 처리하면 됩니다.
-
+    function submitContents(submit) {
         try {
-            elClickedObj.form.submit();
+            submit.form.submit();
         } catch(e) {}
+    }
+
+    // document.getElementById('thumbnail').onchange = function() {
+    //     // fire the upload here
+    //     const file = this.files[0];
+    //     const xhr = this.xhr = new XMLHttpRequest();
+    //     xhr.open('POST', 'http://localhost:8080/marketInfo/image', true);
+    //     xhr.responseType = 'json';
+    //     const data = new FormData()
+    //     data.append('upload',file)
+    //     console.log("data ====> " + file)
+    //     this.xhr.send(data)
+    // };
+
+    // function loadThumbnail() {
+    //     const input = document.getElementById("thumbnail");
+    //     const file = input.files[0];
+    //     const data = new FormData()
+    //     data.append('upload',file)
+    //     console.log("data ====> " + file)
+    //     this.xhr.send(data)
+    //
+    // }
+
+    class UploadAdapter {constructor(loader) {
+        this.loader = loader;
+    }
+
+        upload() {
+            return this.loader.file.then( file => new Promise(((resolve, reject) => {
+                this._initRequest();
+                this._initListeners( resolve, reject, file );
+                this._sendRequest( file );
+            })))
+        }
+
+        _initRequest() {
+            const xhr = this.xhr = new XMLHttpRequest();
+            xhr.open('POST', 'http://localhost:8080/marketInfo/image', true);
+            xhr.responseType = 'json';
+        }
+
+        _initListeners(resolve, reject, file) {
+            const xhr = this.xhr;
+            const loader = this.loader;
+            const genericErrorText = '파일을 업로드 할 수 없습니다.'
+
+            xhr.addEventListener('error', () => {reject(genericErrorText)})
+            xhr.addEventListener('abort', () => reject())
+            xhr.addEventListener('load', () => {
+                const response = xhr.response
+                if(!response || response.error) {
+                    return reject( response && response.error ? response.error.message : genericErrorText );
+                }
+
+                resolve({
+                    default: response.image //업로드된 파일 주소
+                })
+            })
+        }
+
+        _sendRequest(file) {
+            const data = new FormData()
+            data.append('upload',file)
+            console.log("data ====> " + file)
+            this.xhr.send(data)
+        }
     }
 </script>
 <footer id="footer" class="fixed-top">
     <jsp:include page="footer.jsp" flush="true"/>
 </footer>
 </body>
-<script>
-    const mediaType = document.getElementsByName("mediaType");
-</script>
 </html>

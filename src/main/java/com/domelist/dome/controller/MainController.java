@@ -1,7 +1,9 @@
 package com.domelist.dome.controller;
 
+import com.domelist.dome.dto.CdDto;
 import com.domelist.dome.dto.MarketPostDto;
 import com.domelist.dome.service.DomeService;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -24,6 +26,11 @@ import java.util.UUID;
 public class MainController {
     @Autowired
     DomeService service;
+
+    /* 운영 경로 */
+    private String path = "/var/lib/tomcat9/webapps/upload/";
+    /* 로컬 경로 */
+    //private String path = "/Users/hapsun/Desktop/study/img/";
 
     @RequestMapping(value = "/ads.txt")
     @ResponseBody
@@ -54,8 +61,12 @@ public class MainController {
     /* 필독 정보 모음 > 최신 마케팅 소식 */
     @GetMapping("/marketInfo/info")
     public String marketInfo01(Model model) {
-        List<MarketPostDto> result = service.marketInfoPostList("01");
-        model.addAttribute("marketInfoPostList", result);
+        List<MarketPostDto> result0 = service.marketInfoPostList2("01","reg_dttm", 3);
+        List<MarketPostDto> result1 = service.marketInfoPostList("01");
+        List<MarketPostDto> result2 = service.marketInfoPostListByCnt("01");
+        model.addAttribute("recentPostList", result0);
+        model.addAttribute("marketInfoPostList", result1);
+        model.addAttribute("popularPostList", result2);
         return "marketInfo_01";
     }
 
@@ -76,8 +87,12 @@ public class MainController {
     /* 필독 정보 모음 > 10억 아카데미 */
     @GetMapping("/marketInfo/academy")
     public String marketInfo04(Model model) {
-        List<MarketPostDto> result = service.marketInfoPostList("03");
-        model.addAttribute("marketInfoPostList", result);
+        List<MarketPostDto> result0 = service.marketInfoPostList2("03","reg_dttm", 3);
+        List<MarketPostDto> result1 = service.marketInfoPostList("03");
+        List<MarketPostDto> result2 = service.marketInfoPostListByCnt("03");
+        model.addAttribute("recentPostList", result0);
+        model.addAttribute("marketInfoPostList", result1);
+        model.addAttribute("popularPostList", result2);
         return "marketInfo_04";
     }
 
@@ -92,6 +107,8 @@ public class MainController {
     /* 필독 정보 모음 > 정부지원사업모음 */
     @GetMapping("/marketInfo/business")
     public String marketInfo06(Model model) {
+        List<MarketPostDto> result0 = service.marketInfoPostList2("05","reg_dttm", 3);
+        model.addAttribute("recentPostList", result0);
         List<MarketPostDto> result = service.marketInfoPostList("05");
         model.addAttribute("marketInfoPostList", result);
         return "marketInfo_06";
@@ -101,7 +118,10 @@ public class MainController {
     @GetMapping("/marketInfo/post")
     public String infoMarket(@RequestParam("id") int id, Model model, HttpSession session) {
         // 게시글 조회
-        MarketPostDto result = service.marketPost(id);
+        MarketPostDto result1 = service.marketPost(id);
+        // 전체 인기게시글 3개 조회
+        int cnt = 3;
+        List<MarketPostDto> result2 = service.allInfoPostListByCnt(cnt);
         String role = (String)session.getAttribute("role");
 
         if(role == "admin"){
@@ -111,8 +131,9 @@ public class MainController {
             service.updatePostCount(id);
         }
 
-        model.addAttribute("post", result);
-        model.addAttribute("id",id);
+        model.addAttribute("post", result1);
+        model.addAttribute("popularPostList", result2);
+        model.addAttribute("id", id);
         return "marketInfo_post";
     }
 
@@ -135,150 +156,97 @@ public class MainController {
 
     /* 게시글 작성폼 */
     @GetMapping("/writePost")
-    public String marketInfoWritePost() {
+    public String marketInfoWritePost(Model model) {
+        List<CdDto> result = service.infoCategoryList();
+        model.addAttribute("infoCategoryList",result);
         return "writePost";
     }
 
     /* 게시글 수정 */
     @GetMapping("/modifyPost")
-    public String marketInfoModifyPost(@RequestParam("id") int id, Model model) {
-        MarketPostDto result = service.marketPost(id);
-        model.addAttribute("post", result);
+    public String marketInfoModifyPost(@RequestParam("id") String id, Model model) {
+
+        int origin_id = Integer.parseInt(id);
+        MarketPostDto result1 = service.marketPost(origin_id);
+        List<CdDto> result2 = service.infoCategoryList();
+
+        model.addAttribute("infoCategoryList",result2);
+        model.addAttribute("post", result1);
         model.addAttribute("id",id);
         return "modifyPost";
     }
 
     /* 게시글 > 식제 */
     @GetMapping("/deletePost")
-    public String marketInfoDeletePost(@RequestParam("id") int id) {
-        System.out.println("id ===> " + id);
-        service.deletePost(id);
+    public String marketInfoDeletePost(@RequestParam("id") String id) {
+        int origin_id = Integer.parseInt(id);
+        System.out.println("id ===> " + origin_id);
+        service.deletePost(origin_id);
         return "redirect:/marketInfo";
     }
 
     /* 게시글 작성 > 업로드*/
     @PostMapping("/marketInfo/upload")
-    public String marketInfoUpload(@RequestParam MultipartFile[] image, @RequestParam String writer,
-                                   @RequestParam String url,
-                                   @RequestParam String mediaType, @RequestParam String title,
-                                   @RequestParam String article, @RequestParam String category,
-                                   @RequestParam MultipartFile[] thumbnail) throws IOException {
-        // 운영 서버 경로
-        String path = "/var/lib/tomcat9/webapps/upload/";
-        // 로컬 경로
-        //String path = "/Users/hapsun/Desktop/study/img/";
-
+    public String marketInfoUpload(MultipartHttpServletRequest request) throws IOException {
         Map<String,String> post = new HashMap<>();
+        post.put("title", request.getParameter("title"));
+        post.put("writer", request.getParameter("writer"));
+        post.put("article", request.getParameter("article"));
+        post.put("category", request.getParameter("category"));
 
-        if (mediaType.equals("image")) {
-            if(image.length > 0) {
-                for (MultipartFile file : image) {
-                    String name = UUID.randomUUID() + file.getOriginalFilename();
-                    File imageFile = new File(path+name);
-                    try {
-                        file.transferTo(imageFile);
-                        post.put("media", name);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
+        /* 썸네일 없는 경우 패스 */
+        MultipartFile thumbnail = request.getFile("thumbnail");
+        System.out.println("upload post ==? " + thumbnail);
+        if(!thumbnail.isEmpty()) {
+            String name = UUID.randomUUID() + thumbnail.getOriginalFilename();
+            File imageFile = new File(path + name);
+            try {
+                thumbnail.transferTo(imageFile);
+                post.put("thumbnail", name);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
 
-        if (mediaType.equals("video")) {
-            if(!url.isEmpty()) {
-                post.put("media", url);
-            }
-        }
-
-        post.put("title", title);
-        post.put("mediaType", mediaType);
-        post.put("writer", writer);
-        post.put("article", article);
-        post.put("category", category);
-
-        if(thumbnail.length > 0) {
-            for (MultipartFile file : thumbnail) {
-                String name = UUID.randomUUID() + file.getOriginalFilename();
-                File imageFile = new File(path + name);
-                try {
-                    file.transferTo(imageFile);
-                    post.put("thumbnail", name);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-       }
 
         service.uploadPost(post);
-        return "writePost";
+        return "redirect:/marketInfo";
     }
 
     /* 게시글 수정 */
     @PostMapping("/marketInfo/modify")
-    public String marketInfoModifyPost(@RequestParam MultipartFile[] image, @RequestParam String writer,  @RequestParam String url,
-                                   @RequestParam String mediaType,  @RequestParam int id , @RequestParam String title,
-                                   @RequestParam String article, @RequestParam String category,
-                                   @RequestParam MultipartFile[] thumbnail) throws IOException {
-        // 운영 서버 경로
-        String path = "/var/lib/tomcat9/webapps/upload/";
-        // 로컬 경로
-        //String path = "/Users/hapsun/Desktop/study/img/";
+    public String marketInfoModifyPost(MultipartHttpServletRequest request) throws IOException {
+
         Map<String,Object> post = new HashMap<>();
 
-        if(mediaType.equals("image")) {
-            if(image.length > 0) {
-                for (MultipartFile file : image) {
-                    String name = UUID.randomUUID() + file.getOriginalFilename();
-                    File imageFile = new File(path+name);
-                    try {
-                        file.transferTo(imageFile);
-                        post.put("media", name);
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                }
+        post.put("title", request.getParameter("title"));
+        post.put("writer", request.getParameter("writer"));
+        post.put("article", request.getParameter("article"));
+        post.put("category", request.getParameter("category"));
+
+        MultipartFile thumbnail = request.getFile("thumbnail");
+        /* 썸네일 없는 경우 패스 */
+        if(!thumbnail.isEmpty()) {
+            String name = UUID.randomUUID() + thumbnail.getOriginalFilename();
+            File imageFile = new File(path + name);
+            try {
+                thumbnail.transferTo(imageFile);
+                post.put("thumbnail", name);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         }
 
-        if (mediaType.equals("video")) {
-            if(!url.isEmpty()) {
-                post.put("media", url);
-            }
-        }
-
-
-        post.put("title", title);
-        post.put("mediaType", mediaType);
-        post.put("writer", writer);
-        post.put("article", article);
-        post.put("category", category);
-
-        if(thumbnail.length > 0) {
-            for (MultipartFile file : thumbnail) {
-                String name = UUID.randomUUID() + file.getOriginalFilename();
-                File imageFile = new File(path + name);
-                try {
-                    file.transferTo(imageFile);
-                    post.put("thumbnail", name);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-        post.put("id", id);
+        post.put("id", request.getParameter("id"));
+        System.out.println("modify params ===> " + post.toString());
         service.modifyPost(post);
         return "redirect:/marketInfo";
     }
 
+    /* 이미지 다운로드 -> imageController 로 이동해야함 */
     @GetMapping(value = "/image/{filename}", produces = MediaType.IMAGE_JPEG_VALUE)
     @ResponseBody
     public byte[] userSearch(@PathVariable("filename") String filename) throws IOException {
-        //InputStream imageStream = new FileInputStream("C://images/feed/" + filename);
-        /* 운영 경로 */
-        String path = "/var/lib/tomcat9/webapps/upload/";
-        /* 로컬 경로 */
-        //String path = "/Users/hapsun/Desktop/study/img/";
         File file = new File(path+filename);
         FileInputStream inputStream = new FileInputStream(file);
         byte[] bytes = new byte[inputStream.available()];
