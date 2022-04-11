@@ -25,7 +25,7 @@
         <ul class="sitelist">
             <c:forEach items="${prdMainNewList}" var="tProduct">
                 <li>
-                    <a href="${tProduct.url}">
+                    <a href="${tProduct.url}" target="_blank">
                         <div class="inner_img">
                             <img src="${tProduct.img}" onerror="this.src='${pageContext.request.contextPath}/img/site/blankimg.png'" alt="img3">
                         </div>
@@ -46,7 +46,7 @@
         <ul class="sitelist">
             <c:forEach items="${prdMainBestList}" var="tProduct">
                 <li>
-                    <a href="${tProduct.url}">
+                    <a href="${tProduct.url}" target="_blank">
                         <div class="inner_img">
                             <img src="${tProduct.img}" onerror="this.src='${pageContext.request.contextPath}/img/site/blankimg.png'" alt="img3">
                         </div>

@@ -198,7 +198,7 @@
                 <ul class="box_wrap">
                     <c:forEach items="${todayProductList}" var="tProduct">
                         <li>
-                            <a href="${tProduct.url}">
+                            <a href="${tProduct.url}" target="_blank">
                                 <div class="inner_img">
                                     <img src="${tProduct.img}" onerror="this.src='${pageContext.request.contextPath}/img/site/blankimg.png'" alt="img3">
                                 </div>
@@ -222,7 +222,7 @@
                 <ul class="box_wrap">
                     <c:forEach items="${bestProductList}" var="tProduct">
                         <li>
-                            <a href="${tProduct.url}">
+                            <a href="${tProduct.url}" target="_blank">
                                 <div class="inner_img">
                                     <img src="${tProduct.img}" onerror="this.src='${pageContext.request.contextPath}/img/site/blankimg.png'" alt="img3">
                                 </div>

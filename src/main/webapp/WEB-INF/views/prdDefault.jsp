@@ -24,7 +24,7 @@
             <ul class="sitelist">
                 <c:forEach items="${searchList}" var="product">
                     <li>
-                        <a href="${product.url}">
+                        <a href="${product.url}" target="_blank">
                             <div class="inner_img">
                                 <img src="${product.img}" onerror="this.src='${pageContext.request.contextPath}/img/site/blankimg.png'" alt="img3">
                             </div>

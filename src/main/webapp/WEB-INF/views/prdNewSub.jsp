@@ -50,7 +50,7 @@
             <ul class="sitelist">
                 <c:forEach items="${prdSubList}" var="tProduct">
                     <li>
-                        <a href="${tProduct.url}">
+                        <a href="${tProduct.url}" target="_blank">
                             <div class="inner_img">
                                 <img async src="${tProduct.img}" onerror="this.src='${pageContext.request.contextPath}/img/site/blankimg.png'" alt="img3">
                             </div>
