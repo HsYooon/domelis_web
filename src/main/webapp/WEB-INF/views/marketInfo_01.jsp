@@ -25,6 +25,7 @@
                 <c:choose>
                     <c:when test="${num.index == 0}">
                         <li class="mn_1">
+                            <img src="/image/${post.thumbnail}" onerror="this.src='${pageContext.request.contextPath}/img/info_default.jpg'" />
                             <a href="/marketInfo/post?id=${post.id}">
                                 <h3>${post.title}</h3>
                                 <span>게시글 보기</span>
