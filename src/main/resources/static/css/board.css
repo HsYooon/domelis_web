@@ -20,7 +20,7 @@
     font-weight: normal;
     font-size: 1.75rem;
 }
-.c3_board1 p{
+.c3_board1 .line{
     display: block;
     text-align: left;
     padding: 20px 0;

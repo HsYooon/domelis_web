@@ -204,10 +204,6 @@
             color: #3c4043;
         }
         .section6 .main_btn4{
-            position: absolute;
-            bottom: -8%;
-            left: 50%;
-            transform: translate(-50%,-50%);
             width: 80px;
             height: 40px;
             float: right;
@@ -217,6 +213,12 @@
             color: #fff;
             font-size: 14px;
             cursor: pointer;
+        }
+        a.main_btn4_wrap{
+            width: 84%;
+            height: 30px;
+            display: block;
+            margin: 2em 0;
         }
 
         @media all and (min-width:768px) and (max-width:1023px){
@@ -301,7 +303,6 @@
                 transform: translate(-50%,-50%);
             }
         }
-
     </style>
 </head>
 <body>
@@ -362,6 +363,7 @@
 <div class="section6">
     <div class="container">
         <h2>마케터를 위한 도구</h2>
+        <a href="${pageContext.request.contextPath}/marketing" class="main_btn4_wrap"><button class="main_btn4">더보기</button></a>
         <ul class="tool_link">
             <li>
                 <a href="https://datalab.naver.com/" target="_blank">
@@ -453,7 +455,6 @@
                 </a>
             </li>
         </ul><!-- //.tool_link -->
-        <a href="${pageContext.request.contextPath}/marketing"><button class="main_btn4">더보기</button></a>
     </div><!-- //.container -->
 </div><!-- //.section6 -->
 </body>

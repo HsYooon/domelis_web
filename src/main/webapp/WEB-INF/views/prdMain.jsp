@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer"/>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/category.css" type="text/css">
     <link rel="icon" type="image/png" href="img/favicon.png" sizes="192x192">
@@ -31,7 +32,7 @@
                         <div class="inner_txt">
                             <h3>${tProduct.title}</h3>
                             <h4>${tProduct.name}</h4>
-                            <p>클릭 시 해당 도매몰로 이동합니다<br>해당 도매몰 로그인 후 자세한 정보 확인이 가능합니다</p>
+                            <p>클릭 시 해당 도매몰로 이동합니다</p>
                         </div><!-- //.inner_txt -->
                     </a>
                 </li>
@@ -52,7 +53,7 @@
                         <div class="inner_txt">
                             <h3>${tProduct.title}</h3>
                             <h4>${tProduct.name}</h4>
-                            <p>클릭 시 해당 도매몰로 이동합니다<br>해당 도매몰 로그인 후 자세한 정보 확인이 가능합니다</p>
+                            <p>클릭 시 해당 도매몰로 이동합니다</p>
                         </div><!-- //.inner_txt -->
                     </a>
                 </li>

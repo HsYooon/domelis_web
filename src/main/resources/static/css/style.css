@@ -453,7 +453,7 @@ a.main_btn2_wrap{
         height: 100%;
     }
     .section3 .section_wrap ul.box_wrap li a .inner_txt{
-        height: 90px ;
+        height: 110px ;
     }
 }
 
@@ -481,11 +481,11 @@ a.main_btn2_wrap{
         border-bottom: 2px solid #eee;
     }
     .section3 .section_wrap ul.box_wrap li a .inner_img{
-        height: 145px;
+        height: 190px;
         overflow: hidden;
     }
     .section3 .section_wrap ul.box_wrap li .inner_txt{
-        height: 100px;
+        height: 125px;
     }
     .section3 .section_wrap ul.box_wrap li .inner_txt h3{
         font-size: 1rem;
@@ -619,7 +619,7 @@ a.main_btn2_wrap{
         height: 100%;
     }
     .section4 .section_wrap ul.box_wrap li a .inner_txt{
-        height: 90px ;
+        height: 110px ;
     }
 }
 
@@ -647,11 +647,11 @@ a.main_btn2_wrap{
         border-bottom: 2px solid #eee;
     }
     .section4 .section_wrap ul.box_wrap li a .inner_img{
-        height: 145px;
+        height: 190px;
         overflow: hidden;
     }
     .section4 .section_wrap ul.box_wrap li .inner_txt{
-        height: 100px;
+        height: 125px;
     }
     .section4 .section_wrap ul.box_wrap li .inner_txt h3{
         font-size: 1rem;

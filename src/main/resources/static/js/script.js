@@ -14,7 +14,6 @@ $(function(){
 });
 
 
-
 // ( function( $ ) {
 //     $('.cate ul').hide();
 //     $('.cate .menu .subopen').click(function() {

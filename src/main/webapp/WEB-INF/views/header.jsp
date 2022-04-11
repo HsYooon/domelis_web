@@ -5,17 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:url" content="https://www.domaelist.com/">
+    <meta property="og:title" content="Think With Domaelist.com 도매/위탁판매 사이트 모음">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.domaelist.com/img/logo.png">
+    <meta property=”og:image:width” content="800"/>
+    <meta property=”og:image:height” content="400"/>
+    <meta property="og:description" content="국내 인기 B2B 도매&위탁판매 사이트 순위, 리스트, 정보 모음까지!">
     <script src="https://code.jquery.com/jquery-1.4.4.min.js"></script>
-    <script src="js/loadHTML.js" type="text/javascript"></script>
-    <script src="js/script.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/js/script.js" type="text/javascript"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1708982640263259"
      crossorigin="anonymous"></script>
     <title>Document</title>
     <link rel="icon" type="image/png" href="/img/favicon.png" sizes="192x192">
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
-  />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
     <style>
 header{
     width: 100%;
@@ -333,10 +336,18 @@ header nav .allmenu ul.depth1 li{
                                         </span>
                                     </div><!-- .cate -->
                                     <div class="cate">
-                                        <span class="menu">
-                                            <input type="search">
-                                            <i class="fa fa-search" aria-hidden="true"></i>
-                                        </span>
+                                        <form action="${pageContext.request.contextPath}/search" method="post">
+                                            <div class="search">
+                                                <input type="text" name="query"/>
+                                                <button type="submit" style="border:0;outline:0;background:#eeeeee">
+                                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                                </button>
+                                            </div>
+                                        </form>
+<%--                                        <span class="menu">--%>
+<%--                                            <input type="search">--%>
+<%--                                            <i class="fa fa-search" aria-hidden="true"></i>--%>
+<%--                                        </span>--%>
                                     </div><!-- .cate -->
                                 </div><!-- .accordion -->
                             </div><!-- sidebar -->
@@ -446,7 +457,6 @@ header nav .allmenu ul.depth1 li{
                                 <button type="submit" style="border:0;outline:0;background:#fff">
                                 <i class="fa fa-search" aria-hidden="true"></i>
                                 </button>
-
                             </div>
                         </form>
                         </li>

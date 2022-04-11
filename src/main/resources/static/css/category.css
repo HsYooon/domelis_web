@@ -528,7 +528,7 @@
     }
     .category3 ul.sitelist li a .inner_txt{
         height: 70px ;
-        margin-top: 5%;
+        margin-top: 35%;
     }
     .category3 ul.sitelist li a .inner_txt h3{
         font-size: 1.125rem;
@@ -573,7 +573,7 @@
         border-bottom: 2px solid #eee;
     }
     .category3 ul.sitelist li a .inner_img{
-        height: 145px;
+        height: 200px;
         overflow: hidden;
     }
     .category3 ul.sitelist li .inner_txt{
@@ -641,7 +641,7 @@
 }
 .category4 ul.formlink li{
     width: 50%;
-    border: 1px solid#eee;
+    border: 1px solid #eee;
     margin-right: 40px;
     border-radius: 10px;
 }

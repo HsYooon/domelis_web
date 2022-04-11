@@ -37,7 +37,6 @@
                     </li>
                 </c:forEach>
             </ul><!-- //.sitelist -->
-            <a href="https://ad.search.naver.com/search.naver?where=ad&query=%EA%B2%80%EC%83%89%EA%B4%91%EA%B3%A0&referenceId=hBpyPwprvTVssLSXbBVsssssslC-204490" target="_blank" class="c4btn_wrap"><button class="c4btn">더보기</button></a>
         </div><!-- //.bestsite -->
         <div class="bestsite">
             <h3>쇼핑 광고</h3>
@@ -56,7 +55,6 @@
                     </li>
                 </c:forEach>
             </ul><!-- //.sitelist -->
-            <a href="https://ad.search.naver.com/search.naver?where=ad&query=%EC%87%BC%ED%95%91%EA%B4%91%EA%B3%A0&x=0&y=0" target="_blank" class="c4btn_wrap"><button class="c4btn">더보기</button></a>
         </div><!-- //.bestsite -->
         <div class="bestsite">
             <h3>DA 광고</h3>
@@ -75,7 +73,6 @@
                     </li>
                 </c:forEach>
             </ul><!-- //.sitelist -->
-            <a href="https://ad.search.naver.com/search.naver?where=ad&query=DA%EA%B4%91%EA%B3%A0&x=0&y=0" target="_blank" class="c4btn_wrap"><button class="c4btn">더보기</button></a>
         </div><!-- //.bestsite -->
 
         <div class="bestsite">
@@ -95,7 +92,6 @@
                     </li>
                 </c:forEach>
             </ul><!-- //.sitelist -->
-            <a href="https://ad.search.naver.com/search.naver?where=ad&query=%EC%B2%B4%ED%97%98%EB%8B%A8%EB%A6%AC%EB%B7%B0&x=0&y=0" target="_blank" class="c4btn_wrap"><button class="c4btn">더보기</button></a>
         </div><!-- //.bestsite -->
     </div><!-- //.container -->
 </div><!-- //.c4_sub2 -->

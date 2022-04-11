@@ -72,7 +72,7 @@
 </div><!--//.category3  -->
 <jsp:include page="info.jsp" flush="true"/>
 <footer id="footer" class="fixed-top">
-    <jsp:include page="header.jsp" flush="true"/>
+    <jsp:include page="footer.jsp" flush="true"/>
 </footer>
 </body>
 </html>

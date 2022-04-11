@@ -16,7 +16,7 @@ public class imageController {
     /* 운영 경로 */
     private String path = "/var/lib/tomcat9/webapps/upload/";
     /* 로컬 경로 */
-    //private String path = "/Users/hapsun/Desktop/study/img/";
+    // private String path = "/Users/hapsun/Desktop/study/img/";
 
     @PostMapping("/marketInfo/image")
     public Map<String, String> marketInfoImage(MultipartHttpServletRequest request) {

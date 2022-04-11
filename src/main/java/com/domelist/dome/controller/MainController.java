@@ -3,7 +3,6 @@ package com.domelist.dome.controller;
 import com.domelist.dome.dto.CdDto;
 import com.domelist.dome.dto.MarketPostDto;
 import com.domelist.dome.service.DomeService;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
@@ -43,6 +42,7 @@ public class MainController {
 
     @PostMapping("/search")
     public String searchPrd(String query, Model model) {
+        System.out.print("query : " + query);
         Map<String,Object> result =  service.searchPrd(query);
         model.addAttribute("query", query);
         model.addAttribute("searchList", result.get("list"));
@@ -253,6 +253,4 @@ public class MainController {
         inputStream.read(bytes, 0, inputStream.available());
         return bytes;
     }
-
-
 }

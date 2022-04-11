@@ -54,7 +54,7 @@
                 </a>
                 <a href="${pageContext.request.contextPath}/delivery/request" class="span_a">
                     <ul class="icon_txt">
-                        <li><img src="./img/c4_img_b.png" alt="icon"></li>
+                        <li><img src="./img/c4_img.png" alt="icon"></li>
                         <li><p>무료 견적 받기</p></li>
                     </ul>
                 </a>
