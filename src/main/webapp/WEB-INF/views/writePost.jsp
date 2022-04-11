@@ -84,7 +84,7 @@
             </div>
             <div style="text-align: left;margin-bottom: 20px">
                 <label for="title">제목</label>
-                <input type="text" placeholder="제목을 입력하세요" id="title" maxlength=30 name="title">
+                <input type="text" placeholder="제목을 입력하세요" id="title" maxlength=500 name="title">
             </div>
         </div>
         <textarea id="summernote" name="article"></textarea>
