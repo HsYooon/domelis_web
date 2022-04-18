@@ -29,7 +29,7 @@
                     <div class="bt_left">
                         <div class="txt_box1">
                             <span>2022 마케팅 달력</span>
-                            <h3>빠르게 변화하는 트렌드에 적응하기 위한<br> 2022년 마케팅 달력</br></h3>
+                            <h3>빠르게 변화하는 트렌드에 적응하기 위한 <br>2022년 마케팅 달력<br></h3>
                             <p>코로나 19 이후 온라인 시장규모의 폭발적인 확대로 트렌드의 <br>
                                 변화 속도도 빠르게 변화하고 있는 지금.
                                 <br>
@@ -52,9 +52,9 @@
     </div><!-- //.c3_top -->
     <div class="container">
         <h2>최신 마케팅 소식 </h2>
-<%--        <a href="/sub/c3_sub1.html" class="c3btn_wrap"><button class="c3btn">더보기</button></a>--%>
+        <a href="/marketInfo/info" class="c3btn_wrap"><button class="c3btn">더보기</button></a>
         <ul class="sitelist">
-            <c:forEach items="${marketPostList}" var="post">
+            <c:forEach items="${infoPostList}" var="post">
                 <li>
                     <a href="/marketInfo/post?id=${post.id}">
                         <div class="inner_img">
@@ -69,6 +69,63 @@
             </c:forEach>
         </ul><!-- //.sitelist -->
     </div><!-- //.container -->
+    <div class="container">
+        <h2>마케팅 상품 모음</h2>
+        <a href="/marketInfo/product" class="c3btn_wrap"><button class="c3btn">더보기</button></a>
+        <ul class="sitelist">
+            <c:forEach items="${productPostList}" var="post">
+                <li>
+                    <a href="/marketInfo/post?id=${post.id}">
+                        <div class="inner_img">
+                            <img src="/image/${post.thumbnail}" onerror="this.src='${pageContext.request.contextPath}/img/info_default.jpg'" alt="img3">
+                        </div>
+                        <div class="inner_txt">
+                            <h3>${post.title}</h3>
+                            <p>${post.reg_dttm}</p>
+                        </div><!-- //.inner_txt -->
+                    </a>
+                </li>
+            </c:forEach>
+        </ul><!-- //.sitelist -->
+    </div><!-- //.container -->
+    <div class="container">
+        <h2>연매출 10억 달성 아카데미 모음</h2>
+        <a href="/marketInfo/academy" class="c3btn_wrap"><button class="c3btn">더보기</button></a>
+        <ul class="sitelist">
+            <c:forEach items="${academyPostList}" var="post">
+                <li>
+                    <a href="/marketInfo/post?id=${post.id}">
+                        <div class="inner_img">
+                            <img src="/image/${post.thumbnail}" onerror="this.src='${pageContext.request.contextPath}/img/info_default.jpg'" alt="img3">
+                        </div>
+                        <div class="inner_txt">
+                            <h3>${post.title}</h3>
+                            <p>${post.reg_dttm}</p>
+                        </div><!-- //.inner_txt -->
+                    </a>
+                </li>
+            </c:forEach>
+        </ul><!-- //.sitelist -->
+    </div>
+    <div class="container">
+        <h2>필수 프로그램 모음</h2>
+        <a href="/marketInfo/program" class="c3btn_wrap"><button class="c3btn">더보기</button></a>
+        <ul class="sitelist">
+            <c:forEach items="${programPostList}" var="post">
+                <li>
+                    <a href="/marketInfo/post?id=${post.id}">
+                        <div class="inner_img">
+                            <img src="/image/${post.thumbnail}" onerror="this.src='${pageContext.request.contextPath}/img/info_default.jpg'" alt="img3">
+                        </div>
+                        <div class="inner_txt">
+                            <h3>${post.title}</h3>
+                            <p>${post.reg_dttm}</p>
+                        </div><!-- //.inner_txt -->
+                    </a>
+                </li>
+            </c:forEach>
+        </ul><!-- //.sitelist -->
+    </div>
 </div><!--//.category3  -->
 <jsp:include page="info.jsp" flush="true"/>
 <footer id="footer" class="fixed-top">

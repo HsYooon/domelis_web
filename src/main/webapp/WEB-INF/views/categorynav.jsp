@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nav</title>
     <style>
-        .container{
-            width: 70%;
+        .nav_container{
+            width: 100%;
         }
         nav.c_nav{
             width: 100%;
@@ -19,11 +19,16 @@
             width: 100%;
             display: flex;
         }
+        ul.nav_wrap a{
+            width: 100%;
+            font-size: 0.8rem;
+            text-align: center;
+            color: rgb(46, 44, 44);
+            margin: 0 0.5rem;
+        }
         ul.nav_wrap li{
-            width: 8%;
             height: 2rem;
-            line-height: 1.8;
-            margin: 0 0.3rem;
+            line-height: 2.4;
             border-radius: 15px;
             border: 2px solid rgb(131, 130, 130);
             cursor: pointer;
@@ -31,11 +36,7 @@
         ul.nav_wrap li:hover{
             box-shadow: 1px 1px 1px 1px rgba(146, 143, 143, 0.349);
         }
-        ul.nav_wrap li a{
-            font-size: 0.7rem;
-            text-align: center;
-            color: rgb(46, 44, 44);
-        }
+
         /* ul.nav_wrap li:nth-child(5){
             width: 9%;
         }
@@ -62,6 +63,8 @@
             }
         }
 
+
+
         /* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
         @media all and (max-width:767px){
             .c_nav{
@@ -72,22 +75,22 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <nav class="c_nav">
-            <ul class="nav_wrap">
-                <li><a href="/siteinfo?cd=01">종합</a></li>
-                <li><a href="/siteinfo?cd=02">생활</a></li>
-                <li><a href="/siteinfo?cd=04">식품</a></li>
-                <li><a href="/siteinfo?cd=06">자동차</a></li>
-                <li><a href="/siteinfo?cd=09">디지털/가전</a></li>
-                <li><a href="/siteinfo?cd=03">인테리어/소품</a></li>
-                <li><a href="/siteinfo?cd=11">의류</a></li>
-                <li><a href="/siteinfo?cd=12">신발/잡화</a></li>
-                <li><a href="/siteinfo?cd=10">아동/완구</a></li>
-                <li><a href="/siteinfo?cd=08">반려/애완</a></li>
-                <li><a href="/siteinfo?cd=05">헬스케어/뷰티</a></li>
-            </ul><!-- //.nav_wrap -->
-        </nav><!-- //.c_nav -->
-    </div><!-- //.container -->
+<div class="nav_container">
+    <nav class="c_nav">
+        <ul class="nav_wrap">
+            <a href="/siteinfo?cd=01"><li>종합</li></a>
+            <a href="/siteinfo?cd=02"><li>생활</li></a>
+            <a href="/siteinfo?cd=04"><li>식품</li></a>
+            <a href="/siteinfo?cd=06"><li>자동차</li></a>
+            <a href="/siteinfo?cd=09"><li>디지털/가전</li></a>
+            <a href="/siteinfo?cd=03"><li>인테리어/소품</li></a>
+            <a href="/siteinfo?cd=11"><li>의류</li></a>
+            <a href="/siteinfo?cd=12"><li>신발/잡화</li></a>
+            <a href="/siteinfo?cd=10"><li>아동/완구</li></a>
+            <a href="/siteinfo?cd=08"><li>반려/애완</li></a>
+            <a href="/siteinfo?cd=05"><li>헬스케어/뷰티</li></a>
+        </ul><!-- //.nav_wrap -->
+    </nav><!-- //.c_nav -->
+</div><!-- //.nav_container -->
 </body>
 </html>

@@ -16,7 +16,7 @@
 <header id="header" class="fixed-top">
     <jsp:include page="header.jsp" flush="true"/>
 </header>
-<div class="c3_sub4">
+<div class="c3_sub6">
     <div class="container">
         <h2>정부 지원 사업 정보 모음</h2>
         <p>새로운 도구, 전문가의 견해, 활용 가능한 분석 정보를 통해 효과적인 마케팅 운영 및 관련 아이디어를 얻어보세요.</p>

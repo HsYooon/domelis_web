@@ -472,10 +472,11 @@
 .c3_sub1 ul.m_news li{
     width: 25%;
     height: 300px;
-    border: 1px solid#eee;
+    border: 1px solid #eee;
     margin-right: 40px;
     border-radius: 10px;
     transition: all 0.3s;
+    overflow: hidden;
 }
 .c3_sub1 ul.m_news li.mn_1{
     width: 50%;
@@ -483,12 +484,18 @@
 .c3_sub1 ul.m_news li.mn_1 img{
     width: 100%;
     height: 100%;
+    position: relative;
 }
-
 .c3_sub1 ul.m_news li.mn_1 a{
+    width: 40%;
+    overflow-wrap: break-word;
     margin-top: 9rem;
-    color: #fff;
-}
+    color: #000;
+    display: block;    
+    position: absolute;
+    left: -4%;
+    top: 6%;
+    }
 .c3_sub1 ul.m_news li.mn_1 a h3{
     font-size: 1.5rem;
 }
@@ -1002,19 +1009,30 @@
 .c3_sub4 ul.m_news li{
     width: 25%;
     height: 300px;
-    border: 1px solid#eee;
+    border: 1px solid #eee;
     margin-right: 40px;
     border-radius: 10px;
     transition: all 0.3s;
+    overflow: hidden;
 }
 .c3_sub4 ul.m_news li.mn_1{
     width: 50%;
-    background: url(../img/img3.jpg);
+}
+.c3_sub4 ul.m_news li.mn_1 img{
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 .c3_sub4 ul.m_news li.mn_1 a{
+    width: 40%;
+    overflow-wrap: break-word;
     margin-top: 9rem;
-    color: #fff;
-}
+    color: #000;
+    display: block;    
+    position: absolute;
+    left: -4%;
+    top: 6%;
+    }
 .c3_sub4 ul.m_news li.mn_1 a h3{
     font-size: 1.5rem;
 }
@@ -1452,19 +1470,30 @@
 .c3_sub6 ul.m_news li{
     width: 25%;
     height: 300px;
-    border: 1px solid#eee;
+    border: 1px solid #eee;
     margin-right: 40px;
     border-radius: 10px;
     transition: all 0.3s;
+    overflow: hidden;
 }
 .c3_sub6 ul.m_news li.mn_1{
     width: 50%;
-    background: url(../img/img3.jpg);
+}
+.c3_sub6 ul.m_news li.mn_1 img{
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 .c3_sub6 ul.m_news li.mn_1 a{
-    margin-top: 9rem;
-    color: #fff;
-}
+    width: 40%;
+    overflow-wrap: break-word;
+    margin-top: 13.3rem;
+    color: #000;
+    display: block;    
+    position: absolute;
+    left: -4%;
+    top: 6%;
+    }
 .c3_sub6 ul.m_news li.mn_1 a h3{
     font-size: 1.5rem;
 }
@@ -1472,7 +1501,7 @@
     display: block;
     margin-top: 1rem;
 }
-.c3_sub4 ul.m_news li:last-child{
+.c3_sub6 ul.m_news li:last-child{
     margin-right: 0;
 }
 .c3_sub6 ul.m_news li a{
@@ -1631,7 +1660,7 @@
     .c3s1_contents ul.sitelist li{
         width: 48%;
     }
-    .c3_sub4 .c3s1_list{
+    .c3_sub6 .c3s1_list{
         padding: 2rem 0;
     }
     .c3s1_list h3{

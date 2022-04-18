@@ -28,7 +28,6 @@
                             <img src="/image/${post.thumbnail}" onerror="this.src='${pageContext.request.contextPath}/img/info_default.jpg'" alt="img3">
                         </div>
                         <div class="inner_txt">
-                            <span>게시글</span>
                             <p>${post.title}</p>
                         </div><!-- //.inner_txt -->
                     </a>

@@ -9,7 +9,8 @@
     <meta name="referrer" content="no-referrer"/>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css" type="text/css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/sub.css" type="text/css">
-    <title>생활</title>
+    <link rel="icon" type="image/png" href="img/favicon.png" sizes="192x192">
+    <title>${title}</title>
 </head>
 <body>
 <header id="header" class="fixed-top">

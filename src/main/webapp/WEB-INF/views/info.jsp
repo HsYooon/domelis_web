@@ -319,7 +319,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/marketInfo/calendar">
+                    <a href="/marketInfo/info">
                         <strong>최신 마케팅 소식 모아보기</strong>
                         <p>새로운 도구, 전문가의 견해, 활용 가능한 분석 정보를 통해 효과적인 마케팅 운영 및 관련 아이디어를 얻어보세요.</p>
                         <span>바로가기</span>

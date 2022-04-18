@@ -12,6 +12,7 @@
     <meta property=”og:image:width” content="800"/>
     <meta property=”og:image:height” content="400"/>
     <meta property="og:description" content="국내 인기 B2B 도매&위탁판매 사이트 순위, 리스트, 정보 모음까지!">
+    <meta name="naver-site-verification" content="7764ba5741a5db3e2e0365c3f6f1705da72c2a5a" />
     <script src="https://code.jquery.com/jquery-1.4.4.min.js"></script>
     <script src="${pageContext.request.contextPath}/js/script.js" type="text/javascript"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1708982640263259"
