@@ -103,7 +103,7 @@
     <select id="marketInfoPostList" resultType="MarketPostDto" parameterType="String">
         select * from t_info_post
         where category = #{category}
-        order by reg_dttm
+        order by id desc
     </select>
 
     <select id="marketInfoPostListByCnt" resultType="MarketPostDto" parameterType="String">
