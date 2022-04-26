@@ -28,6 +28,7 @@ public class DomeService {
         List<DomeDto> result = dao.bestProductList(cnt);
         return result;
     }
+
     /* 오늘의 도매상품 > 신상품 */
     public Map<String, Object> todayProductList(String info, String page, int totalPrdCnt) {
         // 한페이지에 보여줄 상품 수

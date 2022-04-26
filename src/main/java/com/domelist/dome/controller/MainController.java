@@ -4,6 +4,7 @@ import com.domelist.dome.dto.CdDto;
 import com.domelist.dome.dto.MarketPostDto;
 import com.domelist.dome.service.DomeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -53,18 +54,22 @@ public class MainController {
     /* 필독 정보 모음 */
     @GetMapping("/marketInfo")
     public String marketInfo(Model model) {
-        List<MarketPostDto> result = service.marketInfoPostList("01");
-        model.addAttribute("marketPostList", result);
+        List<MarketPostDto> result1 = service.marketInfoPostList2("01", "reg_dttm", 8);
+        List<MarketPostDto> result2 = service.marketInfoPostList2("02","reg_dttm", 8);
+        List<MarketPostDto> result3 = service.marketInfoPostList2("03","reg_dttm", 8);
+        List<MarketPostDto> result4 = service.marketInfoPostList2("04","reg_dttm", 8);
+        model.addAttribute("infoPostList", result1);
+        model.addAttribute("productPostList", result2);
+        model.addAttribute("academyPostList", result3);
+        model.addAttribute("programPostList", result4);
         return "marketInfo";
     }
 
     /* 필독 정보 모음 > 최신 마케팅 소식 */
     @GetMapping("/marketInfo/info")
     public String marketInfo01(Model model) {
-        List<MarketPostDto> result0 = service.marketInfoPostList2("01","reg_dttm", 3);
         List<MarketPostDto> result1 = service.marketInfoPostList("01");
         List<MarketPostDto> result2 = service.marketInfoPostListByCnt("01");
-        model.addAttribute("recentPostList", result0);
         model.addAttribute("marketInfoPostList", result1);
         model.addAttribute("popularPostList", result2);
         return "marketInfo_01";
@@ -87,10 +92,8 @@ public class MainController {
     /* 필독 정보 모음 > 10억 아카데미 */
     @GetMapping("/marketInfo/academy")
     public String marketInfo04(Model model) {
-        List<MarketPostDto> result0 = service.marketInfoPostList2("03","reg_dttm", 3);
         List<MarketPostDto> result1 = service.marketInfoPostList("03");
         List<MarketPostDto> result2 = service.marketInfoPostListByCnt("03");
-        model.addAttribute("recentPostList", result0);
         model.addAttribute("marketInfoPostList", result1);
         model.addAttribute("popularPostList", result2);
         return "marketInfo_04";
@@ -104,11 +107,9 @@ public class MainController {
         return "marketInfo_05";
     }
 
-    /* 필독 정보 모음 > 정부지원사업모음 */
+    /* 필독 정보 모음 > 사업자를 위한 정보 모음 */
     @GetMapping("/marketInfo/business")
     public String marketInfo06(Model model) {
-        List<MarketPostDto> result0 = service.marketInfoPostList2("05","reg_dttm", 3);
-        model.addAttribute("recentPostList", result0);
         List<MarketPostDto> result = service.marketInfoPostList("05");
         model.addAttribute("marketInfoPostList", result);
         return "marketInfo_06";

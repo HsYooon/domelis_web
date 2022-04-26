@@ -89,7 +89,7 @@
         </ul><!-- //.sitelist -->
     </div><!-- //.container -->
     <div class="container">
-        <h2>연매출 10억 달성 아카데미 모음</h2>
+        <h2>매출 상승의 비결, e-커머스 아카데미</h2>
         <a href="/marketInfo/academy" class="c3btn_wrap"><button class="c3btn">더보기</button></a>
         <ul class="sitelist">
             <c:forEach items="${academyPostList}" var="post">

@@ -77,7 +77,7 @@
                     <option value="02">마케팅 상품모음</option>
                     <option value="03">10억 아카데미</option>
                     <option value="04">필수 프로그램</option>
-                    <option value="05">정부 지원</option>
+                    <option value="05">사업자를 위한 정보</option>
                 </select>
                 <label for="writer">작성자</label>
                 <input type="text" id="writer" name="writer" placeholder="작성자를 입력하세요."/>

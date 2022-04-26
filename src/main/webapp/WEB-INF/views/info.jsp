@@ -334,8 +334,15 @@
                 </li>
                 <li>
                     <a href="/marketInfo/academy">
-                        <strong>연매출 10억 달성 아카데미 모아보기</strong>
+                        <strong>매출 상승의 비결, e-커머스 아카데미 모아보기</strong>
                         <p>혼자서는 어려웠던 마케팅 노하우를 얻어가세요</p>
+                        <span>바로가기</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/marketInfo/business">
+                        <strong>사업자를 위한 정보 모아보기</strong>
+                        <p>다양한 정부 지원사업 정보를 한자리에서 확인해 혜택 꼭 챙겨가세요.</p>
                         <span>바로가기</span>
                     </a>
                 </li>
@@ -343,13 +350,6 @@
                     <a href="/marketInfo/program">
                         <strong>e커머스 필수 프로그램 모아보기</strong>
                         <p>e커머스 사업에 꼭 필요한 핵심 TOOL을 모아두었습니다.</p>
-                        <span>바로가기</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/marketInfo/business">
-                        <strong>정부지원사업정보 모아보기</strong>
-                        <p>다양한 정부 지원사업 정보를 한자리에서 확인해 혜택 꼭 챙겨가세요.</p>
                         <span>바로가기</span>
                     </a>
                 </li>

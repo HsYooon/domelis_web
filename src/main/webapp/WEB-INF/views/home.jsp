@@ -54,7 +54,7 @@
             <div class="section_wrap">
                 <ul class="box_wrap">
                   <li>
-                     <a href="/siteinfo?cd=01">
+                     <a href="${pageContext.request.contextPath}siteinfo?cd=01">
                       <div class="inner_img">
                        <img src="img/category/c_img11.png" alt="img3">
                        </div>
@@ -65,7 +65,7 @@
                                </a>
                     </li>
                     <li>
-                        <a href="/siteinfo?cd=02">
+                        <a href="${pageContext.request.contextPath}siteinfo?cd=02">
                             <div class="inner_img">
                                 <img src="img/category/c_img1.png" alt="img3">
                             </div>
@@ -76,7 +76,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/siteinfo?cd=04">
+                        <a href="${pageContext.request.contextPath}siteinfo?cd=04">
                             <div class="inner_img">
                                 <img src="img/category/c_img2.png" alt="img3">
                             </div>
@@ -87,7 +87,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/siteinfo?cd=06">
+                        <a href="${pageContext.request.contextPath}siteinfo?cd=06">
                             <div class="inner_img">
                                 <img src="img/category/c_img3.png" alt="img3">
                             </div>
@@ -98,7 +98,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/siteinfo?cd=09">
+                        <a href="${pageContext.request.contextPath}siteinfo?cd=09">
                             <div class="inner_img">
                                 <img src="img/category/c_img4.png" alt="img3">
                             </div>
@@ -109,7 +109,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/siteinfo?cd=03">
+                        <a href="${pageContext.request.contextPath}siteinfo?cd=03">
                             <div class="inner_img">
                                 <img src="img/category/c_img5.png" alt="img3">
                             </div>
@@ -120,7 +120,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/siteinfo?cd=11">
+                        <a href="${pageContext.request.contextPath}siteinfo?cd=11">
                             <div class="inner_img">
                                 <img src="img/category/c_img6.png" alt="img3">
                             </div>
@@ -131,7 +131,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/siteinfo?cd=12">
+                        <a href="${pageContext.request.contextPath}siteinfo?cd=12">
                             <div class="inner_img">
                                 <img src="img/category/c_img7.png" alt="img3">
                             </div>
@@ -142,7 +142,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/siteinfo?cd=10">
+                        <a href="${pageContext.request.contextPath}siteinfo?cd=10">
                             <div class="inner_img">
                                 <img src="img/category/c_img8.png" alt="img3">
                             </div>
@@ -153,7 +153,7 @@
                         </a>
                     </li>
                      <li>
-                       <a href="/siteinfo?cd=08">
+                       <a href="${pageContext.request.contextPath}siteinfo?cd=08">
                         <div class="inner_img">
                          <img src="img/category/c_img9.png" alt="img3">
                          </div>
@@ -164,7 +164,7 @@
                                  </a>
                       </li>
                        <li>
-                         <a href="/siteinfo?cd=05">
+                         <a href="${pageContext.request.contextPath}siteinfo?cd=05">
                           <div class="inner_img">
                            <img src="img/category/c_img10.png" alt="img3">
                            </div>
@@ -175,7 +175,7 @@
                                    </a>
                         </li>
                             <li>
-                                 <a href="/siteinfo?cd=01">
+                                 <a href="${pageContext.request.contextPath}siteinfo?cd=01">
                                   <div class="inner_img">
                                    <img src="img/category/c_img12.png" alt="img3">
                                    </div>
@@ -224,7 +224,7 @@
                         <li>
                             <a href="${tProduct.url}" target="_blank">
                                 <div class="inner_img">
-                                    <img src="${tProduct.img}" onerror="this.src='${pageContext.request.contextPath}/img/site/blankimg.png'" alt="img3">
+                                    <img src="${tProduct.img}" onerror="this.src='${pageContext.request.contextPath}img/site/blankimg.png'" alt="img3">
                                 </div>
                                 <div class="inner_txt">
                                     <h3>${tProduct.title}</h3>
@@ -237,7 +237,30 @@
                 </ul><!-- //.box_wrap -->
             </div><!-- //.section_wrap -->
         </div><!-- //.container -->
-    </div><!-- //.section4 -->
+    </div>
+    <div class="section5">
+        <h2>마케팅 소식</h2>
+        <div class="container">
+            <div class="section_wrap">
+                <a href="/marketInfo/info" class="main_btn2_wrap"><button class="main_btn3">더보기</button></a>
+                <ul class="box_wrap">
+                    <c:forEach items="${marketPostList}" var="post">
+                        <li>
+                            <a href="/marketInfo/post?id=${post.id}">
+                                <div class="inner_img">
+                                    <img src="/image/${post.thumbnail}" onerror="this.src='${pageContext.request.contextPath}/img/info_default.jpg'" alt="img3">
+                                </div>
+                                <div class="inner_txt">
+                                    <span>게시글</span>
+                                    <p>${post.title}</p>
+                                </div><!-- //.inner_txt -->
+                            </a>
+                        </li>
+                    </c:forEach>
+                </ul><!-- //.box_wrap -->
+            </div><!-- //.section_wrap -->
+        </div><!-- //.container -->
+    </div><!-- //.section5 -->
     <jsp:include page="info.jsp" flush="true"/>
 </main>
 <footer id="footer" class="fixed-top">

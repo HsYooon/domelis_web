@@ -34,6 +34,9 @@ public class HomeController {
         List<DomeDto> mainBestList = service.mainBestList();
         model.addAttribute("todayProductList", mainNewList);
         model.addAttribute("bestProductList", mainBestList);
+        /* 최신 마케팅 소식 12개 */
+        List<MarketPostDto> mainMarketPostList = service.marketInfoPostList2("01","reg_dttm",12);
+        model.addAttribute("marketPostList", mainMarketPostList);
         return "home";
     }
 

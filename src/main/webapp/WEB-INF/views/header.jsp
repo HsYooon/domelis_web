@@ -304,13 +304,13 @@ header nav .allmenu ul.depth1 li{
                                         <a href="/marketInfo/product">마케팅 상품 모음</a>
                                     </li>
                                     <li>
-                                        <a href="/marketInfo/academy">연매출 10억 달성 아카데미 모아보기</a>
+                                        <a href="/marketInfo/academy">매출 상승의 비결, e-커머스 아카데미</a>
+                                    </li>
+                                    <li>
+                                        <a href="/marketInfo/business">사업자를 위한 정보 모음</a>
                                     </li>
                                     <li>
                                         <a href="/marketInfo/program">필수 프로그램 모음</a>
-                                    </li>
-                                    <li>
-                                        <a href="/marketInfo/business">정부지원사업정보 모음</a>
                                     </li>
                                 </ul>
                             </div><!-- .cate -->
@@ -424,13 +424,13 @@ header nav .allmenu ul.depth1 li{
                                     <a href="/marketInfo/product">마케팅 상품 모음</a>
                                 </li>
                                 <li>
-                                    <a href="/marketInfo/academy">연매출 10억 달성 아카데미 모아보기</a>
+                                    <a href="/marketInfo/academy">매출 상승의 비결, e-커머스 아카데미</a>
+                                </li>
+                                <li>
+                                    <a href="/marketInfo/business">사업자를 위한 정보 모음</a>
                                 </li>
                                 <li>
                                     <a href="/marketInfo/program">필수 프로그램 모음</a>
-                                </li>
-                                <li>
-                                    <a href="/marketInfo/business">정부지원사업정보 모음</a>
                                 </li>
                             </ul><!-- //depth2 -->
                         </li>
