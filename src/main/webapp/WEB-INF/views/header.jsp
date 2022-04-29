@@ -17,6 +17,14 @@
     <script src="${pageContext.request.contextPath}/js/script.js" type="text/javascript"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1708982640263259"
      crossorigin="anonymous"></script>
+     <script async src="https://www.googletagmanager.com/gtag/js?id=G-12D41JGP9S"></script>
+     <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+
+       gtag('config', 'G-12D41JGP9S');
+     </script>
     <title>Document</title>
     <link rel="icon" type="image/png" href="/img/favicon.png" sizes="192x192">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
