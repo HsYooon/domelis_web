@@ -82,12 +82,13 @@
             transform: scale(1.1);
         }
         .c3_board1 .hotnews ul.hotcontent li ul.content li{
-            width: 50%;
+            width: 47%;
             float: left;
         }
         .c3_board1 .hotnews ul.hotcontent li ul.content li img{
             width: 75%;
-            margin: 20px auto;
+            height: 70px;
+            margin: 20px 10px;
             border-radius: 10px;
         }
         .c3_board1 .hotnews ul.hotcontent li ul.content li p{
