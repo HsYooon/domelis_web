@@ -25,7 +25,7 @@
                 <li>
                     <a href="/marketInfo/post?id=${post.id}">
                         <div class="inner_img">
-                            <img src="/image/${post.thumbnail}" onerror="this.src='${pageContext.request.contextPath}/img/info_default.jpg'" alt="img3">
+                            <img src="/image/${post.thumbnail}" onerror="this.src='${pageContext.request.contextPath}/img/info_default.png'" alt="img3">
                         </div>
                         <div class="inner_txt">
                             <span>게시글</span>

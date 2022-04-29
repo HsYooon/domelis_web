@@ -144,7 +144,7 @@
                     <li>
                         <a href="/marketInfo/post?id=${post.id}">
                             <ul class="content">
-                                <li><img src="/image/${post.thumbnail}" onerror="this.src='${pageContext.request.contextPath}/img/info_default.jpg'" alt="img1"></li>
+                                <li><img src="/image/${post.thumbnail}" onerror="this.src='${pageContext.request.contextPath}/img/info_default.png'" alt="img1"></li>
                                 <li><p>${post.title}</p></li>
                             </ul><!-- //.content -->
                         </a>

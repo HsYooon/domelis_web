@@ -25,7 +25,7 @@
 <%--                <c:choose>--%>
 <%--                    <c:when test="${num.index == 0}">--%>
 <%--                        <li class="mn_1">--%>
-<%--                            <img src="/image/${post.thumbnail}" onerror="this.src='${pageContext.request.contextPath}/img/info_default.jpg'" />--%>
+<%--                            <img src="/image/${post.thumbnail}" onerror="this.src='${pageContext.request.contextPath}/img/info_default.png'" />--%>
 <%--                            <a href="/marketInfo/post?id=${post.id}">--%>
 <%--                                <h3>${post.title}</h3>--%>
 <%--                                <span>게시글 보기</span>--%>
@@ -50,7 +50,7 @@
                     <li>
                         <a href="/marketInfo/post?id=${post.id}">
                             <div class="inner_img">
-                                <img src="/image/${post.thumbnail}" onerror="this.src='${pageContext.request.contextPath}/img/info_default.jpg'" alt="img3">
+                                <img src="/image/${post.thumbnail}" onerror="this.src='${pageContext.request.contextPath}/img/info_default.png'" alt="img3">
                             </div>
                             <div class="inner_txt">
                                 <span>게시글</span>
@@ -70,7 +70,7 @@
                             <ul class="list_inner">
                                 <li>
                                     <a href="/marketInfo/post?id=${post.id}">
-                                        <img src="/image/${post.thumbnail}" onerror="this.src='${pageContext.request.contextPath}/img/info_default.jpg'" alt="img3">
+                                        <img src="/image/${post.thumbnail}" onerror="this.src='${pageContext.request.contextPath}/img/info_default.png'" alt="img3">
                                     </a>
                                 </li>
                                 <li>
