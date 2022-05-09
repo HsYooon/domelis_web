@@ -13,6 +13,7 @@
     <meta property=”og:image:height” content="400"/>
     <meta property="og:description" content="국내 인기 B2B 도매&위탁판매 사이트 순위, 리스트, 정보 모음까지!">
     <meta name="naver-site-verification" content="7764ba5741a5db3e2e0365c3f6f1705da72c2a5a" />
+    <meta name="naver-site-verification" content="df253ceb4c9920f21d6729b53d3a6a7086aa60fe" />
     <script src="https://code.jquery.com/jquery-1.4.4.min.js"></script>
     <script src="${pageContext.request.contextPath}/js/script.js" type="text/javascript"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1708982640263259"
@@ -25,6 +26,15 @@
 
        gtag('config', 'G-12D41JGP9S');
      </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RNZFR99M3Y"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-RNZFR99M3Y');
+    </script>
     <title>Document</title>
     <link rel="icon" type="image/png" href="/img/favicon.png" sizes="192x192">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
