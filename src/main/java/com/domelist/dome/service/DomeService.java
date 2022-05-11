@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Stream;
 
 @Service
 public class DomeService {
@@ -19,14 +18,12 @@ public class DomeService {
 
     public List<DomeDto> mainNewList() {
         int cnt = 12;
-        List<DomeDto> result = dao.todayProductList(cnt);
-        return result;
+        return dao.todayProductList(cnt);
     }
 
     public List<DomeDto> mainBestList() {
         int cnt = 12;
-        List<DomeDto> result = dao.bestProductList(cnt);
-        return result;
+        return dao.bestProductList(cnt);
     }
 
     /* 오늘의 도매상품 > 신상품 */
@@ -51,10 +48,10 @@ public class DomeService {
 
         Map<String, Object> map = new HashMap<>();
         List<DomeDto> result = new ArrayList<>();
-        if (info == "11") {
+        if (info.equals("11")) {
             result = dao.domeNewPrdList(start, end);
         }
-        if (info == "12") {
+        if (info.equals("12")) {
             result = dao.domeBestPrdList(start, end);
         }
 
@@ -79,21 +76,21 @@ public class DomeService {
     }
 
     public List<SiteInfoDto> siteInfoList(String cd) {
-        List<SiteInfoDto> result = dao.siteInfoList(cd);
-        return result;
+        return dao.siteInfoList(cd);
     }
+
+    /* 카테고리 이름 조회 */
     public String categoryNm(String cd) {
         return dao.categoryNm(cd);
     }
+
     /* 오늘의 도매상품 > 메인 > 신상품 섹션 */
     public List<DomeDto> prdMainNewList() {
-        List<DomeDto> result = dao.prdMainNewList();
-        return result;
+        return dao.prdMainNewList();
     }
     /* 오늘의 도매상품 > 메인 > 베스트상품 섹션 */
     public List<DomeDto> prdMainBestList() {
-        List<DomeDto> result = dao.prdMainBestList();
-        return result;
+        return dao.prdMainBestList();
     }
 
     public Map<String, List> deliveryMainLists() {
@@ -120,7 +117,7 @@ public class DomeService {
 
     /* 광고 대행 업체 모음 */
     public Map<String, List> advertiseLists() {
-        /** 검색광고 : 12, 쇼핑광고: 13, DA광고: 14, 체험단&리뷰 대행: 15 **/
+        /* 검색광고 : 12, 쇼핑광고: 13, DA광고: 14, 체험단&리뷰 대행: 15 */
         List<DeliveryDto> searchList = dao.advertiseCategoryList("12");
         List<DeliveryDto> shoppingList = dao.advertiseCategoryList("13");
         List<DeliveryDto> daList = dao.advertiseCategoryList("14");
@@ -154,19 +151,12 @@ public class DomeService {
         return dao.allInfoPostListByCnt(cnt);
     }
 
-    public List<MarketPostDto> marketInfoPostList2(String category, String order, int cnt) {
+    public List<MarketPostDto> marketInfoPostList2(String category, int cnt) {
         Map<String, Object> params = new HashMap<>();
         if(category == null) {
             category = "";
         }
-        if(order == null) {
-            category = "";
-        }
-        if(category == null) {
-            cnt = 0;
-        }
         params.put("category", category);
-        params.put("order", order);
         params.put("cnt", cnt);
         return dao.marketInfoPostList2(params);
     }
@@ -192,16 +182,19 @@ public class DomeService {
     }
 
     /* 게시글 업로드*/
+    @Transactional
     public void uploadPost(Map<String,String> post) {
         dao.insertPost(post);
     }
 
     /* 게시글 수정 */
+    @Transactional
     public void modifyPost(Map<String,Object> post) {
         dao.modifyPost(post);
     }
 
     /* 게시글 삭제 */
+    @Transactional
     public void deletePost(int id) {
         dao.deletePost(id);
     }
@@ -209,9 +202,6 @@ public class DomeService {
     ///////////////////////////////////////////////////////////
 
     private int calLastPage(int total, int offset) {
-        if (total % offset == 0) {
-            return (int) Math.ceil((double)total / (double) offset);
-        }
         return (int) Math.ceil((double)total / (double) offset);
     }
 }

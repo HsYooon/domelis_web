@@ -117,14 +117,7 @@
         select *
         from t_info_post
         where category = #{category}
-        <choose>
-            <when test="order!=''">
-                order by #{order} desc
-            </when>
-            <otherwise>
-                order by reg_dttm desc
-            </otherwise>
-        </choose>
+        order by id desc
         <if test='cnt>0'>
             LIMIT #{cnt}
         </if>

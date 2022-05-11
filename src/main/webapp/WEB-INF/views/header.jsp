@@ -3,6 +3,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="google-site-verification" content="YlMgagm9CnrQThEiAMQTVD3P_HBrePiqKUS9mV7-NOA" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:url" content="https://www.domaelist.com/">

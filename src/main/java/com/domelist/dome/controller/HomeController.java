@@ -6,7 +6,6 @@ import com.domelist.dome.dto.MarketPostDto;
 import com.domelist.dome.dto.SiteInfoDto;
 import com.domelist.dome.service.CommonService;
 import com.domelist.dome.service.DomeService;
-import jdk.nashorn.internal.objects.annotations.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,7 +26,6 @@ public class HomeController {
     /* 메인 */
     @GetMapping("/")
     public String home(Model model) {
-        int cnt = 12;
         /* 12개의 상품 */
         List<DomeDto> mainNewList = service.mainNewList();
         /* 12개의 상품 */
@@ -35,7 +33,7 @@ public class HomeController {
         model.addAttribute("todayProductList", mainNewList);
         model.addAttribute("bestProductList", mainBestList);
         /* 최신 마케팅 소식 12개 */
-        List<MarketPostDto> mainMarketPostList = service.marketInfoPostList2("01","reg_dttm",12);
+        List<MarketPostDto> mainMarketPostList = service.marketInfoPostList2("01",12);
         model.addAttribute("marketPostList", mainMarketPostList);
         return "home";
     }
@@ -46,7 +44,7 @@ public class HomeController {
         /* cd = null or all : 모든 사이트*/
         List<SiteInfoDto> siteInfoList = service.siteInfoList(cd);
         String title = "";
-        if(cd == "all") {
+        if(cd.equals("all")) {
             model.addAttribute("title", title);
             model.addAttribute("siteInfoList", siteInfoList);
             return "siteinfo";
@@ -126,7 +124,7 @@ public class HomeController {
     }
 
     @GetMapping("/delivery/request")
-    public String deliveryRequest(Model model) {
+    public String deliveryRequest() {
         return "delivery_request";
     }
 

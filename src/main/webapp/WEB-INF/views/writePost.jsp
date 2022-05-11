@@ -51,6 +51,17 @@
             cursor: pointer;
         }
 
+        .cancel {
+            width: 100%;
+            background-color: #F23D3D;
+            color: white;
+            padding: 14px 20px;
+            margin: 5px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
         .submit:hover {
             background-color: #45a049;
         }
@@ -93,7 +104,10 @@
             <input type="file" id="thumbnail" name="thumbnail" multiple="multiple"/>
         </div>
         <div style="text-align: center;margin-top: 20px">
-            <input type="button" class="submit" onclick="submitContents(this);" value="등록" class="submit">
+            <input type="button" class="submit" onclick="submitContents(this);" value="등록"/>
+        </div>
+        <div style="text-align: center;margin-top: 10px">
+            <input type="button" class="cancel" onclick="location.href='/'" value="취소"/>
         </div>
     </form>
 </div>
@@ -141,6 +155,24 @@
      * 게시물 전송
      */
     function submitContents(submit) {
+        const writer = document.getElementById("writer");
+        const category = document.getElementById("category");
+        const title = document.getElementById("title");
+        if (writer.value == null || writer.value.trim() == '') {
+            writer.focus();
+            alert("작성자를 입력하세요.");
+            return;
+        }
+        if (category.value == null || category.value == '') {
+            category.focus();
+            alert("카테고리를 입력하세요.");
+            return;
+        }
+        if (title.value == null || title.value.trim() == '') {
+            title.focus();
+            alert("제목을 입력하세요.");
+            return;
+        }
         try {
             submit.form.submit();
         } catch(e) {}

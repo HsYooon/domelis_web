@@ -54,10 +54,10 @@ public class MainController {
     /* 필독 정보 모음 */
     @GetMapping("/marketInfo")
     public String marketInfo(Model model) {
-        List<MarketPostDto> result1 = service.marketInfoPostList2("01", "reg_dttm", 8);
-        List<MarketPostDto> result2 = service.marketInfoPostList2("02","reg_dttm", 8);
-        List<MarketPostDto> result3 = service.marketInfoPostList2("03","reg_dttm", 8);
-        List<MarketPostDto> result4 = service.marketInfoPostList2("04","reg_dttm", 8);
+        List<MarketPostDto> result1 = service.marketInfoPostList2("01",8);
+        List<MarketPostDto> result2 = service.marketInfoPostList2("02",8);
+        List<MarketPostDto> result3 = service.marketInfoPostList2("03",8);
+        List<MarketPostDto> result4 = service.marketInfoPostList2("04",8);
         model.addAttribute("infoPostList", result1);
         model.addAttribute("productPostList", result2);
         model.addAttribute("academyPostList", result3);

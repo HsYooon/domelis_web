@@ -151,6 +151,25 @@
      * 게시물 전송
      */
     function submitContents(submit) {
+        const writer = document.getElementById("writer");
+        const category = document.getElementById("category");
+        const title = document.getElementById("title");
+        if (writer.value == null || writer.value.trim() == '') {
+            writer.focus();
+            alert("작성자를 입력하세요.");
+            return;
+        }
+        if (category.value == null || category.value == '') {
+            category.focus();
+            alert("카테고리를 입력하세요.");
+            return;
+        }
+        if (title.value == null || title.value.trim() == '') {
+            title.focus();
+            alert("제목을 입력하세요.");
+            return;
+        }
+
         try {
             submit.form.submit();
         } catch(e) {}
