@@ -21,6 +21,36 @@
     <div class="container">
         <h2>${title}</h2>
         <p class="p1">${desc}</p>
+        <c:choose>
+            <c:when test="${code == 'abroad'}">
+                <a href="/delivery/request" class="formclick_wrap">
+                    <div class="formclick">
+                        <h3>해외 수입구매 (대량구매/OEM/ODM) 대행</h3>
+                        <p>해외 수입구매 대행 업체 정보를 한자리에 모았습니다. 비지니스 성장을 위한 인사이트를 얻을 수 있는지 살펴 보세요.</p>
+                        <a href="/delivery/request" class="span_a">
+                            <ul class="icon_txt">
+                                <li><img src="/img/c4_img.png" alt="icon"></li>
+                                <li><p>무료 견적 받기</p></li>
+                            </ul>
+                        </a>
+                    </div>
+                </a>
+            </c:when>
+            <c:when test="${code == 'domestic'}">
+                <a href="/delivery/request" class="formclick_wrap">
+                    <div class="formclick">
+                        <h3>3PL/물류/택배 대행</h3>
+                        <p>3PL 물류/택배 대행 업체 정보를 한자리에 모았습니다. 비지니스 성장을 위한 인사이트를 얻을 수 있는지 살펴 보세요.</p>
+                        <a href="/delivery/request" class="span_a">
+                            <ul class="icon_txt">
+                                <li><img src="/img/c4_img.png" alt="icon"></li>
+                                <li><p>무료 견적 받기</p></li>
+                            </ul>
+                        </a>
+                    </div>
+                </a>
+            </c:when>
+        </c:choose>
         <div class="bestsite">
             <ul class="sitelist">
                 <c:forEach items="${deliveryList}" var="item">

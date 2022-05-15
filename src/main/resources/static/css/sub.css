@@ -1791,6 +1791,38 @@
     text-align: left;
     width: 40%;
 }
+
+.c4_sub1 a.formclick_wrap{
+    text-align: left;
+    width: 100%;
+    display: block;
+    margin: 2em 0;
+}
+.c4_sub1 .formclick{
+    width: 50%;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 1%;
+}
+.c4_sub1 .formclick h3{
+    margin-top: -35px;
+    margin-bottom: 10px;
+}
+
+.c4_sub1 a.span_a ul.icon_txt{
+    width: 25%;
+    text-align: left;
+    display: flex;
+}
+.c4_sub1 a.span_a ul.icon_txt li p{
+    width: 100%;
+    display: block;
+    line-height: 2.5;
+}
+.c4_sub1 a.span_a ul.icon_txt li p:hover{
+    color:#b4b2b2 ;
+}
+
 .c4_sub1 .bestsite ul.sitelist{
     display:flex;
     flex-wrap: wrap;
@@ -1865,15 +1897,25 @@
     .c4_sub1 .bestsite ul.sitelist li{
         width: 31%;
     }
-
-
-
+    .c4_sub1 .formclick{
+        width: 100%;
+    }
+    .c4_sub1 a.formclick_wrap{
+        width: 100%;
+    }
+    .c4_sub1 .formclick h3{
+        margin-top: -25px;
+        margin-bottom: 10px;
+    }
+    .c4_sub1 a.span_a ul.icon_txt{
+        width: 100%;
+    }
 }
 
 
 
 /* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
-  @media all and (max-width:767px){
+@media all and (max-width:767px){
     .c4_sub1{
         margin-bottom: 2em;
     }
@@ -1902,12 +1944,26 @@
     .c4_sub1 .bestsite ul.sitelist li:nth-child(4n){
         margin: 10% auto;
     }
+    .c4_sub1 .formclick{
+        width: 85%;
+        margin: 0 auto;
+    }
+    .c4_sub1 a.formclick_wrap{
+        width: 100%;
+    }
+    .c4_sub1 .formclick h3{
+        margin-top: -25px;
+        margin-bottom: 15px;
+        font-size: 1rem;
+    }
+    .c4_sub1 a.span_a ul.icon_txt{
+        width: 100%;
+    }
+    .c4_sub1 .formclick p{
+        font-size: 0.8rem;
+    }
 
-  }
-
-
-
-
+}
 
 
 
@@ -2083,6 +2139,35 @@
     text-align: left;
     width: 40%;
 }
+.c4_sub3 a.formclick_wrap{
+    text-align: left;
+    width: 100%;
+    display: block;
+    margin: 2em 0;
+}
+.c4_sub3 .formclick{
+    width: 50%;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 1%;
+}
+.c4_sub3 .formclick h3{
+    margin-top: -35px;
+    margin-bottom: 10px;
+}
+.c4_sub3 a.span_a ul.icon_txt{
+    width: 25%;
+    text-align: left;
+    display: flex;
+}
+.c4_sub3 a.span_a ul.icon_txt li p{
+    width: 100%;
+    display: block;
+    line-height: 2.5;
+}
+.c4_sub3 a.span_a ul.icon_txt li p:hover{
+    color:#b4b2b2 ;
+}
 .c4_sub3 .bestsite h3{
     text-align: left;
     margin-top: 5em;
@@ -2177,15 +2262,26 @@
     .c4_sub3 .bestsite ul.sitelist li{
         width: 31%;
     }
-
-
+    .c4_sub3 .formclick{
+        width: 100%;
+    }
+    .c4_sub3 a.formclick_wrap{
+        width: 100%;
+    }
+    .c4_sub3 .formclick h3{
+        margin-top: -25px;
+        margin-bottom: 10px;
+    }
+    .c4_sub3 a.span_a ul.icon_txt{
+        width: 100%;
+    }
 
 }
 
 
 
 /* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
-  @media all and (max-width:767px){
+@media all and (max-width:767px){
     .c4_sub3{
         margin-bottom: 2em;
     }
@@ -2213,5 +2309,22 @@
     .c4_sub3 .bestsite ul.sitelist li:nth-child(4n){
         margin: 10% auto;
     }
-
-  }
+    .c4_sub3 .formclick{
+        width: 85%;
+        margin: 0 auto;
+    }
+    .c4_sub3 a.formclick_wrap{
+        width: 100%;
+    }
+    .c4_sub3 .formclick h3{
+        margin-top: -25px;
+        margin-bottom: 15px;
+        font-size: 1rem;
+    }
+    .c4_sub3 a.span_a ul.icon_txt{
+        width: 100%;
+    }
+    .c4_sub3 .formclick p{
+        font-size: 0.8rem;
+    }
+}

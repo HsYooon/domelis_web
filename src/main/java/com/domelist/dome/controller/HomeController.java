@@ -130,9 +130,11 @@ public class HomeController {
 
     @GetMapping("/delivery/domestic")
     public String deliveryDomesticInfo(Model model){
+        String code = "domestic";
         String title = "3PL 물류/택배 대행 업체 정보 모음";
         String desc ="3PL 물류/택배 대행 업체 정보를 한자리에 모았습니다. 비지니스 성장을 위한 인사이트를 얻을 수 있는지 살펴 보세요.";
         List<DeliveryDto> result = service.deliveryDomesticList();
+        model.addAttribute("code", code);
         model.addAttribute("title",title);
         model.addAttribute("desc", desc);
         model.addAttribute("deliveryList", result);
@@ -141,9 +143,11 @@ public class HomeController {
 
     @GetMapping("/delivery/abroad")
     public String deliveryAbroadInfo(Model model){
+        String code = "abroad";
         String title = "해외 수입구매 (대량구매/OEM/ODM) 대행 업체 정보 모음";
         String desc ="해외 수입구매 대행 업체 정보를 한자리에 모았습니다. 비지니스 성장을 위한 인사이트를 얻을 수 있는지 살펴 보세요.";
         List<DeliveryDto> result = service.deliveryAbroadList();
+        model.addAttribute("code", code);
         model.addAttribute("title",title);
         model.addAttribute("desc", desc);
         model.addAttribute("deliveryList", result);
@@ -152,7 +156,9 @@ public class HomeController {
 
     @GetMapping("/advertise")
     public String advertiseInfo(Model model) {
+        String code = "advertise";
         Map<String, List> result = service.advertiseLists();
+        model.addAttribute("code", code);
         model.addAttribute("searchList", result.get("searchList"));
         model.addAttribute("shoppingList", result.get("shoppingList"));
         model.addAttribute("daList", result.get("daList"));
