@@ -34,7 +34,11 @@ public class HomeController {
         model.addAttribute("bestProductList", mainBestList);
         /* 최신 마케팅 소식 12개 */
         List<MarketPostDto> mainMarketPostList = service.marketInfoPostList2("01",12);
+        /* 인기 사이트 top10 */
+        //todo: dto 정리
+        List<Object> siteInfoListByCnt = service.siteInfoListByCnt();
         model.addAttribute("marketPostList", mainMarketPostList);
+        model.addAttribute("siteInfoListByCnt", siteInfoListByCnt);
         return "home";
     }
 

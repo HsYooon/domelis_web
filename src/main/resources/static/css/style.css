@@ -825,3 +825,85 @@ a.main_btn2_wrap{
         font-size: 0.75rem;
     }
 }
+
+/* section7 */
+.section7{
+    padding-bottom: 4rem;
+    padding-top: 2rem;
+    width: 100%;
+    height: 1400px;
+    background-color: #fff;
+    margin: 0 auto;
+    position: relative;
+}
+.section7 h2{
+    text-align: left;
+    width: 70%;
+    padding-top:80px;
+    margin: 0 auto;
+    font-size: 1.75rem;
+    line-height: 2.25rem;
+    font-weight: normal;
+}
+.section7 .section_wrap{
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+}
+.section7 .section_wrap ul.lanking_wrap{
+    padding: 2rem 0;
+    width: 100%;
+}
+.section7 .section_wrap ul.lanking_wrap>li{
+    width: 50%;
+    height: 2rem;
+    float: left;
+    margin: 6rem 0;
+}
+.section7 .section_wrap ul.lanking_wrap>li a{
+    display: block;
+}
+.section7 .section_wrap ul.lanking_wrap>li>ul.inner_wrap{
+    width: 100%;
+    border-bottom: 2px solid #eee;
+}
+.section7 .section_wrap ul.lanking_wrap>li>ul.inner_wrap>li.lank_inner{
+    margin:3rem 0;
+    width: 30%;
+
+    float: left;
+}
+.section7 .section_wrap img{
+    width: 120px;
+    height: 120px;
+    border-radius: 5px;
+}
+.section7 .section_wrap h3{
+    width: 70%;
+    font-size: 1rem;
+}
+
+
+
+@media all and (min-width:768px) and (max-width:1023px){
+    .section7{
+        height: 1400px;
+    }
+    .section7 .section_wrap ul.lanking_wrap>li>ul.inner_wrap>li.lank_inner{
+        width: 50%;
+    }
+}
+
+
+/* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
+@media all and (max-width:767px){
+    .section7{
+        height: 2500px;
+    }
+    .section7 .section_wrap ul.lanking_wrap>li{
+        width: 100%;
+    }
+    .section7 .section_wrap ul.lanking_wrap>li>ul.inner_wrap>li.lank_inner{
+        width: 50%;
+    }
+}

@@ -155,13 +155,13 @@
                      <li>
                        <a href="${pageContext.request.contextPath}siteinfo?cd=08">
                         <div class="inner_img">
-                         <img src="img/category/c_img9.png" alt="img3">
-                         </div>
+                            <img src="img/category/c_img9.png" alt="img3">
+                        </div>
                         <div class="inner_txt">
-                          <h3>반려/애완</h3>
-                           <p>바로가기</p>
-                           </div><!-- //.inner_txt -->
-                                 </a>
+                            <h3>반려/애완</h3>
+                            <p>바로가기</p>
+                        </div><!-- //.inner_txt -->
+                       </a>
                       </li>
                        <li>
                          <a href="${pageContext.request.contextPath}siteinfo?cd=05">
@@ -171,25 +171,48 @@
                           <div class="inner_txt">
                             <h3>헬스케어/뷰티</h3>
                              <p>바로가기</p>
-                             </div><!-- //.inner_txt -->
-                                   </a>
+                          </div><!-- //.inner_txt -->
+                         </a>
                         </li>
-                            <li>
-                                 <a href="${pageContext.request.contextPath}siteinfo?cd=01">
-                                  <div class="inner_img">
-                                   <img src="img/category/c_img12.png" alt="img3">
-                                   </div>
-                                  <div class="inner_txt">
-                                    <h3>더보기</h3>
-                                     <p>바로가기</p>
-                                     </div><!-- //.inner_txt -->
-                                           </a>
-                                </li>
-
+<%--                        <li>--%>
+<%--                             <a href="${pageContext.request.contextPath}siteinfo?cd=01">--%>
+<%--                              <div class="inner_img">--%>
+<%--                               <img src="img/category/c_img12.png" alt="img3">--%>
+<%--                               </div>--%>
+<%--                              <div class="inner_txt">--%>
+<%--                                <h3>더보기</h3>--%>
+<%--                                 <p>바로가기</p>--%>
+<%--                                 </div><!-- //.inner_txt -->--%>
+<%--                             </a>--%>
+<%--                        </li>--%>
                 </ul><!-- //.box_wrap -->
             </div><!-- //.section_wrap -->
         </div><!-- //.container -->
     </div><!-- //.section2 -->
+    <div class="section7">
+        <h2>인기 카테고리 랭킹</h2>
+        <div class="container">
+            <div class="section_wrap">
+                <ul class="lanking_wrap">
+                    <c:forEach items="${siteInfoListByCnt}" var="item">
+                    <li>
+                        <a href="${item.url}">
+                            <ul class="inner_wrap">
+                                <li class="lank_inner"><a href="${item.url}"><img src="img/site/${item.img}"></a></li>
+                                <li class="lank_inner">
+                                    <a href="${item.url}">
+                                        <h3>${item.name}</h3>
+                                        <p>${item.info}</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </a>
+                    </li>
+                    </c:forEach>
+                </ul><!-- //.lanking_wrap -->
+            </div><!-- //.section_wrap -->
+        </div><!-- //.container -->
+    </div><!-- //.section7 -->
     <div class="section3">
         <h2>오늘의 도매 신규 상품</h2>
         <div class="container">

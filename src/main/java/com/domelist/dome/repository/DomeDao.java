@@ -55,11 +55,13 @@ public interface DomeDao {
 
     List<DomeDto> searchPrd(String query);
 
+    /* 게시물 등록,수정,삭제*/
     void insertPost(Map<String,String> post);
 
     void modifyPost(Map<String,Object> post);
 
     void deletePost(int id);
 
+    List<Object> siteInfoListByCnt();
 
 }

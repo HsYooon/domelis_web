@@ -199,6 +199,10 @@ public class DomeService {
         dao.deletePost(id);
     }
 
+    /* 인기 사이트 top10 조회 */
+    public List<Object> siteInfoListByCnt() {
+        return dao.siteInfoListByCnt();
+    }
     ///////////////////////////////////////////////////////////
 
     private int calLastPage(int total, int offset) {
