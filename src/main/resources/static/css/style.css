@@ -174,29 +174,10 @@ body{
     } */
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* section2 도매사이트 모음 */
 
 .section2{
-    padding-bottom: 4rem;
+    padding-bottom: 3rem;
     width: 100%;
     background-color: #fff;
     margin: 0 auto;
@@ -211,7 +192,7 @@ body{
 }
 
 .section2 .section_wrap{
-    width: 80%;
+    width: 78%;
     margin: 0 auto;
 }
 .section2 .section_wrap ul.box_wrap{
@@ -221,7 +202,7 @@ body{
     margin: 30px auto;
 }
 .section2 .section_wrap ul.box_wrap li{
-    width: 23%;
+    width: 8%;
     margin: 20px auto;
     box-shadow: 1px 1px 1px 1px rgb(233, 230, 230);
     overflow: hidden;
@@ -233,12 +214,12 @@ body{
 }
 .section2 .section_wrap ul.box_wrap li a .inner_img{
     width: 100%;
-    height: 220px;
+    height: 100px;
     overflow: hidden;
 }
 .section2 .section_wrap ul.box_wrap li .inner_img img{
     width: 100%;
-    height: 220px;
+    height: 100px;
     transition: all 0.6s;
     max-width: 100%;
 }
@@ -247,20 +228,20 @@ body{
 }
 .section2 .section_wrap ul.box_wrap li .inner_txt{
     width: 100%;
-    height: auto;
+    height: 50px;
     background-color: #fff;
     text-align: center;
     padding: 15px 0;
 }
 .section2 .section_wrap ul.box_wrap li .inner_txt h3{
     text-align: center;
-    padding-top: 5px;
-    font-size: 1.125rem;
+    padding-top: 2px;
+    font-size: 1rem;
     font-weight: 500;
 }
 .section2 .section_wrap ul.box_wrap li .inner_txt h4{
     text-align: center;
-    padding: 15px 0;
+    padding: 10px 0;
 }
 .section2 .section_wrap ul.box_wrap li .inner_txt p{
     display: block;
@@ -288,7 +269,7 @@ body{
         margin-right: 0;
     }
     .section2 .section_wrap ul.box_wrap li a .inner_img{
-        height: 140px;
+        height: 100px;
     }
     .section2 .section_wrap ul.box_wrap li .inner_txt{
         height: 60px ;
@@ -327,7 +308,6 @@ body{
         box-shadow: 2px 2px 2px 2px rgb(233, 230, 230);
     }
 }
-
 
 
 
@@ -877,13 +857,20 @@ a.main_btn2_wrap{
     width: 120px;
     height: 120px;
     border-radius: 5px;
+    border: 2px solid #eee;
 }
 .section7 .section_wrap h3{
     width: 70%;
     font-size: 1rem;
 }
-
-
+.section7 .section_wrap .p_category{
+    font-size: 0.8rem;
+    color: #6e6e6e;
+}
+.section7 .section_wrap p{
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+}
 
 @media all and (min-width:768px) and (max-width:1023px){
     .section7{

@@ -25,7 +25,7 @@
         <ul class="sitelist">
             <c:forEach items="${prdMainNewList}" var="tProduct">
                 <li>
-                    <a href="${tProduct.url}" target="_blank">
+                    <a href="javascript:window.open('${tProduct.url}');" onclick="goOutLink('${tProduct.name}')" >
                         <div class="inner_img">
                             <img src="${tProduct.img}" onerror="this.src='${pageContext.request.contextPath}/img/site/blankimg.png'" alt="img3">
                         </div>
@@ -46,7 +46,7 @@
         <ul class="sitelist">
             <c:forEach items="${prdMainBestList}" var="tProduct">
                 <li>
-                    <a href="${tProduct.url}" target="_blank">
+                    <a href="javascript:window.open('${tProduct.url}');" onclick="goOutLink('${tProduct.name}')" >
                         <div class="inner_img">
                             <img src="${tProduct.img}" onerror="this.src='${pageContext.request.contextPath}/img/site/blankimg.png'" alt="img3">
                         </div>
@@ -66,4 +66,16 @@
     <jsp:include page="footer.jsp" flush="true"/>
 </footer>
 </body>
+<script>
+    function goOutLink(name, url) {
+        console.log(name);
+        console.log(url);
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/productIncrCnt', true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhr.onload = function () {
+        };
+        xhr.send('name='+name);
+    }
+</script>
 </html>

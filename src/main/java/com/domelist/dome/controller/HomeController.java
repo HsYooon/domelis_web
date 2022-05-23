@@ -10,8 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -47,6 +50,8 @@ public class HomeController {
     public String siteInfo(@RequestParam("cd") String cd, Model model) {
         /* cd = null or all : 모든 사이트*/
         List<SiteInfoDto> siteInfoList = service.siteInfoList(cd);
+        List<Object> siteInfoListByCnt = service.siteInfoListByCnt();
+        model.addAttribute("siteInfoListByCnt", siteInfoListByCnt);
         String title = "";
         if(cd.equals("all")) {
             model.addAttribute("title", title);
@@ -59,6 +64,7 @@ public class HomeController {
         return "siteinfo";
     }
 
+    /* 오늘의 도매상품 */
     @GetMapping("/product")
     public String productMain(Model model) {
         List<DomeDto> prdMainNewList = service.prdMainNewList();
@@ -116,6 +122,13 @@ public class HomeController {
         model.addAttribute("desc1", desc1);
         model.addAttribute("desc2", desc2);
         return "prdBestSub";
+    }
+
+    /* 사이트 조회수 집계 */
+    @PostMapping("/productIncrCnt")
+    public void productIncrCnt(HttpServletResponse response, String name) throws IOException {
+        service.updateSiteCount(name);
+        response.getWriter().write("ok");
     }
 
     @GetMapping("/delivery")

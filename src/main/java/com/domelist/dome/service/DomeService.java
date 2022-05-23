@@ -171,6 +171,11 @@ public class DomeService {
         dao.updatePostCount(id);
     }
 
+    /* 사이트 조회수 증가 */
+    public void updateSiteCount(String name) {
+        dao.updateSiteCount(name);
+    }
+
     /* 검색 */
     public Map<String,Object> searchPrd(String query){
         List<DomeDto> list = dao.searchPrd(query);

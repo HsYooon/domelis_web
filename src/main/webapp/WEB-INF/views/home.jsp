@@ -194,14 +194,15 @@
         <div class="container">
             <div class="section_wrap">
                 <ul class="lanking_wrap">
-                    <c:forEach items="${siteInfoListByCnt}" var="item">
+                    <c:forEach items="${siteInfoListByCnt}" var="item" varStatus="status">
                     <li>
                         <a href="${item.url}">
                             <ul class="inner_wrap">
                                 <li class="lank_inner"><a href="${item.url}"><img src="img/site/${item.img}"></a></li>
                                 <li class="lank_inner">
                                     <a href="${item.url}">
-                                        <h3>${item.name}</h3>
+                                        <h3>${status.index+1}.${item.name}</h3>
+                                        <p class="p_category">${item.categoryName}</p>
                                         <p>${item.info}</p>
                                     </a>
                                 </li>
@@ -221,7 +222,7 @@
                 <ul class="box_wrap">
                     <c:forEach items="${todayProductList}" var="tProduct">
                         <li>
-                            <a href="${tProduct.url}" target="_blank">
+                            <a href="javascript:window.open('${tProduct.url}');" onclick="goOutLink('${tProduct.name}')" >
                                 <div class="inner_img">
                                     <img src="${tProduct.img}" onerror="this.src='${pageContext.request.contextPath}/img/site/blankimg.png'" alt="img3">
                                 </div>
@@ -245,7 +246,7 @@
                 <ul class="box_wrap">
                     <c:forEach items="${bestProductList}" var="tProduct">
                         <li>
-                            <a href="${tProduct.url}" target="_blank">
+                            <a href="javascript:window.open('${tProduct.url}');" onclick="goOutLink('${tProduct.name}')" >
                                 <div class="inner_img">
                                     <img src="${tProduct.img}" onerror="this.src='${pageContext.request.contextPath}img/site/blankimg.png'" alt="img3">
                                 </div>
@@ -290,4 +291,16 @@
     <jsp:include page="footer.jsp" flush="true"/>
 </footer>
 </body>
+<script>
+    function goOutLink(name, url) {
+        console.log(name);
+        console.log(url);
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/productIncrCnt', true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xhr.onload = function () {
+        };
+        xhr.send('name='+name);
+    }
+</script>
 </html>

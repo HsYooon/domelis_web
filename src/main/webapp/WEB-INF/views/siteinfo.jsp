@@ -23,6 +23,23 @@
             <h2>${title}</h2>
             <p>${title} 카테고리의 도매 사이트를 한자리에 모았습니다.<br>신규 및 인기 상품을 살펴보세요.</p>
             <jsp:include page="categorynav.jsp" flush="true"/>
+            <div class="lank_txt">
+                <h4>종합 사이트 인기순위</h4>
+                <ul class="sitelank">
+                    <c:forEach items="${siteInfoListByCnt}" var="item" varStatus="status">
+                        <c:if test="${status.index < 5}">
+                            <li><a href="${item.url}">${status.index+1}. ${item.name}</a></li>
+                        </c:if>
+                    </c:forEach>
+                </ul><!-- //.sitelank -->
+                <ul class="sitelank">
+                    <c:forEach items="${siteInfoListByCnt}" var="item" varStatus="status">
+                        <c:if test="${status.index  > 4}">
+                            <li><a href="${item.url}">${status.index+1}. ${item.name}</a></li>
+                        </c:if>
+                    </c:forEach>
+                </ul>
+            </div><!-- //.lank_txt -->
             <ul class="sitelist">
                 <c:forEach items="${siteInfoList}" var="item">
                     <li>

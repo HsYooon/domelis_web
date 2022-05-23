@@ -64,4 +64,6 @@ public interface DomeDao {
 
     List<Object> siteInfoListByCnt();
 
+    void updateSiteCount(String name);
+
 }
