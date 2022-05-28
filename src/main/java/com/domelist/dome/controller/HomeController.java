@@ -77,17 +77,21 @@ public class HomeController {
 
     /* 오늘의 도매상품 > 신상품 */
     @GetMapping("/product/new")
-    public String productNew(@RequestParam(value ="page", required = false) String page, Model model) {
+    public String productNew(@RequestParam(value ="page", required = false) String page,
+                             @RequestParam(value ="cd",required = false) String cd, Model model) {
         String info = "11"; // 신상품
-        int totalPrdCnt = commonService.totalPrdCnt(info);
-        Map<String, Object> map = service.todayProductList(info, page, totalPrdCnt);
+        int totalPrdCnt = commonService.totalPrdCnt(info, cd);
+        Map<String, Object> map = service.todayProductList(info, page, cd, totalPrdCnt);
         if (map == null) {
-            return "error";
+            return "/error";
         }
         String title = "오늘의 도매 신상품";
         String desc1 = "도매사이트의 신규 상품을 한자리에 모았습니다.";
         String desc2 = "오늘 새롭게 올라온 상품을 확인하세요.";
 
+        if(cd != null) {
+            model.addAttribute("cd",cd);
+        }
         model.addAttribute("info", info);
         model.addAttribute("lastPage", map.get("lastPage"));
         model.addAttribute("nowPage", map.get("nowPage"));
@@ -101,17 +105,21 @@ public class HomeController {
     }
 
     @GetMapping("/product/best")
-    public String productBest(@RequestParam(value ="page", required = false) String page, Model model) {
+    public String productBest(@RequestParam(value ="page", required = false) String page,
+                              @RequestParam(value ="cd",required = false) String cd, Model model) {
         String info = "12"; // 신상품
-        int totalPrdCnt = commonService.totalPrdCnt(info);
-        Map<String, Object> map = service.todayProductList(info, page,totalPrdCnt);
+        int totalPrdCnt = commonService.totalPrdCnt(info,cd);
+        Map<String, Object> map = service.todayProductList(info, page, cd, totalPrdCnt);
         if (map == null) {
-            return "error";
+            return "/error";
         }
         String title = "오늘의 도매 베스트";
         String desc1 = "도매사이트의 인기 상품을 한자리에 모았습니다.";
         String desc2 = "잘 팔리는 상품을 확인하세요.";
 
+        if(cd != null) {
+            model.addAttribute("cd", cd);
+        }
         model.addAttribute("info", info);
         model.addAttribute("lastPage", map.get("lastPage"));
         model.addAttribute("nowPage", map.get("nowPage"));

@@ -27,7 +27,7 @@ public class DomeService {
     }
 
     /* 오늘의 도매상품 > 신상품 */
-    public Map<String, Object> todayProductList(String info, String page, int totalPrdCnt) {
+    public Map<String, Object> todayProductList(String info, String page, String cd, int totalPrdCnt) {
         // 한페이지에 보여줄 상품 수
         int offset = 100;
         int lastPage = calLastPage(totalPrdCnt, offset);
@@ -49,10 +49,10 @@ public class DomeService {
         Map<String, Object> map = new HashMap<>();
         List<DomeDto> result = new ArrayList<>();
         if (info.equals("11")) {
-            result = dao.domeNewPrdList(start, end);
+            result = dao.domeNewPrdList(start, end, cd);
         }
         if (info.equals("12")) {
-            result = dao.domeBestPrdList(start, end);
+            result = dao.domeBestPrdList(start, end, cd);
         }
 
         int v = nowPage / 5;
