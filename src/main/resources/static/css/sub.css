@@ -366,6 +366,37 @@
     text-align: left;
     padding: 2rem 0;
 }
+
+.c2_sub .btn_wrap{
+    width: 100%;
+    border-bottom: 1px solid #b4b2b2;
+    padding-bottom: 0.75rem;
+}
+.c2_sub .btn_wrap ul.btnul{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+}
+.c2_sub .btn_wrap ul.btnul li{
+    width:6%;
+    margin: 0 0.9rem;
+}
+.c2_sub .btn_wrap ul.btnul li a{
+    display: block;
+}
+.c2_sub .btn_wrap ul.btnul li button{
+    width: 7em;
+    height: 2.5em;
+    background-color: #fff;
+    border: 0;
+    color: rgb(139, 136, 136);
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+.c2_sub .btn_wrap ul.btnul li button:hover{
+    text-decoration: underline;
+    color: #000;
+}
 .c2_sub .bestsite ul.sitelist{
     display:flex;
     flex-wrap: wrap;
@@ -427,12 +458,26 @@
     .c2_sub .bestsite ul.sitelist li{
         width: 31%;
     }
+    .c2_sub .btn_wrap ul.btnul{
+        width: 100%;
+        padding-bottom: 1rem;
+    }
+    .c2_sub .btn_wrap ul.btnul li{
+        margin: 0;
+        width: 9%;
+    }
+    .c2_sub .btn_wrap ul.btnul li button{
+        width: 3em;
+        height: 4em;
+        margin: 0;
+        font-size: 0.75rem;
+    }
 }
 
 
 
 /* 모바일 가로, 모바일 세로 (해상도 480px ~ 767px)*/
-  @media all and (max-width:767px){
+@media all and (max-width:767px){
     .c2_sub {
         margin-bottom: 4em;
     }
@@ -476,8 +521,23 @@
     .c2_sub .bestsite ul.sitelist .inner_txt p{
         font-size: 0.75rem;
     }
-  }
-
+    .c2_sub .btn_wrap ul.btnul{
+        display: none;
+        /* width: 100%;
+        padding-bottom: 1rem; */
+    }
+    /* .c2_sub .btn_wrap ul.btnul li{
+        width: 8%;
+        margin: 0;
+        padding: 0 1%;
+    }
+    .c2_sub .btn_wrap ul.btnul li button{
+        width: 1em;
+        height: 8em;
+        margin: 0;
+        font-size: 0.68rem;
+    } */
+}
 
 
 

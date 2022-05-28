@@ -29,7 +29,34 @@
     white-space: normal;
     line-height: 1.6;
 }
-
+.category1 .lank_txt{
+    width: 100%;
+    text-align: left;
+    height: auto;
+    padding: 2%;
+    border-left: 2px solid #ccc;
+    margin: 4rem 0;
+    display: flex;
+}
+.category1 .lank_txt h4{
+    margin-top: 4rem;
+    width: 100%;
+    font-size: 1.125rem;
+    font-weight: 400;
+}
+.category1 .lank_txt ul.sitelank{
+    margin: 0.5rem 1rem;
+    width: 100%;
+    color: #212121;
+}
+.category1 .lank_txt ul.sitelank li{
+    margin: 0.25rem;
+    text-align: center;
+}
+.category1 .lank_txt ul.sitelank li:hover{
+    text-decoration: underline;
+    background-color: #eee;
+}
 .category1 ul.sitelist{
     display:flex;
     flex-wrap: wrap;
@@ -81,11 +108,14 @@
     line-height: 1.5rem;
 }
 
-/* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/ 
+/* 테블릿 가로, 테블릿 세로 (해상도 768px ~ 1023px)*/
 @media all and (min-width:768px) and (max-width:1023px){
     .category1 h2{
         padding-top: 2rem;
         font-size: 2rem;
+    }
+    .category1 .lank_txt h4{
+        margin-top: 3rem;
     }
     .category1 ul.sitelist li{
         width: 30%;
@@ -111,6 +141,28 @@
         margin-bottom: 12%;
         padding: 0;
         line-height: 1.8;
+    }
+    .category1 .lank_txt{
+        width: 95%;
+        display: inline;
+        text-align: center;
+        border-left: 0;
+    }
+    .category1 .lank_txt h4{
+        width: 100%;
+        font-size: 1rem;
+        margin: 2rem 0;
+        border-top: 2px solid #ccc;
+        padding-top: 2rem;
+    }
+    .category1 .lank_txt ul.sitelank{
+        width: 100%;
+        margin:0;
+    }
+    .category1 .lank_txt ul.sitelank li{
+        font-size: 0.8rem;
+        height: 3rem;
+        margin: 0.5rem;
     }
     .category1 ul.sitelist{
         display:inline;

@@ -45,6 +45,22 @@
     <div class="container">
         <h2>${title}</h2>
         <p>${desc1}<br>${desc2}</p>
+        <div class="btn_wrap">
+            <ul class="btnul">
+                <li><a href="/product/best"><button>All</button></a></li>
+                <li><a href="/product/best?cd=01"><button>종합</button></a></li>
+                <li><a href="/product/best?cd=02"><button>생활</button></a></li>
+                <li><a href="/product/best?cd=04"><button>식품</button></a></li>
+                <li><a href="/product/best?cd=06"><button>자동차</button></a></li>
+                <li><a href="/product/best?cd=09"><button>디지털/가전</button></a></li>
+                <li><a href="/product/best?cd=03"><button>인테리어/소품</button></a></li>
+                <li><a href="/product/best?cd=11"><button>의류</button></a></li>
+                <li><a href="/product/best?cd=12"><button>신발/잡화</button></a></li>
+<%--                <li><a href="/product/best?cd=10"><button>아동/완구</button></a></li>--%>
+                <li><a href="/product/best?cd=08"><button>반려/애완</button></a></li>
+                <li><a href="/product/best?cd=05"><button>헬스케어/뷰티</button></a></li>
+            </ul><!-- //.btnul -->
+        </div><!-- //.btn_wrap -->
         <div class="bestsite">
             <ul class="sitelist">
                 <c:forEach items="${prdSubList}" var="tProduct">
@@ -63,12 +79,16 @@
                 </c:forEach>
             </ul><!-- //.sitelist -->
             <div class="pagination">
+                <c:set var="targetUrl" value="/product/best?"/>
+                <c:if test="${cd != null}">
+                    <c:set var="targetUrl" value="/product/best?cd=${cd}&"/>
+                </c:if>
                 <c:choose>
                     <c:when test="${nowPage/5 <= 1}">
                         <a href="#">&lt;</a>
                     </c:when>
                     <c:when test="${nowPage/5 > 1}">
-                        <a href="/product/best?page=${startPage - 1}">&lt;</a>
+                        <a href="${targetUrl}page=${startPage - 1}">&lt;</a>
                     </c:when>
                 </c:choose>
                 <c:forEach begin="${startPage}" end="${endPage}" var="page">
@@ -77,7 +97,7 @@
                             <a href="#" class="active">${page }</a>
                         </c:when>
                         <c:when test="${page != nowPage}">
-                            <a href="/product/best?page=${page}">${page}</a>
+                            <a href="${targetUrl}page=${page}">${page}</a>
                         </c:when>
                     </c:choose>
                 </c:forEach>
@@ -86,7 +106,7 @@
                         <a href="#">&gt;</a>
                     </c:when>
                     <c:when test="${nowPage/5 + 1 < lastPage/5}">
-                        <a href="/product/best?page=${endPage + 1}">&gt;</a>
+                        <a href="${targetUrl}page=${endPage + 1}">&gt;</a>
                     </c:when>
                 </c:choose>
             </div>
