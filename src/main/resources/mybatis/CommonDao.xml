@@ -8,6 +8,9 @@
         select count(*)
         from t_domelist
         where info = #{info}
+        <if test="cd != null">
+            and category = #{cd}
+        </if>
     </select>
 
 </mapper>
