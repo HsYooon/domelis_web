@@ -9,10 +9,10 @@ import java.util.Map;
 
 @Mapper
 public interface DomeDao {
-    /* 오늘의 도매상품 > 신상품,베스트 */
-    List<DomeDto> domeNewPrdList(@Param("start") int start, @Param("end") int end);
-
-    List<DomeDto> domeBestPrdList(@Param("start") int start, @Param("end") int end);
+    /* 오늘의 도매상품 > 신상품 */
+    List<DomeDto> domeNewPrdList(@Param("start") int start, @Param("end") int end, @Param("cd")String cd);
+    /* 오늘의 도매상품 > 베스트 */
+    List<DomeDto> domeBestPrdList(@Param("start") int start, @Param("end") int end, @Param("cd")String cd);
 
     List<DomeDto> todayProductList(int cnt);
 
