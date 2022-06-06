@@ -63,10 +63,11 @@ public class ProductController {
         return "prdNewSub";
     }
 
+    /* 오늘의 도매상품 > 베스트 */
     @GetMapping("/product/best")
     public String productBest(@RequestParam(value ="page", required = false) String page,
                               @RequestParam(value ="cd",required = false) String cd, Model model) {
-        String info = "12"; // 신상품
+        String info = "12"; // 베스트
         int totalPrdCnt = commonService.totalPrdCnt(info,cd);
         Map<String, Object> map = service.todayProductList(info, page, cd, totalPrdCnt);
         if (map == null) {
