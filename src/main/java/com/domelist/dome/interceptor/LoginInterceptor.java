@@ -11,17 +11,14 @@ public class LoginInterceptor extends InterceptorRegistry implements HandlerInte
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        System.out.println("LoginInterceptor start ======>");
         String role = (String)request.getSession().getAttribute("role");
-
-        if(role == "admin"){return true;}
-
-        else{
+        if(role == "admin"){
+            return true;
+        } else{
             String destUri = request.getRequestURI();
             String destQuery = request.getQueryString();
             String dest = (destQuery == null) ? destUri : destUri+"?"+destQuery;
             request.getSession().setAttribute("dest", dest);
-
             response.sendRedirect("/login");
             return false;
         }
@@ -36,5 +33,4 @@ public class LoginInterceptor extends InterceptorRegistry implements HandlerInte
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
         HandlerInterceptor.super.afterCompletion(request, response, handler, ex);
     }
-
 }
