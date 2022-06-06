@@ -52,11 +52,11 @@
                 <li><a href="/product/best?cd=02"><button>생활</button></a></li>
                 <li><a href="/product/best?cd=04"><button>식품</button></a></li>
                 <li><a href="/product/best?cd=06"><button>자동차</button></a></li>
-                <li><a href="/product/best?cd=09"><button>디지털/가전</button></a></li>
+<%--                <li><a href="/product/best?cd=09"><button>디지털/가전</button></a></li>--%>
                 <li><a href="/product/best?cd=03"><button>인테리어/소품</button></a></li>
                 <li><a href="/product/best?cd=11"><button>의류</button></a></li>
                 <li><a href="/product/best?cd=12"><button>신발/잡화</button></a></li>
-<%--                <li><a href="/product/best?cd=10"><button>아동/완구</button></a></li>--%>
+                <li><a href="/product/best?cd=10"><button>아동/완구</button></a></li>
                 <li><a href="/product/best?cd=08"><button>반려/애완</button></a></li>
                 <li><a href="/product/best?cd=05"><button>헬스케어/뷰티</button></a></li>
             </ul><!-- //.btnul -->
