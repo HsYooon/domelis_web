@@ -6,6 +6,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="도매/위탁판매 사이트 모음 - 국내 인기 B2B 도매/위탁판매 사이트 순위, 리스트 , 정보 모음까지 제공합니다.">
+    <meta property="og:title" content="도매/위탁판매 사이트 모음 - 도매리스트닷컴">
+    <meta property="og:description" content="도매/위탁판매 사이트 모음 - 국내 인기 B2B 도매/위탁판매 사이트 순위, 리스트 , 정보 모음까지 제공합니다.">
     <meta name="referrer" content="no-referrer"/>
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <script src="${pageContext.request.contextPath}js/script.js" type="text/javascript"></script>
@@ -21,31 +24,33 @@
 <main class="contents">
     <div class="section1">
                 <div class="container">
-                <h2>Solve e-commerce in one shot.
-                </h2>
-                <p class="p1">Think with Domaelist.com과 함께 더욱 업그레이드된 e커머스 사업을 펼쳐보세요.</p>
-                    <div class="section1_bt">
-                        <!-- <div class="mo_top">
-                            <img src="./img/main.jpg" alt="moimg">
-                        </div> -->
-                        <div class="bt_left">
-                            <div class="txt_box1">
-                                <span>도매/위탁판매 사이트 모음</span>
-                                <h3>Think With Domaelist.com</h3>
-                                <p>매출상승으로 가는 지름길!<br>
-                                    국내 인기 B2B 도매&위탁판매 사이트 순위, 리스트, 정보 모음까지!<br>
-                                    TOP10 및 장단점을 총 정리했습니다. 도매리스트닷컴에서 지금 시작하세요.<br>
-                                    당신이 원하는 상품부터 광고까지  모든 정보를 한자리에서 해결해보세요!
+                    <img src="/img/mainban.png" alt="mainban" class="pcmain">
+                    <img src="/img/mo_main.png" alt="mo_mainban" class="momain">
+<%--                <h2>Solve e-commerce in one shot.--%>
+<%--                </h2>--%>
+<%--                <p class="p1">Think with Domaelist.com과 함께 더욱 업그레이드된 e커머스 사업을 펼쳐보세요.</p>--%>
+<%--                    <div class="section1_bt">--%>
+<%--                        <!-- <div class="mo_top">--%>
+<%--                            <img src="./img/main.jpg" alt="moimg">--%>
+<%--                        </div> -->--%>
+<%--                        <div class="bt_left">--%>
+<%--                            <div class="txt_box1">--%>
+<%--                                <span>도매/위탁판매 사이트 모음</span>--%>
+<%--                                <h3>Think With Domaelist.com</h3>--%>
+<%--                                <p>매출상승으로 가는 지름길!<br>--%>
+<%--                                    국내 인기 B2B 도매&위탁판매 사이트 순위, 리스트, 정보 모음까지!<br>--%>
+<%--                                    TOP10 및 장단점을 총 정리했습니다. 도매리스트닷컴에서 지금 시작하세요.<br>--%>
+<%--                                    당신이 원하는 상품부터 광고까지  모든 정보를 한자리에서 해결해보세요!--%>
 
-                                </p>
-                            </div><!-- //.txt_box -->
-                        </div><!-- //.bt_left -->
-                        <!--<div class="bt_right">
-                            <a  href="#">
-                                <img src="./img/main.jpg" alt="img2">
-                            </a>
-                        </div> //.bt_right -->
-                    </div><!-- //.section1_bt -->
+<%--                                </p>--%>
+<%--                            </div><!-- //.txt_box -->--%>
+<%--                        </div><!-- //.bt_left -->--%>
+<%--                        <!--<div class="bt_right">--%>
+<%--                            <a  href="#">--%>
+<%--                                <img src="./img/main.jpg" alt="img2">--%>
+<%--                            </a>--%>
+<%--                        </div> //.bt_right -->--%>
+<%--                    </div><!-- //.section1_bt -->--%>
                 </div><!-- //.container -->
             </div><!-- section1 -->
     <div class="section2">

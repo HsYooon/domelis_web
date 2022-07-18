@@ -28,9 +28,9 @@ public class CommonController {
     DomeService service;
 
     /* 운영 경로 */
-    // private String path = "/var/lib/tomcat9/webapps/upload/";
+    private String path = "/var/lib/tomcat9/webapps/upload/";
     /* 로컬 경로 */
-    private String path = "/Users/hapsun/Desktop/study/img/";
+    // private String path = "/Users/hapsun/Desktop/study/img/";
 
     @RequestMapping(value = "/ads.txt")
     @ResponseBody

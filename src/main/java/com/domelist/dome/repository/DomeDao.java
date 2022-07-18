@@ -62,7 +62,7 @@ public interface DomeDao {
 
     void deletePost(int id);
 
-    List<Object> siteInfoListByCnt();
+    List<Object> siteInfoListByCnt(String cd);
 
     void updateSiteCount(String name);
 

@@ -27,9 +27,9 @@ public class InfoController {
     DomeService service;
 
     /* 운영 경로 */
-    // private final String path = "/var/lib/tomcat9/webapps/upload/";
+    private final String path = "/var/lib/tomcat9/webapps/upload/";
     /* 로컬 경로 */
-    private final String path = "/Users/hapsun/Desktop/study/img/";
+    //private final String path = "/Users/hapsun/Desktop/study/img/";
 
     /* 필독 정보 모음 */
     @GetMapping("/marketInfo")

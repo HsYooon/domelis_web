@@ -16,9 +16,9 @@ import java.util.UUID;
 public class imageController {
 
     /* 운영 경로 */
-    // private final String path = "/var/lib/tomcat9/webapps/upload/";
+    private final String path = "/var/lib/tomcat9/webapps/upload/";
     /* 로컬 경로 */
-    private final String path = "/Users/hapsun/Desktop/study/img/";
+    // private final String path = "/Users/hapsun/Desktop/study/img/";
 
     @PostMapping("/marketInfo/image")
     public Map<String, String> marketInfoImage(MultipartHttpServletRequest request) {

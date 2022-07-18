@@ -25,8 +25,9 @@
             <c:when test="${code == 'abroad'}">
                 <a href="/delivery/request" class="formclick_wrap">
                     <div class="formclick">
-                        <h3>해외 수입구매 (대량구매/OEM/ODM) 대행</h3>
-                        <p>해외 수입구매 대행 업체 정보를 한자리에 모았습니다. 비지니스 성장을 위한 인사이트를 얻을 수 있는지 살펴 보세요.</p>
+                        <h3>저렴하고 편리하게 비교 견적 받으세요</h3>
+                        <p>도매리스트닷컴과 제휴되어 있는 업체들를 통해 무료 비교 견적을 받으세요.
+                            <br>저렴한 비용으로 선택과 집중을 할수 있습니다.당신의 e커머스 사업을 강화하세요.</p>
                         <a href="/delivery/request" class="span_a">
                             <ul class="icon_txt">
                                 <li><img src="/img/c4_img.png" alt="icon"></li>
@@ -39,8 +40,9 @@
             <c:when test="${code == 'domestic'}">
                 <a href="/delivery/request" class="formclick_wrap">
                     <div class="formclick">
-                        <h3>3PL/물류/택배 대행</h3>
-                        <p>3PL 물류/택배 대행 업체 정보를 한자리에 모았습니다. 비지니스 성장을 위한 인사이트를 얻을 수 있는지 살펴 보세요.</p>
+                        <h3>저렴하고 편리하게 비교 견적 받으세요</h3>
+                        <p>도매리스트닷컴과 제휴되어 있는 업체들를 통해 무료 비교 견적을 받으세요.
+                            <br>저렴한 비용으로 선택과 집중을 할수 있습니다.당신의 e커머스 사업을 강화하세요.</p>
                         <a href="/delivery/request" class="span_a">
                             <ul class="icon_txt">
                                 <li><img src="/img/c4_img.png" alt="icon"></li>

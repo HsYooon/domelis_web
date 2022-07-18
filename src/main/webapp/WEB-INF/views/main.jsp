@@ -16,29 +16,30 @@
 </header>
 <main class="contents">
     <div class="section1">
-        <h2>위탁판매 도매 사이트 모음
-            <br>
-            WVM
-        </h2>
+<%--        <h2>위탁판매 도매 사이트 모음--%>
+<%--            <br>--%>
+<%--            WVM--%>
+<%--        </h2>--%>
         <div class="container">
-            <div class="section1_bt">
-                <div class="bt_left">
-                    <div class="txt_box1">
-                        <h3>Wholesale Category</h3>
-                        <p>@도매사이트 카테고리별 모음</p>
-                    </div><!-- //.txt_box -->
-                    <div class="img_box">
-                        <a href="/">
-                            <img src="img/img1.jpg" alt="img1">
-                        </a>
-                    </div><!-- //.img_box -->
-                </div><!-- //.bt_left -->
-                <div class="bt_right">
-                    <a  href="/">
-                        <img src="img/img2.jpg" alt="img2">
-                    </a>
-                </div><!-- //.bt_right -->
-            </div><!-- //.section1_bt -->
+            <img src="/img/mainban.png" alt="mainban">
+<%--            <div class="section1_bt">--%>
+<%--                <div class="bt_left">--%>
+<%--                    <div class="txt_box1">--%>
+<%--                        <h3>Wholesale Category</h3>--%>
+<%--                        <p>@도매사이트 카테고리별 모음</p>--%>
+<%--                    </div><!-- //.txt_box -->--%>
+<%--                    <div class="img_box">--%>
+<%--                        <a href="/">--%>
+<%--                            <img src="img/img1.jpg" alt="img1">--%>
+<%--                        </a>--%>
+<%--                    </div><!-- //.img_box -->--%>
+<%--                </div><!-- //.bt_left -->--%>
+<%--                <div class="bt_right">--%>
+<%--                    <a  href="/">--%>
+<%--                        <img src="img/img2.jpg" alt="img2">--%>
+<%--                    </a>--%>
+<%--                </div><!-- //.bt_right -->--%>
+<%--            </div><!-- //.section1_bt -->--%>
         </div><!-- //.container -->
     </div><!-- section1 -->
     <div class="section2">

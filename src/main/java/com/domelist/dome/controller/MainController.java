@@ -38,8 +38,9 @@ public class MainController {
         /* 최신 마케팅 소식 12개 */
         List<MarketPostDto> mainMarketPostList = service.marketInfoPostList2("01",12);
         /* 인기 사이트 top10 */
-        //todo: dto 정리
-        List<Object> siteInfoListByCnt = service.siteInfoListByCnt();
+        //todo: dto 정리, category 정리
+        String cd = "all";
+        List<Object> siteInfoListByCnt = service.siteInfoListByCnt(cd);
         model.addAttribute("marketPostList", mainMarketPostList);
         model.addAttribute("siteInfoListByCnt", siteInfoListByCnt);
         return "home";
@@ -50,7 +51,7 @@ public class MainController {
     public String siteInfo(@RequestParam("cd") String cd, Model model) {
         /* cd = null or all : 모든 사이트*/
         List<SiteInfoDto> siteInfoList = service.siteInfoList(cd);
-        List<Object> siteInfoListByCnt = service.siteInfoListByCnt();
+        List<Object> siteInfoListByCnt = service.siteInfoListByCnt(cd);
         model.addAttribute("siteInfoListByCnt", siteInfoListByCnt);
         String title = "";
         if(cd.equals("all")) {

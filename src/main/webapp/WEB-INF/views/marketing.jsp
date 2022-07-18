@@ -19,7 +19,7 @@
 <div class="category5">
     <div class="container">
         <h2>마케터를 위한 도구</h2>
-        <p>Google 도구를 활용한여 소비자 동향과 유용한 정보를 살펴보고 당신의 디지털 마케팅 전략을 강화하세요.</p>
+        <p>다양한 마케팅 도구를 활용하여 소비자 동향과 유용한 정보를 살펴보고 당신의 디지털 마케팅 전략을 강화하세요.</p>
         <div class="box_wrap">
             <ul class="c5">
                 <li>

@@ -205,8 +205,8 @@ public class DomeService {
     }
 
     /* 인기 사이트 top10 조회 */
-    public List<Object> siteInfoListByCnt() {
-        return dao.siteInfoListByCnt();
+    public List<Object> siteInfoListByCnt(String cd) {
+        return dao.siteInfoListByCnt(cd);
     }
     ///////////////////////////////////////////////////////////
 
